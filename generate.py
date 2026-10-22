@@ -23,11 +23,22 @@ import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 
-import yaml
+try:
+    import yaml
 
-from verc.prompts import build_system_prompt, fix_prompt, lesson_prompt, workbook_prompt
-from verc.style_check import StyleChecker, find_verify_markers, summarize
-from verc.word_builder import DocInfo, markdown_to_docx
+    from verc.prompts import build_system_prompt, fix_prompt, lesson_prompt, workbook_prompt
+    from verc.style_check import StyleChecker, find_verify_markers, summarize
+    from verc.word_builder import DocInfo, markdown_to_docx
+except ModuleNotFoundError as missing:
+    sys.exit(
+        f"Missing Python package: {missing.name}\n\n"
+        "Install the packages first (README step 2). From this folder, run:\n"
+        "    python3 -m venv .venv\n"
+        "    source .venv/bin/activate\n"
+        "    pip install -r requirements.txt\n\n"
+        "Already installed them? Activate them in this Terminal window first:\n"
+        "    source .venv/bin/activate"
+    )
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content"
