@@ -1,0 +1,1 @@
+"""VERC course generator package."""

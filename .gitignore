@@ -1,0 +1,17 @@
+# Secrets: never commit your API key
+.env
+
+# Generated drafts stay on your computer
+output/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Word lock files
+~$*.docx

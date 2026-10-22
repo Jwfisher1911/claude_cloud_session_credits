@@ -1,0 +1,220 @@
+# VERC course plan.
+# The generator reads this file to decide what to write.
+# Edit lesson topics, worksheets, or notes here, then rerun the generator.
+# Lines starting with # are comments and are ignored.
+
+program:
+  name: Veteran Entrepreneur Resource Collaborative
+  short_name: VERC
+  website: vercusa.com
+  legal_line: VERC is a d/b/a of Casa Concepts LLC.
+  disclaimer: >-
+    VERC is not affiliated with the Department of Defense, the U.S. Small
+    Business Administration, or the Department of Veterans Affairs. SBA makes
+    every certification decision.
+
+settings:
+  # claude-opus-5-5 writes the strongest drafts. claude-sonnet-5-5 costs less.
+  model: claude-opus-5-5
+  # Upper limit on the length of each draft, in tokens (about 0.75 words each).
+  max_tokens: 16000
+  # Target length of each lesson guide, in words.
+  lesson_words: 2500
+  # After each draft, check it against the style rules and send one
+  # revision request if it breaks any. Set to false to save credits.
+  auto_fix: true
+  # Word document colors (hex) and font.
+  colors:
+    primary: "1F3A5F"
+    accent: "B8862B"
+    callout_fill: "EEF2F7"
+  font: Calibri
+
+tracks:
+  - id: core
+    title: VERC Core Modules
+    modules:
+      - id: battle-rhythm
+        title: Operational Battle Rhythm
+        goal: Run the business week like an operation so revenue work happens first, every day.
+        lessons:
+          - "The first-light task: one revenue action before email or admin."
+          - "Mission-Essential Tasks: exactly three per day, at least one revenue-touching, admin below the line."
+          - "The weekly rhythm: revenue days, delivery days, financial review, and rest."
+          - "The four daily numbers: contacts made, offers made, invoices sent, money collected."
+          - "The Friday after-action review: planned, happened, why, sustain, improve."
+        worksheets:
+          - "Daily MET card: first-light task, exactly three Mission-Essential Tasks (mark which one touches revenue), admin list below the line."
+          - "Weekly battle rhythm planner: Monday to Sunday grid with revenue, delivery, financial review, and rest blocks."
+          - "Four-numbers tracker: contacts, offers, invoices, collections for each day across four weeks."
+          - "Friday after-action review form."
+
+      - id: five-ws
+        title: "Who, What, When, Where, Why: Your One-Page Business Brief"
+        goal: Define the business on one page, the way a unit writes a mission brief.
+        lessons:
+          - "Who you serve: one specific customer, described in plain words."
+          - "What you sell: the offer, the price, and what the customer gets."
+          - "When customers buy: triggers, seasons, and deadlines that create demand."
+          - "Where you find them: channels, locations, and referral sources."
+          - "Why they choose you: proof, results, and how military experience supports the offer without replacing it."
+        worksheets:
+          - "One-page business brief with a block for each of the five Ws."
+          - "Customer profile sheet."
+          - "Offer and pricing sheet: offer name, deliverables, price, payment terms."
+
+      - id: ai-staff
+        title: Building Your AI Staff
+        goal: Assign AI tools to defined staff roles with written standing orders and a human review step.
+        lessons:
+          - "Think in billets, not tools: define the job before picking software."
+          - "Writing standing orders: clear instructions an AI assistant follows every time."
+          - "Five starter billets: executive assistant, marketing writer, bookkeeping aide, research analyst, customer reply drafter."
+          - "Review and verify: the owner approves every output, checks facts, and keeps private data out."
+          - "Measuring time saved and deciding which billet to add next."
+        worksheets:
+          - "AI staff roster: billet, tool, assigned tasks, standing order, reviewer."
+          - "Standing order template."
+          - "Data rules checklist: what never goes into an AI tool (Social Security numbers, client records, passwords)."
+          - "Weekly time-saved log."
+        notes: >-
+          Name tools as examples only (Claude, ChatGPT, Gemini, or similar). Do not
+          require any paid tool. Tool features and prices change, so avoid quoting them.
+
+      - id: google-presence
+        title: Google Business Profile and Search Console
+        goal: Get the business found in local Google searches and measure what searches bring visitors.
+        lessons:
+          - "Why local search matters for a new business."
+          - "Creating and verifying a Google Business Profile."
+          - "Completing the profile: category, service area, hours, services, photos."
+          - "Reviews: how to ask for them and how to respond to every one."
+          - "Google Search Console: verify the website, submit a sitemap, read the Performance report."
+          - "A 30-minute monthly upkeep routine."
+        worksheets:
+          - "Google Business Profile setup checklist."
+          - "Review request script and review tracker."
+          - "Search Console monthly check log: clicks, impressions, top searches, action taken."
+        notes: >-
+          Google changes its screens often. Describe each step by its purpose and
+          tell readers to follow the current on-screen prompts. Do not invent menu names.
+
+      - id: facebook-setup
+        title: Facebook Page Setup and Verification
+        goal: Build a professional Facebook Page, secure it, and prepare for business verification.
+        lessons:
+          - "Business Page versus personal profile, and why customers need the Page."
+          - "Building the Page: name, category, contact details, action button, cover and profile images."
+          - "Business tools: managing the Page and ad account through Meta's business tools."
+          - "Business verification: documents with a legal name that matches exactly."
+          - "Account security: two-factor authentication and admin roles."
+          - "A weekly posting rhythm the owner can keep."
+        worksheets:
+          - "Page setup checklist."
+          - "Verification document checklist with a legal-name match column."
+          - "Account security checklist."
+          - "Four-week posting calendar."
+        notes: >-
+          Meta changes verification rules and menu names often. Mark document
+          requirements for verification with a VERIFY marker.
+
+      - id: instagram-setup
+        title: Instagram Setup for Business
+        goal: Set up a professional Instagram account that turns profile visits into conversations.
+        lessons:
+          - "Switching to a professional account and linking it to the Facebook Page."
+          - "The profile: name field, bio formula, link, and contact buttons."
+          - "Three content pillars: proof of work, how-to, behind the scenes."
+          - "Posts, reels, and stories: what each format does for a small business."
+          - "Direct messages as a sales channel: reply scripts and follow-up."
+        worksheets:
+          - "Profile build sheet."
+          - "Content pillar planner."
+          - "Two-week post plan."
+          - "Direct message reply scripts."
+
+      - id: first-ads
+        title: Launching Your First Social Media Ads
+        goal: Run small, controlled ad tests and make spend decisions from results instead of hope.
+        lessons:
+          - "Ad readiness: a clear offer, a working page, and a way to capture leads."
+          - "Choosing the campaign objective and the audience."
+          - "Budget in gated rounds: start at the platform minimum, review, then decide."
+          - "Ad creative and copy that match the offer."
+          - "Reading results: cost per result, click-through rate, leads, sales."
+          - "Stop, fix, or scale: decision rules for each round."
+        worksheets:
+          - "Ad readiness checklist."
+          - "Campaign plan sheet."
+          - "Three-round gated budget plan."
+          - "Results tracker."
+          - "Stop, fix, or scale decision log."
+        notes: >-
+          Platform minimum budgets and targeting rules change. Mark any dollar
+          minimums with a VERIFY marker. Remind readers that ads for credit,
+          employment, housing, and similar categories carry extra platform rules.
+
+  - id: vetcert
+    title: VetCert Readiness
+    sources:
+      - sources/vetcert_facts.md
+    modules:
+      - id: vetcert-overview
+        title: "VetCert: What It Is and Who Qualifies"
+        goal: Understand the SBA Veteran Small Business Certification and decide whether to pursue VOSB or SDVOSB status.
+        lessons:
+          - "What VetCert is and why SBA took over certification from the VA in 2023."
+          - "VOSB versus SDVOSB: the difference and who qualifies for each."
+          - "The core eligibility rules: veteran status, 51 percent ownership and control, small business size."
+          - "Why certification matters: federal contracting goals, VA set-asides, subcontracting credit."
+          - "What VERC does and what SBA does: SBA makes every certification decision."
+        worksheets:
+          - "Eligibility self-check."
+          - "VOSB or SDVOSB decision sheet."
+
+      - id: vetcert-prep
+        title: "Getting Ready: SAM.gov, VA Records, and Documents"
+        goal: Gather every record and document before starting the application.
+        lessons:
+          - "SAM.gov registration, the UEI, and NAICS codes."
+          - "Size standards: confirming the business counts as small for at least one NAICS code."
+          - "Matching VA records: full name with suffix, date of birth, and home address."
+          - "Documents by business type: sole proprietorship, LLC, partnership, corporation."
+          - "Special situations that need extra documents."
+        worksheets:
+          - "SAM.gov readiness checklist."
+          - "VA record match check."
+          - "Document checklist by business type."
+          - "Special situation flag sheet."
+
+      - id: vetcert-control
+        title: "Ownership and Control: Proving the Veteran Runs the Business"
+        goal: Make sure the business documents and daily practice both show veteran ownership and control.
+        lessons:
+          - "Ownership: at least 51 percent held by one or more qualifying veterans."
+          - "Control: the veteran holds the highest officer position and manages daily operations."
+          - "Reviewing operating agreements and bylaws for provisions that let non-veterans block decisions."
+          - "Meeting minutes and records that show current practice."
+          - "When the veteran is not the highest-paid person: the written explanation."
+        worksheets:
+          - "Control audit checklist."
+          - "Operating agreement review sheet."
+          - "Decision-authority map: who decides what."
+        notes: >-
+          Tell readers to have an attorney review governing documents. Do not
+          give legal advice or interpret regulations beyond the facts file.
+
+      - id: vetcert-apply
+        title: Submitting the Application and Staying Certified
+        goal: Submit a complete application, answer SBA questions fast, and keep the certification current.
+        lessons:
+          - "Setting up the account and starting the application."
+          - "Submission day: a final check of every document and every name match."
+          - "Answering SBA questions quickly and completely."
+          - "After approval: the three-year term, recertification, and reporting changes."
+          - "Using the certification: SAM.gov profile, capability statement, and opportunity search."
+        worksheets:
+          - "Submission day checklist."
+          - "SBA question response log."
+          - "Three-year certification maintenance calendar."
+          - "Material change trigger list."
