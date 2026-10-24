@@ -57,7 +57,8 @@ body { width:1920px; height:1080px; overflow:hidden; background:var(--ground); c
 .title-wrap .h1 { font-size:168px; }
 .title-wrap .bar { width:220px; height:14px; background:var(--accent); }
 .title-wrap .sub { font-size:46px; color:var(--muted); margin:0; }
-.route { position:absolute; right:150px; top:190px; width:430px; height:700px; }
+/* The last stop sits high enough that a two-line chapter name clears the caption zone. */
+.route { position:absolute; right:150px; top:170px; width:430px; height:640px; }
 .route .ln { position:absolute; left:28px; top:20px; bottom:20px; width:6px; background:rgba(125,185,242,.35); border-radius:3px; }
 .route .wp { position:absolute; left:0; display:flex; align-items:center; gap:30px; font-family:"Barlow Condensed"; font-weight:700; font-size:40px; color:var(--muted); }
 .route .wp .d { width:62px; height:62px; border-radius:50%; border:5px solid rgba(125,185,242,.55); background:var(--ground);
@@ -249,7 +250,7 @@ function worksheetPage(s, m) {
 const L = {
   title(s, m) {
     const wps = m.chTitles.map((t,i) => {
-      const y = 20 + i * (640/(m.chTitles.length-1)) - 31;
+      const y = 20 + i * (600/(m.chTitles.length-1)) - 31;
       return `<div class="wp ${i+1===m.ch?'on':''}" style="top:${y}px"><div class="d">${i+1}</div><div>${esc(t)}</div></div>`;
     }).join('');
     return `<div class="title-wrap"><p class="tag">${esc(s.tag)}</p><h1 class="h1"${String(s.headline).length > 22 ? ' style="font-size:140px"' : ''}>${esc(s.headline)}</h1>
@@ -382,8 +383,22 @@ window.renderScene = (scene, meta) => {
   const html = L[scene.layout](scene, meta).replace(/ class-b /g, ' ').replace(/ class-b>/g, '>').replace(/ class-b/g, '');
   const st = document.getElementById('stage'); st.innerHTML = html;
   renumberExample(st, scene);
-  // keep hyphenated words in headings on one line ("first-light")
-  st.querySelectorAll('.h1, .lbl, .t').forEach(h => { h.innerHTML = h.innerHTML.replace(/([A-Za-z]+(?:-[A-Za-z]+)+)/g, '<span style="white-space:nowrap">$1</span>'); });
+  // keep hyphenated words on one line ("first-light", "follow-up"), except on the worksheet page
+  // and the narrow chapter list, where "Mission-Essential" has to break
+  const walker = document.createTreeWalker(st, NodeFilter.SHOW_TEXT);
+  const hyph = /[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+/g;
+  for (const node of [...(function* () { let n; while ((n = walker.nextNode())) yield n; })()]) {
+    if (!/[A-Za-z0-9]-[A-Za-z0-9]/.test(node.nodeValue) || node.parentElement.closest('.wbhtml, .route')) continue;
+    const frag = document.createDocumentFragment();
+    let last = 0;
+    for (const mt of node.nodeValue.matchAll(hyph)) {
+      frag.append(node.nodeValue.slice(last, mt.index));
+      const sp = document.createElement('span'); sp.style.whiteSpace = 'nowrap'; sp.textContent = mt[0]; frag.append(sp);
+      last = mt.index + mt[0].length;
+    }
+    frag.append(node.nodeValue.slice(last));
+    node.replaceWith(frag);
+  }
   // an empty card waits for its first row
   st.querySelectorAll('.paper, .idx').forEach(card => {
     const kids = [...card.querySelectorAll('[data-b]')].map(e => +e.dataset.b);
