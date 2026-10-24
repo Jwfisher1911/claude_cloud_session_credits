@@ -579,8 +579,8 @@ chapters:
         heading: One line per role
         cols: [Role, Status]
         rows:
-          - ["Schedule Draft", "Live. Drafts next week's job schedule every Friday. Owner spot-checks."]
-          - ["Quote Follow-Up", "Live. A follow-up for every open quote. Owner approves every draft."]
+          - ["Schedule Draft", "Live. Drafts the weekly schedule Fridays. Owner spot-checks."]
+          - ["Quote Follow-Up", "Live. Follows up on open quotes. Owner approves every draft."]
           - ["Research Analyst", "Testing. 10 new fleet managers a week from public sources."]
           - ["Marketing", "Waiting. 3 social posts a week, after 4 zero-error weeks."]
         say: >-
