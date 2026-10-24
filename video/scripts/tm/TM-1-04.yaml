@@ -1,0 +1,489 @@
+# VERC training module video script: TM 1-04 Business Operational Battle Rhythm
+# Source: VERC_TM-1-04_Business-Operational-Battle-Rhythm_v2.html, the version on Payhip
+# (payhip.com/b/Y54Eq, "About 4 hours"). Worksheet pages: TM-1-04-worksheets.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: "1-04"
+track: tm
+title: Business Operational Battle Rhythm
+short: Battle Rhythm
+
+chapters:
+
+  - n: 1
+    title: Commander's Intent
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC · TM 1-04
+        headline: Business Operational Battle Rhythm
+        sub: Chapter 1 of 4 · Commander's Intent
+        say: >-
+          Welcome to TM 1-04, Business Operational Battle Rhythm. You ran a unit
+          on a fixed schedule of briefs, reports, and reviews. This module shows
+          you how to run your business the same way, so important work happens
+          on time and nothing depends on memory.
+
+      - id: outline
+        layout: outline
+        heading: Three deliverables, one rhythm
+        items:
+          - Commander's Intent
+          - The Mission
+          - Battle Rhythm
+          - Annual Battle Rhythm Calendar
+        say: >-
+          In four chapters, you build three deliverables and a calendar you
+          follow every week. [+] A one-page Commander's Intent. [+] A two-page
+          Business Mission Plan. [+] Five recurring events on your calendar. [+]
+          And your capstone, an Annual Battle Rhythm Calendar. Each lesson uses
+          the format you know: task, conditions, and standards.
+
+      - id: definition
+        layout: statement
+        tag: Definition
+        headline: A battle rhythm is a fixed schedule of events.
+        sub: Each event has a set time, set inputs, and one set output. An event with no output gets cut.
+        say: >-
+          When you run the company from the inbox, the loudest problem gets the
+          day. Planning, follow-up, and money reviews slide to next week. A
+          battle rhythm fixes this. It is a fixed schedule of events. [+] Each
+          event has a set time, set inputs, and one set output. An event with no
+          output gets cut.
+
+      - id: translate
+        layout: table
+        tag: You already know these tools
+        heading: Military tools, business names
+        cols: [Military concept, Business version]
+        rows:
+          - ["Commander's intent", "Owner's intent: where the business goes and what success looks like"]
+          - ["Operation order", "Business Mission Plan: every weekly action traces to a priority"]
+          - ["Battle update brief", "15-minute daily dashboard review"]
+          - ["SITREP", "Weekly one-page status report"]
+          - ["After action review", "Monthly and quarterly review: planned, happened, why, next time"]
+        say: >-
+          This module renames military planning tools for a business and keeps
+          the discipline. [+] Commander's intent becomes owner's intent. [+] The
+          operation order becomes your Business Mission Plan. [+] The battle
+          update brief becomes a 15-minute daily dashboard review. [+] The SITREP
+          becomes a weekly one-page status report. [+] And the after action
+          review becomes your monthly and quarterly review.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 1 · 45 minutes
+        heading: Intent lets your team act without waiting on you.
+        items:
+          - "Task: Write a one-page Commander's Intent."
+          - "Conditions: Revenue, weekly hours, the worksheet."
+          - "Standards: Five answers, 3 sentences each, signed."
+        say: >-
+          In the Army, intent lets a unit act when the plan breaks and the
+          commander is out of reach. In your business, intent lets your team,
+          your contractors, and your AI tools act without waiting on you. [+]
+          Your task: write a one-page Commander's Intent for your business. [+]
+          Conditions: your current revenue, your available hours per week, and
+          the worksheet. [+] Standards: all five questions answered in plain
+          language, each answer 3 sentences or fewer, at least one number in the
+          success answer, signed and dated.
+
+      - id: questions
+        layout: table
+        tag: "The five questions · Example: veteran-owned mobile detailing"
+        heading: Your Commander's Intent
+        cols: [Question, Example]
+        rows:
+          - ["Where it is going", "Three vans serving fleet accounts in one county"]
+          - ["What success is", "$180,000 revenue, 20% net margin, owner works 30 hours a week"]
+          - ["Priorities", "Win 5 fleet contracts, hire one technician, automate booking"]
+          - ["Acceptable risks", "Up to $5,000 on a second van before contracts are signed"]
+          - ["Delegated decisions", "Technicians approve refunds up to $100"]
+        say: >-
+          Your intent answers five questions. Here is an illustrative example, a
+          veteran-owned mobile detailing company. [+] Where is the business going?
+          Three vans serving fleet accounts in one county. [+] What defines
+          success? $180,000 in revenue, a 20% net margin, and an owner who works
+          30 hours a week. [+] What are the priorities? Win 5 fleet contracts,
+          hire one technician, and automate booking. [+] What are acceptable
+          risks? Up to $5,000 on a second van before contracts are signed. [+]
+          What decisions are delegated? Technicians approve refunds up to $100.
+          The booking tool confirms jobs without owner review.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Hand your intent to a new hire.
+        chips:
+          - One decision on day one, no call
+          - A number in the success answer
+        say: >-
+          Check on learning. [+] Hand your intent to a new hire. Name one
+          decision they make on day one without calling you. [+] Then find the
+          answer with a number in it. If none has a number, rewrite the success
+          answer.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 worksheet · Commander's Intent
+        sheet: 1
+        text: Write and sign your Commander's Intent.
+        checks:
+          - All five questions answered
+          - Each answer 3 sentences or fewer
+          - A number in the success answer
+          - Signed, dated, review in 12 months
+        say: >-
+          Your task. Open TM 1-04 to the Lesson 1 worksheet and write your
+          Commander's Intent. [+] Answer all five questions in plain language.
+          [+] Keep each answer to 3 sentences or fewer. [+] Put a number in the
+          success answer. [+] Sign it, date it, and set a review date 12 months
+          out. Post it where your team works.
+
+      - id: next
+        layout: end
+        next: "Chapter 2 · The Mission"
+        say: >-
+          In Chapter 2, you will turn your intent into a Business Mission Plan.
+
+  - n: 2
+    title: The Mission
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-04 · Chapter 2 of 4
+        headline: The Mission
+        sub: Every daily task traces up to the mission.
+        say: >-
+          Chapter 2. The Mission. An operation order nests each unit's task
+          inside the purpose of the unit above it. Your Business Mission Plan
+          does the same. Every daily task traces up to the mission.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 2 · 60 minutes
+        heading: Build a plan from mission to daily tasks.
+        items:
+          - "Task: Build a two-page Business Mission Plan."
+          - "Conditions: Your Commander's Intent from Lesson 1."
+          - "Standards: All 8 levels, 3 objectives at most."
+        say: >-
+          [+] Your task: build a Business Mission Plan, from mission statement
+          to daily tasks. [+] Conditions: your Commander's Intent from Lesson 1.
+          [+] Standards: all 8 levels filled, 3 annual objectives or fewer, 3
+          quarterly priorities or fewer, and every weekly action linked to a
+          quarterly priority.
+
+      - id: page-one
+        layout: tiles
+        tag: Page 1 · Once a year
+        heading: The top four levels
+        tiles:
+          - label: Mission
+            text: One sentence. Who you serve, with what, and why.
+          - label: Vision
+            text: One sentence. What the business becomes.
+          - label: Core values
+            text: Three to five. How you behave under pressure.
+          - label: Annual objectives
+            text: Three at most. What must be true by December 31?
+        say: >-
+          The plan has eight levels on two pages. Page 1 holds the top four. [+]
+          Your mission, in one sentence: who you serve, with what, and why. [+]
+          Your vision, in one sentence: what the business becomes. [+] Three to
+          five core values: how you behave under pressure. [+] And three annual
+          objectives at most: what must be true by December 31?
+
+      - id: page-two
+        layout: tiles
+        tag: Page 2 · On schedule
+        heading: The bottom four levels
+        tiles:
+          - label: Quarterly
+            text: Three priorities. What moves each objective this quarter?
+          - label: Monthly
+            text: Three goals. What result proves progress this month?
+          - label: Weekly
+            text: Five actions. What gets done this week?
+          - label: Daily
+            text: Three tasks. What gets done today?
+        say: >-
+          Page 2 holds the bottom four, and it changes on schedule. [+] Three
+          quarterly priorities. [+] Three monthly goals. [+] Five weekly
+          actions. [+] And three daily tasks. More than three annual objectives
+          means no priorities.
+
+      - id: chain
+        layout: table
+        tag: Example · Veteran-owned mobile detailing
+        heading: One chain, top to bottom
+        cols: [Level, Example]
+        rows:
+          - ["Annual objective", "5 fleet contracts, 1 technician hired, online booking live"]
+          - ["Quarterly priority", "Q4: pitch 20 fleet managers"]
+          - ["Monthly goal", "October: 7 pitches, 2 proposals sent"]
+          - ["Weekly action", "Call 5 fleet managers, send 1 proposal"]
+          - ["Daily task", "Two calls before 10 a.m., follow up on yesterday's quote"]
+        say: >-
+          Here is one chain from the example business. [+] The annual objective:
+          5 fleet contracts, 1 technician hired, and online booking live. [+] The
+          fourth-quarter priority: pitch 20 fleet managers. [+] The October goal:
+          7 pitches and 2 proposals sent. [+] This week: call 5 fleet managers and
+          send 1 proposal. [+] Today: two calls before 10 a.m., and a follow-up
+          on yesterday's quote. Each level answers to the one above it.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Trace one weekly action to an objective.
+        chips:
+          - "Broken chain: fix the plan"
+          - Over 3 objectives = no priorities
+        say: >-
+          Check on learning. [+] Pick one weekly action and trace it up to an
+          annual objective. [+] If the chain breaks, drop the action or fix the
+          plan. Then count your annual objectives. Keep three at most.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 2 worksheet · Business Mission Plan
+        sheet: 2
+        text: Fill all eight levels of your plan.
+        checks:
+          - Mission and vision, one sentence each
+          - Three annual objectives at most
+          - Five weekly actions tied to priorities
+          - Three daily tasks for today
+        say: >-
+          Your task. Open the Lesson 2 worksheet and build your plan. [+] Write
+          your mission and vision, one sentence each. [+] Set three annual
+          objectives at most. [+] List five weekly actions, and note the
+          quarterly priority each one serves. [+] Finish with three daily tasks
+          for today.
+
+      - id: next
+        layout: end
+        next: "Chapter 3 · Battle Rhythm"
+        say: >-
+          In Chapter 3, you will put the plan on a schedule.
+
+  - n: 3
+    title: Battle Rhythm
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-04 · Chapter 3 of 4
+        headline: Battle Rhythm
+        sub: Fixed events, fixed times, fixed outputs.
+        say: >-
+          Chapter 3. Battle Rhythm. A staff runs on a battle rhythm: fixed
+          events, fixed times, fixed outputs. Your business runs the same way.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 3 · 75 minutes
+        heading: Put every event on your calendar.
+        items:
+          - "Task: Set the battle rhythm for your business."
+          - "Conditions: Your Mission Plan and your current tools."
+          - "Standards: 5 recurring events, each with an output."
+        say: >-
+          [+] Your task: set the battle rhythm for your business and put every
+          event on your calendar. [+] Conditions: your Mission Plan from Lesson
+          2, and your current tools. Your bank, accounting software, calendar,
+          inbox, and any AI tools. [+] Standards: five cadences scheduled as
+          recurring calendar events, each with an owner and an output, plus
+          alert triggers written for the daily brief.
+
+      - id: cadences
+        layout: table
+        tag: The five cadences
+        heading: Every event has one output
+        cols: [Cadence, Event and output]
+        rows:
+          - ["Daily", "Morning update brief, 15 min. Top 3 tasks, alerts acted on"]
+          - ["Weekly", "Monday sync, 60 min. One-page SITREP and 5 actions"]
+          - ["Monthly", "First Tuesday, 3 hours. AAR notes and 3 goals"]
+          - ["Quarterly", "1 day, first week of Jan, Apr, Jul, Oct. SWOT and 3 priorities"]
+          - ["Annual", "2 days, first half of December. Next year's plan and budget"]
+        say: >-
+          [+] Daily: a 15-minute morning update brief, at the same time each
+          day. The output is your top 3 tasks for today, with alerts acted on.
+          [+] Weekly: a 60-minute sync on Monday morning. The output is a
+          one-page SITREP and 5 actions for the week. [+] Monthly: a 3-hour
+          review on the first Tuesday. The output is after-action notes and 3
+          goals for the month. [+] Quarterly: one planning day in the first week
+          of January, April, July, and October. The output is an updated SWOT
+          and 3 priorities. [+] Annual: a 2-day planning conference in the first
+          half of December. The output is a new Commander's Intent, Mission
+          Plan, budget, and calendar.
+
+      - id: alerts
+        layout: list
+        tag: Alert triggers
+        heading: When one fires, you act today.
+        items:
+          - Cash covers fewer than 30 days of expenses
+          - A customer message sits unanswered for 24 hours
+          - A deal shows no movement for 14 days
+          - An AI tool or automation logs one failed run
+        say: >-
+          Your daily brief watches for alert triggers, your version of
+          commander's critical information requirements. When one fires, you
+          act today. [+] Cash covers fewer than 30 days of expenses. [+] A
+          customer message sits unanswered for 24 hours. [+] A deal shows no
+          movement for 14 days. [+] An AI tool or automation logs one failed run
+          or error. Keep these four or replace them. Five at most, and each one
+          needs a number.
+
+      - id: rules
+        layout: list
+        tag: Rules of the rhythm
+        heading: Four rules keep the rhythm.
+        items:
+          - Every event is a recurring calendar appointment
+          - A missed event moves inside the same week
+          - An event with no output gets cut
+          - Solo owners run every event
+        say: >-
+          [+] Every event sits on the calendar as a recurring appointment. [+] A
+          missed event moves inside the same week. It never drops. [+] An event
+          with no output gets cut. [+] Solo owners run every event. Owners with
+          staff assign an owner for each review.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Put your AI tools in the rhythm.
+        chips:
+          - "Daily brief: AI task review"
+          - "Weekly sync: AI scorecard"
+        say: >-
+          Field note. [+] Put your AI tools in the rhythm. The daily brief checks
+          what each automation or AI tool did overnight. [+] The weekly sync
+          scores each one on tasks completed, errors, and hours saved, and names
+          one fix. TM 1-05 shows you how.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 3 worksheet · Your battle rhythm
+        sheet: 3
+        text: Set all five cadences as recurring events.
+        checks:
+          - Daily brief and Monday sync
+          - First-Tuesday monthly review
+          - Quarterly days and December conference
+          - Alert triggers in your daily brief
+        say: >-
+          Your task. Open your calendar and set each cadence as a recurring
+          event, with an owner and an output. [+] The daily brief and the Monday
+          weekly sync. [+] The first-Tuesday monthly review. [+] Four quarterly
+          planning days and the December conference. [+] Then write your alert
+          triggers into your daily brief, using the Lesson 3 worksheet.
+
+      - id: next
+        layout: end
+        next: "Chapter 4 · Annual Battle Rhythm Calendar"
+        say: >-
+          In Chapter 4, you will build your Annual Battle Rhythm Calendar.
+
+  - n: 4
+    title: Annual Battle Rhythm Calendar
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-04 · Chapter 4 of 4
+        headline: Annual Battle Rhythm Calendar
+        sub: Your synchronization matrix for the year.
+        say: >-
+          Chapter 4. Your capstone, the Annual Battle Rhythm Calendar. It works
+          as a synchronization matrix for the year. The daily brief, the Monday
+          sync, and the first-Tuesday review run every month. The calendar shows
+          what each month adds.
+
+      - id: months
+        layout: table
+        tag: Capstone · What each month adds
+        heading: Your year on one page
+        cols: [Month, Annual items]
+        rows:
+          - ["January", "Quarterly planning. Q4 estimated tax (Jan 15). 1099-NEC forms (Jan 31)."]
+          - ["April", "Quarterly planning. Individual return, Q1 estimated tax (Apr 15)."]
+          - ["June", "Q2 estimated tax (Jun 15). Mid-year check of the strategic plan."]
+          - ["July", "Quarterly planning. SAM.gov renewal, 60 days before expiration."]
+          - ["December", "Annual planning conference: plan, budget, next year's calendar"]
+        say: >-
+          [+] January adds quarterly planning, your fourth-quarter estimated
+          tax, and the tax forms for your contractors. Then the packet goes to
+          your CPA. [+] April adds quarterly planning, your individual return,
+          first-quarter estimated tax, and your state annual report. [+] June
+          adds second-quarter estimated tax and a mid-year check of the
+          strategic plan. [+] July
+          adds quarterly planning and, for contractors, a SAM.gov renewal 60
+          days before it expires. [+] And December holds the annual planning
+          conference: the strategic plan, the budget, and next year's calendar.
+
+      - id: confirm
+        layout: statement
+        tag: Confirm every date
+        headline: Confirm every tax date with your CPA.
+        sub: A date falling on a weekend or holiday moves to the next business day.
+        say: >-
+          These tax dates are federal defaults for calendar-year filers. [+] A
+          date falling on a weekend or holiday moves to the next business day.
+          Put your insurance review 60 days before your own renewal date, move
+          the SAM.gov row to your own expiration month, and confirm every date
+          with your CPA.
+
+      - id: field-note
+        layout: fieldnote
+        headline: No output? Fix it or cut it.
+        chips:
+          - "Weekly sync: SITREP and 5 actions"
+          - "Cash under 30 days: act today"
+        say: >-
+          Field note. [+] An event with no written output gets fixed or cut. For
+          the weekly sync, the output is a one-page SITREP and 5 actions for the
+          week. [+] And if cash covers 21 days of expenses, you act today. Cash
+          under 30 days is an alert trigger.
+
+      - id: task
+        layout: task
+        worksheet: Capstone · Annual Battle Rhythm Calendar
+        sheet: 4
+        text: Build and post your annual calendar.
+        checks:
+          - One page, wide format
+          - Every row as a recurring event
+          - A reminder 14 days ahead
+          - Printed and posted
+        say: >-
+          Your task. Build your Annual Battle Rhythm Calendar. [+] Keep it to one
+          page, in wide format. [+] Put every row into your calendar as a
+          recurring event, [+] with a reminder 14 days ahead. [+] Then print it
+          and post it.
+
+      - id: wrap
+        layout: checklist
+        tag: Deliverable checklist
+        heading: Before TM 1-05
+        items:
+          - Commander's Intent signed and posted
+          - Mission Plan page 1 complete
+          - Page 2 set for this quarter, month, and week
+          - Annual calendar printed and posted
+          - Five cadences on your calendar, 14-day reminders
+        say: >-
+          Before you move on, check your work. [+] Commander's Intent written,
+          signed, and posted. [+] Mission Plan page 1 complete. [+] Page 2 set
+          for this quarter, month, and week. [+] Annual calendar printed and
+          posted. [+] And all five cadences on your calendar, with every annual
+          item carrying a 14-day reminder.
+
+      - id: next
+        layout: end
+        next: "TM 1-05 · Building Your AI Staff"
+        say: >-
+          Next in the Founders Bundle is TM 1-05, Building Your AI Staff. It
+          assigns routine work inside this rhythm to AI tools, with a job
+          description and a weekly scorecard for each one.

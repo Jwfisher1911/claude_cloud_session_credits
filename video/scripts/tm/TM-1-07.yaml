@@ -1,0 +1,656 @@
+# VERC training module video script: TM 1-07 SAM Registration Blueprint
+# Source: VERC_TM-1-07_SAM-Registration-Blueprint_v1.html, the version on Payhip
+# (payhip.com/b/LVAy2). Worksheet pages: TM-1-07-worksheets.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: "1-07"
+track: tm
+title: SAM Registration Blueprint
+short: SAM Registration
+
+chapters:
+
+  - n: 1
+    title: Before You Start
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC · TM 1-07
+        headline: SAM Registration Blueprint
+        sub: Chapter 1 of 5 · Before You Start
+        say: >-
+          Welcome to TM 1-07, SAM Registration Blueprint. No federal contract
+          and no SBA veteran certification moves forward without an active
+          SAM.gov registration. This module takes you from a records check to
+          active status. Registration is free.
+          You do it yourself.
+
+      - id: outline
+        layout: outline
+        heading: Five chapters, one record
+        items:
+          - Before You Start
+          - Register
+          - After Submission
+          - Stay Active
+          - Active and ready
+        say: >-
+          In five chapters, you build three deliverables and an active
+          record. [+] Before you start. [+] Register. [+] After submission. [+]
+          Stay active. [+] And your capstone, active and ready.
+
+      - id: definition
+        layout: statement
+        tag: Definition
+        headline: SAM registration is your free federal record.
+        sub: A 12-character UEI, a CAGE code from the Defense Logistics Agency, and 365 days of active status.
+        say: >-
+          SAM.gov is the federal government's System for Award Management. A
+          contracting officer checks it before every award. SBA checks it before
+          it reviews a VOSB or SDVOSB application. [+] Your free registration
+          gives you a 12-character Unique Entity ID, or UEI, a CAGE code from the
+          Defense Logistics Agency, and 365 days of active status.
+
+      - id: translate
+        layout: table
+        tag: You already know these tools
+        heading: Military records, SAM records
+        cols: [Military concept, SAM version]
+        rows:
+          - ["Records review before a PCS", "Records match: IRS, state, address and bank read the same"]
+          - ["CAC and PIN", "Login.gov account with multi-factor authentication"]
+          - ["Hand receipt holders", "Entity Administrator and a backup administrator"]
+          - ["Unit identification code", "Unique Entity ID (UEI)"]
+        say: >-
+          SAM registration works like the records you kept in uniform. [+] The
+          records review before a move becomes a records match test. [+] Your
+          common access card and PIN become a Login.gov account. [+] Hand
+          receipt holders become an Entity Administrator and a backup. [+] Your
+          unit identification code becomes the UEI.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 1 · 45 minutes
+        heading: Fix your records before you open SAM.gov.
+        items:
+          - "Task: Complete a SAM Readiness Checklist."
+          - "Conditions: EIN letter, state record, bank, email."
+          - "Standards: 8 items ready, two admins named."
+        say: >-
+          [+] Your task: complete a SAM Readiness Checklist before you open
+          SAM.gov. A mismatch with outside records stops the registration. [+]
+          Conditions: your EIN letter, state record, bank account, and an email
+          you control. [+] Standards: all 8 items
+          ready, the same legal name and address on every record, and two Entity
+          Administrators named.
+
+      - id: items
+        layout: list
+        tag: The readiness items
+        heading: Eight items, all marked ready
+        items:
+          - "Your EIN and the legal name on the IRS letter"
+          - "The same spelling, punctuation, and suffix"
+          - "Start date and state of formation"
+          - "A street address, not a P.O. box"
+          - "A U.S. business bank account"
+          - "Login.gov, two administrators, NAICS codes"
+        say: >-
+          [+] Your EIN. A new EIN takes 2 to 5 weeks to reach the IRS records
+          SAM.gov checks. [+] Your legal name, with the same spelling,
+          punctuation, and suffix as the IRS letter. [+] Your start date and
+          state of formation. [+] A street address, not a P.O. box. [+] A U.S.
+          business bank account. [+] Plus Login.gov, two administrators, and
+          your NAICS codes.
+
+      - id: ridgeline
+        layout: example
+        name: Ridgeline
+        role: Veteran-owned cleaning company · illustrative
+        rows:
+          - k: IRS letter
+            v: Ridgeline Facility Services LLC
+          - k: State record
+            v: "Ridgeline Facility Services, LLC, with a comma"
+          - k: In SAM.gov
+            v: The IRS spelling. SAM.gov checks the EIN against the IRS.
+          - k: Address
+            v: The warehouse street address, not the invoice P.O. box
+        quote: Backup administrator named on day one.
+        say: >-
+          Example. Ridgeline is an illustrative veteran-owned cleaning
+          company. [+] The IRS letter reads Ridgeline
+          Facility Services LLC. [+] The state record adds a comma. [+] SAM.gov
+          checks the EIN against the IRS, so the owner uses the IRS spelling. [+]
+          He lists his warehouse street address, not his P.O. box. [+] And he names his operations manager as backup
+          administrator.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Name a backup administrator on day one.
+        chips:
+          - "Only admin leaves: letter to FSD"
+          - Renewal waits until it clears
+        say: >-
+          Field note. [+] Name a backup administrator on day one. [+] If your only
+          administrator leaves, you send a letter to the Federal Service Desk,
+          and renewal waits until it clears.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 worksheet · SAM Readiness Checklist
+        sheet: 1
+        text: Check all eight readiness items.
+        checks:
+          - Legal name, letter for letter
+          - Same name and address on every record
+          - Login.gov with multi-factor sign-in
+          - An administrator and a backup
+        say: >-
+          Your task. Open TM 1-07 to the Lesson 1 worksheet. [+] Copy your legal
+          name from the IRS letter, letter for letter. [+] Confirm the name and
+          address match on every record. [+] Set up Login.gov with multi-factor
+          authentication. [+] Name your administrator and a backup. Keep bank
+          numbers and passwords out of the worksheet.
+
+      - id: next
+        layout: end
+        next: "Chapter 2 · Register"
+        say: >-
+          In Chapter 2, you will register in SAM.gov.
+
+  - n: 2
+    title: Register
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-07 · Chapter 2 of 5
+        headline: Register
+        sub: Save each page. Finish within the week.
+        say: >-
+          Chapter 2. Register. SAM.gov saves each page when you select Save and
+          Continue, so you stop and return any time. A draft left untouched for
+          90 days gets removed. Finish within the week.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 2 · 75 minutes
+        heading: Submit your registration for all awards.
+        items:
+          - "Task: Submit your entity registration."
+          - "Conditions: Login.gov and 60 to 90 minutes."
+          - "Standards: UEI issued, Submitted on screen."
+        say: >-
+          [+] Your task: complete and submit your SAM.gov entity registration
+          for all awards. [+] Conditions: your readiness checklist, your
+          Login.gov account, and 60 to 90 minutes without interruption. [+]
+          Standards: entity validated and UEI issued. All Awards selected. Core
+          data, NAICS codes, representations and certifications, and points of
+          contact complete. And the Registration Submitted confirmation on
+          screen.
+
+      - id: part-one
+        layout: steps
+        tag: The sequence, part 1
+        heading: From sign-in to UEI
+        items:
+          - text: Sign in with Login.gov. Type the address yourself.
+            note: Never use a link from an email.
+          - text: Select Get Started, then Create New Entity.
+          - text: Validate your legal name and physical address.
+            note: "Not found? Submit documents through the Federal Service Desk."
+          - text: Choose whether your record shows in public searches.
+          - text: Certify your authority and write down your UEI.
+        say: >-
+          [+] Go to SAM.gov, select Sign In, and authenticate with Login.gov.
+          Type the address yourself. Never use a link from an email. [+] From
+          your Workspace, select Get Started, then Create New Entity. [+] Enter
+          your legal name and physical address for validation. [+] Decide
+          whether your record shows in public searches. Buyers search public
+          records. [+] Certify your authority to act for the entity, and write
+          down the 12-character UEI SAM.gov issues.
+
+      - id: part-two
+        layout: steps
+        tag: The sequence, part 2
+        heading: Purpose to submit
+        items:
+          - text: "Choose your purpose: All Awards."
+            note: Financial Assistance Awards Only does not let you bid on contracts.
+          - text: Complete core data, including bank details.
+          - text: Add your NAICS codes and size data.
+          - text: Answer every rep and cert question truthfully.
+          - text: Add your points of contact.
+          - text: Submit. Look for Registration Submitted.
+            note: No confirmation on screen means the registration did not submit.
+        say: >-
+          [+] Select All Awards. It covers contracts, plus grants and loans. [+]
+          Complete core data, including financial information for electronic
+          payment. [+] Enter your NAICS codes and size data, and count
+          affiliates. [+] Answer every representation and certification
+          question in full. A false answer carries federal penalties. [+] Name
+          your points of contact. [+] Then submit, and look for the Registration
+          Submitted confirmation.
+
+      - id: veteran-box
+        layout: statement
+        tag: Business types
+        headline: The veteran box is your own representation.
+        sub: SBA certifies VOSBs and SDVOSBs at MySBA Certifications. Say certified only after SBA approves you.
+        say: >-
+          Under business types, you represent whether your firm is veteran-owned
+          or service-disabled veteran-owned. [+] This box is your own
+          representation. SBA certification is a separate step at MySBA
+          Certifications. Say certified SDVOSB or certified VOSB only after SBA
+          approves your firm.
+
+      - id: ridgeline
+        layout: table
+        tag: "Example · Ridgeline Facility Services LLC · illustrative"
+        heading: Ridgeline registers
+        cols: [Step, What he did]
+        rows:
+          - ["Purpose", "All Awards"]
+          - ["NAICS codes", "561720 Janitorial Services, primary. 561730 Landscaping Services."]
+          - ["Size check", "Both codes checked in the SBA size table. Small: Yes under each."]
+          - ["Business types", "Marked veteran-owned. No certification claim on his website."]
+          - ["Defense Response", "Skipped. He bids only on civilian agency work."]
+        say: >-
+          Example. [+] Ridgeline selects All Awards. [+] The owner lists
+          janitorial services as his primary NAICS code and landscaping services
+          as his second. [+] He checks both codes in the SBA size table and
+          confirms SAM.gov shows Yes for small under each. [+] He marks
+          veteran-owned under business types and keeps certification language
+          off his website until SBA approves his application. [+] He skips the
+          Defense Response section, because he bids only on civilian agency
+          work.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Bidding on a VA contract? Choose All Awards.
+        chips:
+          - "Grants only: Financial Assistance"
+          - Checked SDVOSB is not certified
+        say: >-
+          Check on learning. [+] You plan to bid on a VA contract. Choose All
+          Awards. [+] You checked service-disabled veteran-owned in SAM.gov. You
+          are not a certified SDVOSB yet. SBA certifies through MySBA
+          Certifications.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 2 worksheet · Registration notes
+        sheet: 2
+        text: Record your registration notes.
+        checks:
+          - Start and submit dates
+          - Validation result or reference ID
+          - NAICS codes, small Yes or No
+          - Points of contact with emails
+        say: >-
+          Your task. Open the Lesson 2 worksheet and record your notes as you
+          go. [+] The date you started and the date you submitted. [+] Your
+          validation result, or the reference ID from the Federal Service Desk.
+          [+] Each NAICS code and its small business result. [+] And each point
+          of contact, with name and email.
+
+      - id: next
+        layout: end
+        next: "Chapter 3 · After Submission"
+        say: >-
+          In Chapter 3, you will track your registration to active status.
+
+  - n: 3
+    title: After Submission
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-07 · Chapter 3 of 5
+        headline: After Submission
+        sub: Three checks run. Allow at least 10 business days.
+        say: >-
+          Chapter 3. After Submission. After you submit, three checks run. The
+          IRS confirms your name and EIN. The Defense Logistics Agency assigns or
+          confirms your CAGE code. SAM.gov activates the record. Allow at least
+          10 business days.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 3 · 45 minutes
+        heading: Track your registration to active status.
+        items:
+          - "Task: Track to active, fill the Record Sheet."
+          - "Conditions: Submitted record and inboxes."
+          - "Standards: Status checked every 2 days."
+        say: >-
+          [+] Your task: track your submitted registration to active status and
+          complete the Registration Record Sheet. [+] Conditions: a submitted
+          registration, access to the email inboxes of your points of contact,
+          and your Lesson 2 notes. [+] Standards: every SAM.gov and CAGE email
+          answered within the stated deadline, status checked every 2 business
+          days, and your UEI, CAGE code, activation date, and expiration date
+          recorded.
+
+      - id: timeline
+        layout: table
+        tag: What happens and when
+        heading: Four steps to Active
+        cols: [Step, Your action]
+        rows:
+          - ["Submission, same day", "Save the confirmation email"]
+          - ["IRS name and EIN check", "Watch for the TIN match email. A new EIN adds 2 to 5 weeks."]
+          - ["CAGE review by DLA", "Answer any CAGE email within 3 business days"]
+          - ["Activation, 10 business days", "Record your activation and expiration dates"]
+        say: >-
+          [+] SAM.gov confirms your submission the same day. Save the
+          confirmation email. [+] The IRS checks your name and EIN in a few
+          business days. A new EIN adds 2 to 5 weeks. Watch for the match result
+          email. [+] After the IRS check, the Defense Logistics Agency assigns or
+          reviews your CAGE code. Answer any CAGE email within 3 business days.
+          [+] SAM.gov activates the record. Allow up to 10 business days from
+          submission, then record your activation and expiration dates.
+
+      - id: delays
+        layout: table
+        tag: Common delays
+        heading: Common delays and fixes
+        cols: [Problem, Fix]
+        rows:
+          - ["Name, EIN mismatch", "Enter the legal name as the IRS has it"]
+          - ["New EIN, not in IRS", "Wait 2 to 5 weeks after the issue date, then resubmit"]
+          - ["Entity not found", "Submit formation and address documents through FSD.gov"]
+          - ["CAGE check failed", "Send the requested documents within 3 business days"]
+          - ["P.O. box as address", "Use the street location of the business"]
+        say: >-
+          [+] A name and EIN mismatch: enter the legal name the way the IRS has
+          it. [+] A new EIN not yet in IRS records: wait 2 to 5 weeks after the
+          issue date, then resubmit. [+] Entity not found during validation:
+          submit your formation and address documents through the Federal
+          Service Desk. [+] CAGE validation failed: send the requested documents
+          within 3 business days. [+] A P.O. box as your physical address: use
+          the street location of the business.
+
+      - id: ridgeline
+        layout: example
+        name: Ridgeline
+        role: Facility services · illustrative
+        rows:
+          - k: Monday
+            v: Submits the registration.
+          - k: Wednesday
+            v: The TIN match succeeds.
+          - k: Thursday
+            v: A CAGE email asks for address proof. Lease sent same day.
+          - k: Day 8
+            v: Active, eight business days after submission.
+        quote: UEI, CAGE code, and both dates go on the record sheet.
+        say: >-
+          Example. [+] Ridgeline submits on a Monday. [+] On Wednesday, the IRS
+          match succeeds. [+] On Thursday, a CAGE email asks for proof of the
+          warehouse address. The owner sends the lease page the same day. [+]
+          The record shows Active eight business days after submission. [+] He
+          writes the UEI, CAGE code, activation date, and expiration date on his
+          record sheet.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Real notices come from SAM.gov and DLA.
+        chips:
+          - donotreply@sam.gov
+          - cagereview@dla.mil
+        say: >-
+          Field note. [+] Real notices come from SAM.gov and the Defense
+          Logistics Agency. [+] A CAGE email arriving Friday afternoon still
+          gets your reply within 3 business days. A message from any other
+          domain is not from SAM.gov. Sign in at SAM.gov yourself and select
+          Check Entity Status. Check every 2 business days until the record
+          shows Active.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 3 worksheet · Registration Record Sheet
+        sheet: 3
+        text: Complete your Registration Record Sheet.
+        checks:
+          - UEI, 12 characters
+          - CAGE code, 5 characters
+          - Submission, activation, expiration dates
+          - Every email and your reply date
+        say: >-
+          Your task. Open the Lesson 3 worksheet and complete your Registration
+          Record Sheet. [+] Your 12-character UEI. [+] Your 5-character CAGE
+          code. [+] Your submission, activation, and expiration dates. [+] And
+          every email you received, with the date you replied. Store the sheet
+          with your formation documents.
+
+      - id: next
+        layout: end
+        next: "Chapter 4 · Stay Active"
+        say: >-
+          In Chapter 4, you will keep your registration active every year.
+
+  - n: 4
+    title: Stay Active
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-07 · Chapter 4 of 5
+        headline: Stay Active
+        sub: Your registration expires 365 days after activation.
+        say: >-
+          Chapter 4. Stay Active. Your registration expires 365 days after
+          activation. An expired record blocks contract offers and awards,
+          payment, and SBA certification review. Renewal is free, and it uses
+          the same pages you completed in Lesson 2.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 4 · 45 minutes
+        heading: Put renewal and updates on your calendar.
+        items:
+          - "Task: Set renewal dates and scam rules."
+          - "Conditions: Record Sheet, TM 1-04 calendar."
+          - "Standards: Start at 60, remind at 30 and 15."
+        say: >-
+          [+] Your task: put your SAM.gov renewal and update triggers on your
+          calendar, and set your scam defense rules. [+] Conditions: your
+          Registration Record Sheet and your calendar from TM 1-04. [+]
+          Standards: a renewal start date 60 days before expiration, reminders
+          at 60, 30, and 15 days, your update triggers listed, and free help
+          contacts saved.
+
+      - id: sixty
+        layout: bignum
+        num: "60"
+        headline: Start at 60 days.
+        sub: Reminders at 60, 30, and 15 days
+        say: >-
+          Start your renewal 60 days before expiration. [+] SAM.gov sends
+          reminder emails at 60, 30, and 15 days, and on day 365. Start the day
+          the 60-day email arrives.
+
+      - id: triggers
+        layout: table
+        tag: Update triggers
+        heading: Business changes, SAM updates
+        cols: [Trigger, SAM.gov action]
+        rows:
+          - ["New address", "Update physical and mailing address before your next offer"]
+          - ["New bank account", "Update financial information before your next invoice"]
+          - ["Ownership or officer change", "Update relationships and contacts the same day. Tell SBA if certified."]
+          - ["New line of work", "Add the NAICS code and recheck size before you bid"]
+          - ["Administrator leaves", "Assign the backup, then name a new backup"]
+        say: >-
+          Some changes force an update between renewals. [+] A new address:
+          update it before your next offer. [+] A new bank account: update it
+          before your next invoice. [+] An ownership or officer change: update
+          the same day, and report eligibility changes to SBA if you are
+          certified. [+] A new line of work: add the NAICS code before you bid.
+          [+] An administrator leaves: assign the backup, and name a new one.
+
+      - id: scams
+        layout: table
+        tag: Scam defense
+        heading: Five red flags
+        cols: [Red flag, Real practice]
+        rows:
+          - ["A fee to register", "Registration and renewal are free"]
+          - ["A .com sender", "Notices come from SAM.gov and DLA addresses"]
+          - ["Gift card or wire", "The government does not ask for payment this way"]
+          - ["Password requests", "SAM.gov asks for nothing outside SAM.gov"]
+          - ["UEI or CAGE for sale", "SAM.gov and DLA issue both at no cost"]
+        say: >-
+          Look-alike companies charge hundreds of dollars for the same free
+          steps. Watch for five red flags. [+] A fee to register, renew, or fix
+          errors. [+] A sender address ending in dot com. [+] A request for
+          payment by gift card, wire, or cryptocurrency. [+] A phone call asking
+          for your password or bank details. [+] An offer to sell you a UEI or a
+          CAGE code. Report fraud to the FTC.
+
+      - id: help
+        layout: tiles
+        tag: Free help
+        heading: Three free sources of help
+        tiles:
+          - label: FSD.gov
+            text: The official SAM.gov help desk. Open a ticket for validation and admin problems.
+          - label: APEX Accelerators
+            text: Free registration and contracting help in about 300 offices.
+          - label: VBOCs
+            text: SBA-funded counseling for veteran business owners.
+        say: >-
+          Help is free. [+] The Federal Service Desk is the official help desk
+          for SAM.gov. Open a ticket for validation and administrator problems.
+          [+] APEX Accelerators give free registration and contracting help in
+          about 300 offices. [+] And Veterans Business Outreach Centers give
+          SBA-funded counseling to veteran business owners.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Stay active through final payment.
+        chips:
+          - Active at offer and at award
+          - A .com renewal notice is a scam
+        say: >-
+          Check on learning. [+] Federal rules require an active registration
+          at offer, at award, and through final payment. [+] An email from a dot
+          com address demanding a renewal fee is a scam. Sign in to SAM.gov
+          yourself, check your date, and pay nothing.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 4 worksheet · Renewal Calendar Entries
+        sheet: 4
+        text: Set your renewal dates.
+        checks:
+          - Renewal start, 60 days before expiration
+          - Reminders at 30 and 15 days
+          - Your update triggers listed
+          - APEX and VBOC contacts saved
+        say: >-
+          Your task. Open the Lesson 4 worksheet. [+] Set your renewal start
+          date, 60 days before expiration, as a calendar event. [+] Add
+          reminders at 30 and 15 days. [+] List the changes in your business
+          forcing a SAM.gov update. [+] And save your local APEX Accelerator and
+          Veterans Business Outreach Center contacts. Add the renewal start date to your TM 1-04 Annual Battle
+          Rhythm Calendar.
+
+      - id: next
+        layout: end
+        next: "Chapter 5 · Active and ready"
+        say: >-
+          In Chapter 5, you will confirm your record is active and ready.
+
+  - n: 5
+    title: Active and ready
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-07 · Chapter 5 of 5
+        headline: Active and Ready
+        sub: One record, one sheet, one renewal date.
+        say: >-
+          Chapter 5. Your capstone, active and ready. Your registration is
+          complete when three things are true. The record shows Active in
+          SAM.gov. Your numbers sit on one sheet. And your renewal sits on your
+          calendar, 60 days before the record expires.
+
+      - id: free
+        layout: statement
+        tag: Who does what
+        headline: Registration is free. You do it yourself.
+        sub: VERC is not a registration service and does not register entities. Confirm each step on SAM.gov and FSD.gov.
+        say: >-
+          SAM.gov registration, renewal, the UEI, and the CAGE code are free from
+          the federal government. [+] VERC is not a registration service and
+          does not register entities. SAM.gov screens and rules change. Confirm
+          each step on SAM.gov and FSD.gov before you act.
+
+      - id: assessment
+        layout: table
+        tag: Assessment
+        heading: Check yourself
+        cols: [Question, Answer]
+        rows:
+          - ["Registration cost?", "Nothing. A company charging a fee sells its own service."]
+          - ["New EIN fails match?", "Wait 2 to 5 weeks for IRS records, then resubmit."]
+          - ["Want to bid?", "Choose All Awards."]
+          - ["Veteran box checked?", "Your own representation. SBA certifies through MySBA."]
+          - ["Expires December 1?", "Start the renewal October 2, 60 days before."]
+        say: >-
+          Check yourself. [+] What does registration cost? Nothing. A company
+          charging a fee sells its own service. [+] Your EIN arrived yesterday
+          and the IRS match fails on a correct name. Wait 2 to 5 weeks, then
+          resubmit. [+] You want to bid on federal contracts. Choose All Awards.
+          [+] You checked veteran-owned in SAM.gov. The box is your own
+          representation, and SBA certifies. [+] Your registration expires
+          December first. Start the renewal October second, 60 days before.
+
+      - id: task
+        layout: task
+        worksheet: Capstone · Active and ready
+        sheet: 5
+        text: Check all three deliverables.
+        checks:
+          - Readiness Checklist, all 8 items ready
+          - Record Sheet with UEI, CAGE, and dates
+          - Renewal entries at 60, 30, and 15 days
+          - Renewal date in your annual calendar
+        say: >-
+          Your task. Open the capstone checklist. [+] Your SAM Readiness
+          Checklist, with all 8 items ready. [+] Your Registration Record Sheet,
+          with the UEI, CAGE code, and all dates. [+] Your Renewal Calendar
+          Entries, with reminders at 60, 30, and 15 days. [+] And the renewal
+          start date on your TM 1-04 Annual Battle Rhythm Calendar.
+
+      - id: wrap
+        layout: checklist
+        tag: Action checklist
+        heading: Before TM 1-08
+        items:
+          - Login.gov set with multi-factor authentication
+          - Backup Entity Administrator assigned
+          - All Awards selected as your purpose
+          - NAICS results checked against the SBA table
+          - Record shows Active in SAM.gov
+          - Safe senders and APEX contact saved
+        say: >-
+          Before you move on, check your actions. [+] Login.gov set with
+          multi-factor authentication. [+] A backup Entity Administrator
+          assigned in SAM.gov. [+] All Awards selected as your purpose of
+          registration. [+] NAICS small business results checked against the
+          SBA size table. [+] The record shows Active in SAM.gov. [+] And the
+          SAM.gov and CAGE sender addresses added to your safe senders, with
+          your local APEX Accelerator contact saved.
+
+      - id: next
+        layout: end
+        next: "TM 1-08 · Certification Readiness Checklist"
+        say: >-
+          Next in the Founders Bundle is TM 1-08, the VOSB and SDVOSB
+          Certification Readiness Checklist. It tests your firm against the SBA
+          rules for veteran status, ownership, control, and size. Your active
+          SAM.gov registration comes first.

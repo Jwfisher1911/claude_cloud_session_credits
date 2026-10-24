@@ -231,7 +231,7 @@ const b = () => ` class-b data-b="${++B}"`;
 const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg>';
 
 const asset = (m, name) => (m.files || {})[name] || null;
-const modLabel = m => `${m.track === 'vetcert' ? 'VetCert ' : ''}Module ${m.module}`;
+const modLabel = m => m.track === 'tm' ? `TM ${m.module}` : `${m.track === 'vetcert' ? 'VetCert ' : ''}Module ${m.module}`;
 
 function header(m) {
   const dots = Array.from({length:m.chapters}, (_,i) => `<i class="${i+1===m.ch?'on':''}"></i>`).join('');
@@ -242,7 +242,7 @@ function header(m) {
 function worksheetPage(s, m) {
   const url = s.page ? asset(m, s.page) : null;
   if (url) return `<div class="wbpage"><img src="${url}"></div>`;
-  const num = (String(s.worksheet).match(/Worksheet\s+(\d+)/i) || [])[1];
+  const num = s.sheet ? String(s.sheet) : (String(s.worksheet).match(/Worksheet\s+(\d+)/i) || [])[1];
   const html = num && m.worksheets ? m.worksheets[num] : null;
   return html ? `<div class="wbpage wbhtml"><div class="wbh">VERC | ${esc(m.title)}</div>${html}</div>` : '';
 }
@@ -386,7 +386,7 @@ window.renderScene = (scene, meta) => {
   // keep hyphenated words on one line ("first-light", "follow-up"), except on the worksheet page
   // and the narrow chapter list, where "Mission-Essential" has to break
   const walker = document.createTreeWalker(st, NodeFilter.SHOW_TEXT);
-  const hyph = /[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+/g;
+  const hyph = /(?:\b[A-Z]{2} )?[A-Za-z0-9]+(?:-[A-Za-z0-9]+)+/g;   // also keeps codes whole: TM 1-05
   for (const node of [...(function* () { let n; while ((n = walker.nextNode())) yield n; })()]) {
     if (!/[A-Za-z0-9]-[A-Za-z0-9]/.test(node.nodeValue) || node.parentElement.closest('.wbhtml, .route')) continue;
     const frag = document.createDocumentFragment();

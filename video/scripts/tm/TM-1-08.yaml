@@ -1,0 +1,450 @@
+# VERC training module video script: TM 1-08 VOSB/SDVOSB Certification Readiness Checklist
+# Source: VERC_TM-1-08_VOSB-SDVOSB-Certification-Readiness-Checklist_v1.html, the version on Payhip
+# (payhip.com/b/n2h8N, "About 1 hour"). Worksheet pages: TM-1-08-worksheets.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: "1-08"
+track: tm
+title: VOSB/SDVOSB Certification Readiness Checklist
+short: Certification Readiness
+
+chapters:
+
+  - n: 1
+    title: Why you check and Test 1
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC · TM 1-08
+        headline: Certification Readiness Checklist
+        sub: Chapter 1 of 4 · Why you check and Test 1
+        say: >-
+          Welcome to TM 1-08, the VOSB and SDVOSB Certification Readiness
+          Checklist. You ran pre-combat checks before every mission. This module
+          gives you the same check for SBA veteran certification. You answer 18
+          questions against the federal rule, get a readiness score, and leave
+          with a fix list before you apply.
+
+      - id: outline
+        layout: outline
+        heading: Four tests, one fix list
+        items:
+          - Why you check and Test 1
+          - Ownership and Control
+          - Size, Score and Your Path
+          - Prepare to Apply
+        say: >-
+          Four chapters cover the checklist. [+] Why you check,
+          and Test 1. [+] Ownership and control. [+] Size, your score, and your
+          path. [+] And your capstone, prepare to apply.
+
+      - id: why
+        layout: statement
+        tag: Why you check
+        headline: The SBA judges your application on your documents.
+        sub: Missing or incomplete information leads to a denial and a 90-day wait before you reapply.
+        say: >-
+          The SBA runs the Veteran Small Business Certification program, called
+          VetCert. Only a certified firm receives a VOSB or SDVOSB set-aside or
+          sole-source contract. The SBA judges your application on the documents you
+          upload, and the SBA makes every certification decision. [+] The SBA
+          presumes missing or incomplete information shows you are not eligible,
+          and it denies the application. A denial starts a 90-day wait before
+          you reapply.
+
+      - id: definition
+        layout: tiles
+        tag: Definition
+        heading: Two certifications, one test
+        tiles:
+          - label: VOSB
+            text: Small business at least 51 percent owned and controlled by veterans in the U.S.
+          - label: SDVOSB
+            text: The same test, met by service-disabled veterans.
+        say: >-
+          [+] A VOSB is a small business at least 51 percent owned and
+          controlled by one or more veterans who reside in the United States.
+          [+] An SDVOSB meets the same test with service-disabled veterans.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 1 · 45 minutes
+        heading: Score your firm against the four tests.
+        items:
+          - "Task: Score your firm and write a fix list."
+          - "Conditions: Your records and the 18 checks."
+          - "Standards: All 18 answered, gaps on the fix list."
+        say: >-
+          [+] Your task: score your firm against the four VetCert eligibility
+          tests and write a fix list. [+] Conditions: your governing documents,
+          your SAM.gov record, your VA letters, and the 18 checks. [+] Standards: all 18 checks answered, every No and Not sure
+          on the fix list with an owner and a target date, and a path chosen.
+
+      - id: four-tests
+        layout: steps
+        tag: The four tests
+        heading: Work the tests in order
+        items:
+          - text: Veteran status and residency
+          - text: "Ownership: 51 percent, held directly"
+          - text: "Control: top officer, full time"
+          - text: Size and federal standing
+            note: One failed test stops the application.
+        say: >-
+          The SBA certifies a firm only when it passes all four tests. [+] Test 1,
+          veteran status and residency. [+] Test 2, ownership: 51 percent, held
+          directly. [+] Test 3, control: the veteran holds the top position and
+          works full time. [+] Test 4, size and federal standing. One failed test
+          stops the application.
+
+      - id: test-one
+        layout: list
+        tag: Test 1 · Veteran status
+        heading: Checks 1 to 3
+        items:
+          - "Check 1: VA confirms each veteran's service"
+          - "Check 2: SDVOSB, a VA disability rating"
+          - "Check 3: Each veteran resides in the U.S."
+        say: >-
+          Answer each check Yes, No, or Not sure. [+] Check 1: the VA confirms
+          the military service of each veteran counted toward the 51 percent.
+          [+] Check 2, for an SDVOSB: each qualifying veteran holds a VA
+          service-connected disability rating. Applying as a VOSB? Answer Yes on
+          check 2. [+] Check 3: each veteran counted toward the 51 percent
+          resides in the United States.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Keep your documents open.
+        chips:
+          - DD-214 and VA letters
+          - Operating agreement or bylaws
+        say: >-
+          Field note. [+] Answer each check with your documents open. [+] Keep your VA letters, your operating agreement or bylaws,
+          your stock ledger, and your SAM.gov record on the desk.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 · Test 1 checks
+        sheet: 1
+        text: Answer checks 1 to 3 for each veteran.
+        checks:
+          - "Check 1: VA confirms service"
+          - "Check 2: VA rating, SDVOSB only"
+          - "Check 3: Resides in the United States"
+          - Each No or Not sure on the fix list
+        say: >-
+          Your task. Open TM 1-08 to Test 1 and answer checks 1 to 3 for each
+          veteran. [+] VA confirms service. [+] VA rating, for an SDVOSB. [+]
+          Residence in the United States. [+] Write each No and Not sure onto
+          your fix list.
+
+      - id: next
+        layout: end
+        next: "Chapter 2 · Ownership and Control"
+        say: >-
+          In Chapter 2, you will test ownership and control.
+
+  - n: 2
+    title: Ownership and Control
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-08 · Chapter 2 of 4
+        headline: Ownership and Control
+        sub: Tests 2 and 3. Checks 4 to 14.
+        say: >-
+          Chapter 2. Ownership and control. Tests 2 and 3 hold 11 of the 18
+          checks. Open your operating agreement, partnership agreement, or stock
+          ledger before you start.
+
+      - id: test-two
+        layout: list
+        tag: Test 2 · Ownership
+        heading: Checks 4 to 8
+        items:
+          - "Check 4: 51 percent owned directly"
+          - "Check 5: The ownership is unconditional"
+          - "Check 6: 51 percent of each class"
+          - "Check 7: 51 percent of profit distributions"
+          - "Check 8: Your documents show it in writing"
+        say: >-
+          Test 2 is ownership. [+] Check 4: qualifying veterans own at least 51
+          percent directly, in their own names. No holding company, employee
+          stock ownership plan, or other entity sits between them and the firm.
+          A revocable living trust counts only when the veterans are its grantors,
+          trustees, and current beneficiaries. [+] Check 5: the ownership is
+          unconditional. No voting trust, agreement, or condition shifts the
+          benefits of ownership to someone else. [+] Check 6: veterans own at
+          least 51 percent of each class of member interest, partnership
+          interest, or voting stock. [+] Check 7: veterans receive at least 51
+          percent of profit distributions, in line with their share. [+] Check
+          8: your operating agreement, partnership agreement, or stock ledger
+          shows all of this in writing.
+
+      - id: test-three
+        layout: list
+        tag: Test 3 · Control
+        heading: Checks 9 to 14
+        items:
+          - "Check 9: Veteran holds the top officer post"
+          - "Check 10: Veterans manage the firm"
+          - "Check 11: Veterans meet any supermajority"
+          - "Check 12: Top veteran officer, full time"
+          - "Check 13: No non-veteran earns more"
+          - "Check 14: No control by loans or licenses"
+        say: >-
+          Test 3 is control. [+] Check 9: a qualifying veteran holds the
+          highest officer position, such as President, CEO, or Managing Member.
+          [+] Check 10: veterans are the managing members of the LLC, the
+          general partners of the partnership, or control the corporate board.
+          [+] Check 11: veterans meet any supermajority vote for management and
+          daily operations on their own. [+] Check 12: the top veteran officer
+          works full time in the business during normal hours, and no outside
+          job prevents it. [+] Check 13: no non-veteran earns more than the top
+          veteran officer, or the reason is commercially reasonable and
+          documented. [+] Check
+          14: no non-veteran controls the firm through loans, critical
+          financing, bonding, or a critical license.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Point to the page and paragraph.
+        chips:
+          - No page to point to = Not sure
+          - "Outside job: presumed no control"
+        say: >-
+          Check on learning. [+] Name the document proving check 10. If you have
+          no page and paragraph to point to, answer Not sure. [+] And if the top
+          veteran officer works 20 hours a week and holds a full-time job
+          elsewhere, the SBA presumes the veteran does not control the firm. Fix
+          this before you apply.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 · Tests 2 and 3
+        sheet: 2
+        text: Answer checks 4 to 14 from your documents.
+        checks:
+          - Ownership, checks 4 to 8
+          - Control, checks 9 to 14
+          - A page and paragraph for each Yes
+          - Each No or Not sure on the fix list
+        say: >-
+          Your task. Answer the next 11 checks with your documents open. [+]
+          Ownership, checks 4 to 8. [+] Control, checks 9 to 14. [+] For each
+          Yes, note the page and paragraph proving it. [+] Write each No and each
+          Not sure onto your fix list.
+
+      - id: next
+        layout: end
+        next: "Chapter 3 · Size, Score and Your Path"
+        say: >-
+          In Chapter 3, you will finish the last test, score your firm, and
+          choose your path.
+
+  - n: 3
+    title: Size, Score and Your Path
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-08 · Chapter 3 of 4
+        headline: Size, Score and Your Path
+        sub: Test 4, your score out of 18, and your next move.
+        say: >-
+          Chapter 3. Size, score, and your path. Test 4 checks your size and
+          your federal standing. Next, you count your answers and choose your
+          next move.
+
+      - id: test-four
+        layout: list
+        tag: Test 4 · Size, standing
+        heading: Checks 15 to 18
+        items:
+          - "Check 15: An active SAM.gov registration"
+          - "Check 16: Small for at least one NAICS code"
+          - "Check 17: No active exclusion in SAM.gov"
+          - "Check 18: No delinquent federal debt"
+        say: >-
+          [+] Check 15: the firm holds an active SAM.gov registration. [+] Check
+          16: the firm is small under the SBA size standard for at least one
+          NAICS code in its SAM profile. [+] Check 17: neither the firm nor any
+          owner has an active exclusion in SAM.gov. [+] Check 18: neither the
+          firm nor any principal owes delinquent federal debt, such as an
+          unresolved tax lien or a defaulted federal loan. A current approved
+          repayment plan counts as Yes.
+
+      - id: paths
+        layout: table
+        tag: Choose your path
+        heading: Your score decides your next move
+        cols: [Result, Path]
+        rows:
+          - ["18 of 18 Yes", "Apply. Gather your documents and apply in MySBA Certifications."]
+          - ["Any No", "Fix first. Work the fix list. Score again before you apply."]
+          - ["Any Not sure, no No", "Get help. Free help, or the CB 1-01 Self-Prep Review."]
+        say: >-
+          Count your Yes answers for a score out of 18. [+] 18 of 18 Yes means
+          apply. Gather your documents and apply in MySBA Certifications. [+] Any
+          No means fix first. Work the fix list and score again before you
+          apply. [+] Any Not sure, with no No answers, means get help. Use the
+          free help in the capstone, or the CB 1-01 Certification Blueprint
+          Self-Prep Review for the full document kit.
+
+      - id: ridgeline
+        layout: table
+        tag: "Example · Ridgeline Freight LLC, an illustrative firm"
+        heading: Ridgeline's three key checks
+        cols: [Check, Answer and fix]
+        rows:
+          - ["4. Direct 51 percent", "Yes. The veteran holds 60 percent in the veteran's own name."]
+          - ["10. Managing member", "No. Amend the agreement to make the veteran managing member."]
+          - ["13. Pay", "No. Adjust pay or document the business reason."]
+          - ["Result", "Fix first. Ridgeline passes ownership and fails control."]
+        say: >-
+          Example. Ridgeline Freight LLC is an illustrative firm. A veteran owns
+          60 percent of the member interests. A non-veteran owns 40 percent and
+          is the sole managing member. The non-veteran draws $90,000 a year. The
+          veteran draws $60,000 and holds the title President. [+] Check 4,
+          direct ownership: Yes. The veteran holds 60 percent in the veteran's
+          own name. [+] Check 10, managing member: No. The fix is to amend the
+          operating agreement and make the veteran the managing member. [+]
+          Check 13, pay: No. The non-veteran earns $30,000 more with no written
+          reason. Adjust pay or document the reason. [+] The result is fix
+          first. An application today runs a high risk of denial and a 90-day
+          wait.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Count your No answers.
+        chips:
+          - Each No needs a fix
+          - Score again before you apply
+        say: >-
+          Check on learning. [+] Count your No answers. Each one needs a fix
+          before you open the application. [+] Score again after the fixes, and
+          apply at 18 of 18.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 worksheet · Your fix list
+        sheet: 3
+        text: Score your firm and write your fix list.
+        checks:
+          - Checks 15 to 18 answered
+          - Your score out of 18
+          - Each fix with an owner and a date
+          - "Path chosen: Apply, Fix first, Get help"
+        say: >-
+          Your task. Finish the checklist and write your fix list. [+] Answer
+          checks 15 to 18. [+] Count your score out of 18. [+] Give each fix an
+          owner and a target date. [+] Choose your path: apply, fix first, or get
+          help, and set a date to score again.
+
+      - id: next
+        layout: end
+        next: "Chapter 4 · Prepare to Apply"
+        say: >-
+          In Chapter 4, you will prepare your application file.
+
+  - n: 4
+    title: Prepare to Apply
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-08 · Chapter 4 of 4
+        headline: Prepare to Apply
+        sub: Apply at 18 of 18. Plan for the years after approval.
+        say: >-
+          Chapter 4. Your capstone: prepare to apply. Apply after you score 18
+          of 18. These facts help you plan the application and the years after
+          approval.
+
+      - id: facts
+        layout: table
+        tag: Capstone · Application facts
+        heading: What the rule says
+        cols: [Fact, Rule]
+        rows:
+          - ["Cost", "The SBA charges nothing to apply"]
+          - ["After a denial", "Wait 90 calendar days, fix every reason, reapply"]
+          - ["Certification length", "3 years. Recertify within the 90 days before it ends."]
+          - ["Changes after approval", "Report changes affecting eligibility within 30 days"]
+          - ["Size at each bid", "Small under the contract's NAICS code when you submit your offer"]
+        say: >-
+          [+] Cost: the SBA charges nothing to apply. [+] After a denial, wait 90
+          calendar days, fix every reason, and reapply. [+] Certification lasts
+          3 years. Recertify within the 90 days before it ends. [+] After
+          approval, report any change affecting eligibility within 30 calendar
+          days. [+] And at each bid, you must be small under the contract's NAICS
+          code when you submit your offer with price.
+
+      - id: look-alike
+        layout: statement
+        tag: Look-alike sites
+        headline: Never pay a site promising faster certification.
+        sub: The SBA warns Certify.us is not affiliated with the SBA. SBA emails come from @sba.gov.
+        say: >-
+          Watch for look-alike sites. The SBA charges nothing to apply. [+] It
+          warns the site on screen is not affiliated with the SBA, and it
+          contacts you only from an sba.gov email address. Never pay a site promising
+          faster certification.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Spouse or caregiver exception
+        chips:
+          - VA permanent and total rating
+          - Resides in the United States
+        say: >-
+          Field note. [+] For an SDVOSB, a veteran with a VA permanent and total
+          disability rating who is unable to manage daily operations has the
+          option to let a spouse or permanent caregiver meet the control test.
+          [+] The spouse or caregiver must reside in the United States. Read the
+          rule before you rely on it, and have an attorney review your
+          governing documents.
+
+      - id: task
+        layout: task
+        worksheet: Capstone · Application checklist
+        sheet: 4
+        text: Get your application file ready.
+        checks:
+          - DD-214 and VA letters ready
+          - Operating agreement current and signed
+          - SAM.gov active with the right NAICS codes
+          - Recertification date set, 90 days early
+        say: >-
+          Your task. Build your application file. [+] Your discharge record and
+          VA letters for each qualifying veteran. [+] Your operating agreement,
+          bylaws, or stock ledger, current and signed. [+] An active SAM.gov
+          registration with the right NAICS codes. [+] And a recertification date
+          in your calendar, 90 days before the 3-year mark.
+
+      - id: wrap
+        layout: checklist
+        tag: Deliverable checklist
+        heading: Before you apply
+        items:
+          - All 18 checks answered
+          - Fix list with an owner and a date for each item
+          - "Path chosen: Apply, Fix first or Get help"
+          - Login.gov and MySBA Certifications account set up
+          - "Free help saved: VBOC, APEX, SBA VetCert"
+        say: >-
+          Before you apply, check your work. [+] All 18 checks answered. [+] A
+          fix list with an owner and a date for each item. [+] A path chosen:
+          apply, fix first, or get help. [+] Your Login.gov and MySBA
+          Certifications account set up. [+] And free help saved: your Veterans
+          Business Outreach Center, your APEX Accelerator, and SBA VetCert help.
+
+      - id: next
+        layout: end
+        next: "TM 1-04 · Business Operational Battle Rhythm"
+        say: >-
+          Next in the Founders Bundle is step 5, TM 1-04, Business Operational
+          Battle Rhythm. You set a weekly cadence to run the business you
+          registered and prepared.

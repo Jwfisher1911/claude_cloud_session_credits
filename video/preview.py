@@ -8,6 +8,7 @@ Spends no API credits. Needs Node.js and ffmpeg (see README, "Lesson videos").
     python3 video/preview.py --module five-ws --frames-only   storyboard frames, no MP4s (fast)
     python3 video/preview.py --track core                     every core module with a script
     python3 video/preview.py --module battle-rhythm --voiced  final chapters from voice files
+    python3 video/preview.py --tm 1-04                         a Payhip training module (video/scripts/tm/TM-1-04.yaml)
 
 Voiced chapters: put the narration for each chapter in
     output/video/voice/<module>/ch1.mp3, ch2.mp3, ...
@@ -35,6 +36,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 VIDEO = ROOT / "video"
 OUTPUT = ROOT / "output"
+TM_DIR = VIDEO / "scripts" / "tm"
 sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(VIDEO))
 
@@ -73,13 +75,12 @@ def level_voice(src: Path, dst: Path) -> None:
     run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(src), "-af", chain + measured, "-ar", "48000", "-ac", "1", str(dst)])
 
 
-def build_voiced(track: dict, number: int, stem: str, script_path: Path, build: Path, render: list[str],
+def build_voiced(prefix: str, stem: str, script_path: Path, build: Path, render: list[str],
                  chapters: list[int] | None) -> list[Path]:
     voice_dir = OUTPUT / "video" / "voice" / stem
     final = OUTPUT / "video" / "final" / stem
     final.mkdir(parents=True, exist_ok=True)
     script = yaml.safe_load(script_path.read_text(encoding="utf-8"))
-    prefix = f"VERC-{'VC' if track['id'] == 'vetcert' else 'M'}{number}"
     made = []
     for ch in script["chapters"]:
         n = ch["n"]
@@ -116,10 +117,27 @@ def build_module(track: dict, number: int, module: dict, chapters: list[int] | N
         print(f"- {module['id']}: no video script yet. Run: python3 generate.py --module {module['id']} --kind video")
         return None
     stem = f"{number:02d}-{module['id']}"
+    prefix = f"VERC-{'VC' if track['id'] == 'vetcert' else 'M'}{number}"
+    wb_md = OUTPUT / "markdown" / track["id"] / f"{stem}-workbook.md"
+    return build_script(script_path, stem, prefix, wb_md, chapters, frames_only, voiced)
+
+
+def build_tm(code: str, chapters: list[int] | None, frames_only: bool, voiced: bool) -> Path | None:
+    """A training module from the Payhip catalog, scripted by hand in video/scripts/tm/."""
+    script_path = TM_DIR / f"TM-{code}.yaml"
+    if not script_path.exists():
+        print(f"- TM {code}: no script at {script_path.relative_to(ROOT)}")
+        return None
+    stem = f"TM-{code}"
+    return build_script(script_path, stem, f"VERC-{stem}", TM_DIR / f"{stem}-worksheets.md", chapters, frames_only, voiced)
+
+
+def build_script(script_path: Path, stem: str, prefix: str, wb_md: Path, chapters: list[int] | None,
+                 frames_only: bool, voiced: bool) -> Path | None:
     script = yaml.safe_load(script_path.read_text(encoding="utf-8"))
     problems = check(script)
     if problems:
-        print(f"- {module['id']}: the script has {len(problems)} problems. Fix them first:")
+        print(f"- {stem}: the script has {len(problems)} problems. Fix them first:")
         for p in problems[:12]:
             print(f"    {p}")
         print(f"  Check again with: python3 video/script_tools.py {script_path.relative_to(ROOT)}")
@@ -130,18 +148,17 @@ def build_module(track: dict, number: int, module: dict, chapters: list[int] | N
     build.mkdir(parents=True, exist_ok=True)
     board.mkdir(parents=True, exist_ok=True)
 
-    wb_md = OUTPUT / "markdown" / track["id"] / f"{stem}-workbook.md"
     pages = workbook_pages(wb_md.read_text(encoding="utf-8")) if wb_md.exists() else {}
     (build / "worksheets.json").write_text(json.dumps(pages), encoding="utf-8")
 
     all_ch = [c["n"] for c in script["chapters"]]
     pick = [c for c in all_ch if not chapters or c in chapters]
     assets = ",".join(str(p) for p in (OUTPUT / "video" / "assets", VIDEO / "assets"))
-    print(f"\n{module['title']}: {script_path.relative_to(ROOT)}")
+    print(f"\n{script['title']}: {script_path.relative_to(ROOT)}")
     render = ["node", str(VIDEO / "render_frames.mjs"), str(script_path), "--out", str(build / "frames"),
               "--assets", assets, "--worksheets", str(build / "worksheets.json")]
     if voiced:
-        made = build_voiced(track, number, stem, script_path, build, render, chapters)
+        made = build_voiced(prefix, stem, script_path, build, render, chapters)
         for m in made:
             print(f"    {m.relative_to(ROOT)}")
         return made[0].parent if made else None
@@ -162,12 +179,13 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Build silent previews and storyboards for lesson video scripts.")
     ap.add_argument("--module", action="append", help="module id (repeat for more)")
     ap.add_argument("--track", choices=["core", "vetcert", "all"])
+    ap.add_argument("--tm", help="training module codes from video/scripts/tm, for example 1-04 or 1-04,1-05, or all")
     ap.add_argument("--chapters", help="chapters to preview, for example 1 or 1,2. Default: all")
     ap.add_argument("--frames-only", action="store_true", help="storyboard frames only, skip the MP4 previews")
     ap.add_argument("--voiced", action="store_true", help="build final chapters from voice files in output/video/voice/<module>/")
     a = ap.parse_args()
-    if not a.module and not a.track:
-        ap.error("name a --module or a --track")
+    if not a.module and not a.track and not a.tm:
+        ap.error("name a --module, a --track or a --tm")
 
     need("node", "Install it with: brew install node")
     need("ffmpeg", "Install it with: brew install ffmpeg")
@@ -177,7 +195,15 @@ def main() -> None:
     curriculum = yaml.safe_load((ROOT / "content" / "curriculum.yaml").read_text(encoding="utf-8"))
     chapters = [int(x) for x in a.chapters.split(",")] if a.chapters else None
     built = []
+    if a.tm:
+        codes = sorted(p.stem[3:] for p in TM_DIR.glob("TM-*.yaml")) if a.tm == "all" else a.tm.split(",")
+        for code in codes:
+            page = build_tm(code.strip(), chapters, a.frames_only, a.voiced)
+            if page:
+                built.append(page)
     for track in curriculum["tracks"]:
+        if not (a.module or a.track):
+            break
         if a.track not in (None, "all", track["id"]):
             continue
         for number, module in enumerate(track["modules"], start=1):

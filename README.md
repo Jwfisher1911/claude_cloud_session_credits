@@ -209,6 +209,24 @@ It times every on-screen item and caption to the voice and writes four files per
 
 The timing step runs offline and costs nothing. If it stops on a word it does not know, add the word to `EXTRA_WORDS` in `video/align.py`.
 
+### Training modules (TM 1-04 and up)
+
+The Payhip training modules have hand-written scripts in `video/scripts/tm/`, one per product code: `TM-1-04.yaml` and the worksheet pages its task scenes show, `TM-1-04-worksheets.md`. Build them with `--tm`:
+
+```
+python3 video/preview.py --tm 1-04 --frames-only     storyboard only
+python3 video/preview.py --tm 1-04                    storyboard and silent previews
+python3 video/preview.py --tm all --voiced            finished chapters from output/video/voice/TM-1-04/ch1.mp3 ...
+```
+
+Finished files are named by code: `output/video/final/TM-1-04/VERC-TM-1-04-Ch1.mp4`.
+
+The voice gets a copy of the narration with codes and acronyms spelled the way they are said: TM 1-04 becomes "T M one oh four", AAR becomes "A-A-R", VOSB becomes "V-O-S-B". Print a chapter's voice text with:
+
+```
+python3 video/voice_text.py video/scripts/tm/TM-1-04.yaml --chapter 1
+```
+
 ## Before you publish
 1. Open the newest report in `output/reports/`.
 2. Check every yellow **VERIFY** note in the Word files. Claude adds one wherever a fact is not in the approved sources.

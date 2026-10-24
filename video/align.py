@@ -36,6 +36,25 @@ EXTRA_WORDS = {
     "aar": "EY EY AA R",
     "aar(2)": "EY EY R",
     "priya": "P R IY Y AH",
+    "deliverables": "D IH L IH V ER AH B AH L Z",
+    "renames": "R IY N EY M Z",
+    "sitrep": "S IH T R EH P",
+    "swot": "S W AA T",
+    "ftc": "EH F T IY S IY",
+    "tcpa": "T IY S IY P IY EY",
+    "fsd": "EH F EH S D IY",
+    "sba": "EH S B IY EY",
+    "mysba": "M AY EH S B IY EY",
+    "va": "V IY EY",
+    "vosb": "V IY OW EH S B IY",
+    "sdvosb": "EH S D IY V IY OW EH S B IY",
+    "uei": "Y UW IY AY",
+    "naics": "N EY K S",
+    "naics(2)": "EH N EY AY S IY EH S",
+    "ridgeline": "R IH JH L AY N",
+    "cryptocurrency": "K R IH P T OW K ER AH N S IY",
+    "inboxes": "IH N B AA K S IH Z",
+    "tool's": "T UW L Z",
 }
 LEAD = 0.25       # a scene starts this long before its first word
 CUE_LEAD = 0.12   # an item appears this long before the words about it
@@ -50,20 +69,47 @@ def number_words(n: int) -> list[str]:
     if n < 1000:
         h, r = divmod(n, 100)
         return [ONES[h], "hundred"] + (number_words(r) if r else [])
-    th, r = divmod(n, 1000)
-    return number_words(th) + ["thousand"] + (number_words(r) if r else [])
+    if n < 1_000_000:
+        th, r = divmod(n, 1000)
+        return number_words(th) + ["thousand"] + (number_words(r) if r else [])
+    mi, r = divmod(n, 1_000_000)
+    return number_words(mi) + ["million"] + (number_words(r) if r else [])
+
+
+CODE_RE = re.compile(r"\b([A-Z])([A-Z]) (\d)-(\d)(\d)\b")     # product codes: TM 1-04, CB 1-01
+
+
+def code_words(m: re.Match) -> str:
+    """TM 1-04 is said "T M one oh four"."""
+    digit = lambda d: "oh" if d == "0" else ONES[int(d)]
+    return f" {m.group(1)} {m.group(2)} {digit(m.group(3))} {digit(m.group(4))} {digit(m.group(5))} "
+
+
+def year_words(n: int) -> list[str]:
+    if 2000 <= n <= 2009:
+        return ["two", "thousand"] + ([ONES[n - 2000]] if n > 2000 else [])
+    return number_words(n // 100) + (number_words(n % 100) if n % 100 else ["hundred"])
 
 
 def spoken_tokens(text: str) -> list[str]:
     """Narration text as the words a speaker says, lowercase, in dictionary form."""
     out: list[str] = []
-    t = text.replace("’", "'").replace("$", " dollars ")
+    t = text.replace("’", "'")
+    t = CODE_RE.sub(code_words, t)
+    t = re.sub(r"(?<=\d),(?=\d{3}\b)", "", t)                                    # 180,000 -> 180000
+    t = re.sub(r"\$(\d+) (million|billion)", r" \1 \2 dollars ", t)                         # $1 million
+    t = re.sub(r"\$(\d+)(?:\.(\d\d))?", lambda m: f" {m.group(1)} dollars " + (f"{m.group(2)} cents " if m.group(2) else ""), t)
+    t = re.sub(r"(\d)%", r"\1 percent", t)
+    t = re.sub(r"(\d+)\.(\d+)", lambda m: f" {m.group(1)} point " + " ".join(m.group(2)) + " ", t)   # 1.9 -> 1 point 9
+    t = re.sub(r"\.(gov|com|org|mil|us)\b", r" dot \1", t, flags=re.I)                   # SAM.gov -> SAM dot gov
     t = re.sub(r"(\d+):(\d\d)", lambda m: f" {m.group(1)} {m.group(2)} ", t)   # 6:30 -> 6 30
     t = re.sub(r"\ba\.m\.", " a m ", t, flags=re.I)
     t = re.sub(r"\bp\.m\.", " p m ", t, flags=re.I)
+    t = re.sub(r"\b([A-Za-z])(\d+)\b", r"\1 \2", t)                                    # Q4 -> Q 4
     for raw in re.findall(r"[A-Za-z0-9']+", t.replace("-", " ")):
         if raw.isdigit():
-            out += number_words(int(raw))
+            n = int(raw)
+            out += year_words(n) if len(raw) == 4 and 1900 <= n <= 2099 else number_words(n)
         else:
             out.append(raw.lower().strip("'"))
     return [w for w in out if w]

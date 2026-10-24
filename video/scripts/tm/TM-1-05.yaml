@@ -1,0 +1,668 @@
+# VERC training module video script: TM 1-05 Building Your AI Staff
+# Source: VERC_TM-1-05_Building-Your-AI-Staff_v1.html, the version on Payhip
+# (payhip.com/b/9SDsP). Worksheet pages: TM-1-05-worksheets.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: "1-05"
+track: tm
+title: Building Your AI Staff
+short: AI Staff
+
+chapters:
+
+  - n: 1
+    title: Find the Work
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC · TM 1-05
+        headline: Building Your AI Staff
+        sub: Chapter 1 of 5 · Find the Work
+        say: >-
+          Welcome to TM 1-05, Building Your AI Staff. You led people with
+          written duties, clear limits, and regular counseling. This module
+          shows you how to hand routine work to AI tools the same way. An AI
+          staff member gets a written job, set inputs, one set output,
+          decision limits, and a named supervisor. AI drafts. You approve.
+
+      - id: outline
+        layout: outline
+        heading: Four lessons and a roster
+        items:
+          - Find the Work
+          - Write the Job Description
+          - Build and Test
+          - Supervise
+          - AI Staff Roster
+        say: >-
+          In five chapters, you build an AI staff you command. [+] Find the
+          work. [+] Write the job description. [+] Build and test. [+]
+          Supervise. [+] And build your AI Staff Roster.
+
+      - id: translate
+        layout: table
+        tag: You already know these tools
+        heading: Military tools, AI names
+        cols: [Military concept, Business version]
+        rows:
+          - ["Troops-to-task", "AI Task Inventory: every recurring task with its hours per week"]
+          - ["Risk management", "Green, Amber and Red task tiers"]
+          - ["Duty description", "AI job description with 13 fields"]
+          - ["Rehearsal", "Test log: 10 sample runs before live use"]
+          - ["Counseling", "Weekly AI Scorecard: tasks, errors, hours saved, one fix"]
+        say: >-
+          [+] Troops-to-task becomes your AI Task Inventory. [+] Risk
+          management becomes three tiers: Green, Amber, and Red. [+] A duty
+          description becomes a 13-field job description. [+] A rehearsal
+          becomes a 10-run test log. [+] And counseling becomes a Weekly AI
+          Scorecard.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 1 · 45 minutes
+        heading: Find where the hours go before you assign work.
+        items:
+          - "Task: An AI Task Inventory by hours and risk."
+          - "Conditions: One week of calendar, inbox, tasks."
+          - "Standards: Hours, tier, score. No Red tasks to AI."
+        say: >-
+          [+] Your task: build an AI Task Inventory ranked by hours and risk.
+          [+] Conditions: one week of your calendar, inbox, and task list. [+]
+          Standards: every task taking 30 minutes or more a week, each with
+          hours, a risk tier, and a score. Pick your top 2. Assign zero Red
+          tasks to AI.
+
+      - id: tiers
+        layout: tiles
+        tag: Three risk tiers
+        heading: Green, Amber, Red
+        tiles:
+          - label: Green
+            text: Internal only, no personal data. AI drafts, owner spot-checks.
+          - label: Amber
+            text: Reaches a customer after review. Owner approves every item.
+          - label: Red
+            text: Personal data, money, contracts, hiring, legal or tax advice. Owner only.
+        say: >-
+          [+] Green tasks stay inside the business, with no personal data.
+          Meeting agendas and research summaries. AI drafts, and you
+          spot-check. [+] Amber tasks reach a customer after review. You
+          approve every item. [+] Red tasks touch personal data, money,
+          contracts, hiring, or legal, tax, medical, or VA benefits advice.
+          Red stays with you. No AI.
+
+      - id: score
+        layout: statement
+        tag: Priority score
+        headline: Hours per week × fit. Green 2, Amber 1, Red 0.
+        sub: Green scores double because an error stays inside the business. A tie goes to more hours.
+        say: >-
+          Log five workdays and total the hours for each weekly task. Then
+          multiply its hours by its fit: 2 for Green, 1 for Amber, 0 for Red.
+          [+] Green scores double because an error stays inside the business.
+          A tie goes to the task with more hours.
+
+      - id: inventory
+        layout: table
+        tag: Example · Illustrative mobile detailing company
+        heading: Task inventory, ranked
+        cols: [Task, Hours and score]
+        rows:
+          - ["Weekly job schedule", "2.0 hours, Green, score 4.0. Pick 1."]
+          - ["Quote follow-ups", "3.0 hours, Amber, score 3.0. Pick 2, more hours wins the tie."]
+          - ["Research list", "1.5 hours, Green, score 3.0. Next role."]
+          - ["Social posts", "2.5 hours, Amber, score 2.5. Later."]
+          - ["Bookkeeping, payroll", "Red, score 0. Owner, bookkeeper or payroll service."]
+        say: >-
+          An illustrative mobile detailing company. [+] The weekly job
+          schedule: 2 hours, Green, a score of 4. It becomes pick 1. [+] Quote
+          follow-ups: 3 hours, Amber, a score of 3. Pick 2, because more hours
+          wins the tie. [+]
+          The research list: next role. [+] Social posts: later. [+]
+          Bookkeeping and payroll: Red, owner only. Of 14.5 weekly hours, 5 go
+          to AI first.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Customer bank details? Red. It stays with you.
+        chips:
+          - Owner only, at any number of hours
+          - Top 2 hours = your week-one savings
+        say: >-
+          Check on learning. [+] Your highest-hour task involves customer bank
+          details. Red. It stays with you. [+] Add the hours of your top 2
+          picks. This number is the most time AI saves you in week one, before
+          review time.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 worksheet · AI Task Inventory
+        sheet: 1
+        text: Start your audit and build your inventory.
+        checks:
+          - Time audit log, five workdays
+          - Every weekly task with hours, tier, score
+          - Red tasks marked owner only
+          - Top 2 picks circled
+        say: >-
+          Your task. Open TM 1-05 to the Lesson 1 worksheet. Start the audit
+          first, and work Lessons 2 to 4 while it runs. [+] Log five workdays.
+          [+] List every weekly task with its hours, tier, and score. [+] Mark
+          Red tasks owner only. [+] Circle your top 2.
+
+      - id: next
+        layout: end
+        next: Chapter 2 · Write the Job Description
+        say: >-
+          In Chapter 2, you will write a job description for each of your top
+          2 tasks.
+
+  - n: 2
+    title: Write the Job Description
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-05 · Chapter 2 of 5
+        headline: Write the Job Description
+        sub: What the tool does. What you check.
+        say: >-
+          Chapter 2. Write the Job Description. You never handed a new soldier
+          a job with no duty description. Do not hand one to an AI tool. The
+          job tells the tool what to do, and it tells you what to check.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 2 · 60 minutes
+        heading: One written job per top task.
+        items:
+          - "Task: An AI job description for each top task."
+          - "Conditions: Your inventory and TM 1-04 intent."
+          - "Standards: All 13 fields, limits as numbers."
+        say: >-
+          [+] Your task: write an AI job description for each of your top 2
+          tasks. [+] Conditions: your Task Inventory, and your Commander's
+          Intent from TM 1-04. [+] Standards: all 13 fields filled. Limits
+          stated as a number or a list. An approval rule naming who and when.
+          Data limits blocking every Red item.
+
+      - id: roles
+        layout: list
+        tag: Starter roles
+        heading: Start with 2. Add one at a time.
+        items:
+          - "Executive Assistant: agendas, brief prep"
+          - "Operations Assistant: procedures, schedules"
+          - "Marketing Assistant: calendar, post drafts"
+          - "Sales Assistant: follow-ups, proposals"
+          - "Research Analyst: public opportunity lists"
+          - "Customer Service: approved answers"
+        say: >-
+          Six starter roles. [+] An Executive Assistant: agendas, email
+          drafts, and daily brief prep. [+] An Operations Assistant:
+          procedures and schedule drafts. [+] A Marketing Assistant: a content
+          calendar and post drafts. [+] A Sales Assistant: follow-ups and
+          first-draft proposals. [+] A Research Analyst: competitor summaries
+          and public opportunity lists. [+] A Customer Service Assistant:
+          answers from your approved list. Start with 2. Add one after a role
+          passes 4 straight weekly scorecards.
+
+      - id: fields
+        layout: list
+        tag: The 13 fields
+        heading: Every role gets the same job description.
+        items:
+          - "Fields 1 to 3: Title, supervisor, schedule"
+          - "Fields 4 and 5: Inputs and tools"
+          - "Fields 6 to 8: Steps, output, quality standard"
+          - "Fields 9 and 10: Decision limits, approval rule"
+          - "Fields 11 and 12: Escalation, data limits"
+          - "Field 13: Scorecard, the four weekly measures"
+        say: >-
+          [+] Fields 1 to 3: title and mission, supervisor, and schedule. [+]
+          Fields 4 and 5: inputs and tools. [+] Fields 6 to 8: steps, output,
+          and quality standard. [+] Fields 9 and 10: decision limits and the
+          approval rule. [+] Fields 11 and 12: escalation and data limits. [+]
+          And field 13: the scorecard.
+
+      - id: example
+        layout: table
+        tag: Example · Quote Follow-Up Assistant
+        heading: An illustrative job description
+        cols: [Field, Example]
+        rows:
+          - ["Mission", "Draft a follow-up for every open quote within 2 business days"]
+          - ["Inputs", "Quote number, service, vehicle count, price, date. No names or contacts."]
+          - ["Quality standard", "Correct service and price. 120 words or fewer. No promised dates."]
+          - ["Decision limits", "Wording only. No discounts, no new prices, no service dates."]
+          - ["Approval rule", "Owner approves every draft. Nothing sends on its own."]
+        say: >-
+          Here is an illustrative Quote Follow-Up Assistant. [+] Mission:
+          draft a follow-up for every open quote within 2 business days. [+]
+          Inputs: quote number, service, vehicle count, price, and date. No
+          names or contact details. [+] Quality: the right service and price,
+          120 words or fewer, no promised dates. [+] Limits: wording only. No
+          discounts. [+] Approval: the owner approves every draft. Nothing
+          sends on its own.
+
+      - id: data-rules
+        layout: statement
+        tag: Data rules
+        headline: Never enter personal data into an AI tool.
+        sub: "Read the tool's data settings before first use. Send it only the data the job needs."
+        say: >-
+          Never enter customer names tied to contact details, Social Security
+          numbers, bank or card numbers, passwords, or health or VA claim
+          details into an AI tool. [+] Before first use, read the tool's data
+          and privacy settings, turn off use of your chats for model training
+          where the account allows it, and write down the setting you chose.
+
+      - id: field-note
+        layout: fieldnote
+        headline: A customer asks for 10% off.
+        chips:
+          - "Field 11: escalate the same day"
+          - Red list item missing? Add it.
+        say: >-
+          Check on learning. [+] A customer asks your AI-drafted email for a
+          10% discount. Which field handles it? Field 11, escalation. The
+          request goes to you the same day. [+] Then check your data limits
+          against your Red list.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 2 worksheet · AI job descriptions
+        sheet: 2
+        text: Write job descriptions A and B.
+        checks:
+          - All 13 fields for each role
+          - Decision limits as a number or list
+          - "Approval rule: who, and when"
+          - Data limits block every Red item
+        say: >-
+          Your task. Write job descriptions A and B on the Lesson 2
+          worksheets. [+] All 13 fields for each role. [+] Decision limits as
+          a number or a list. [+] Who approves, and when. [+] Data limits
+          blocking every Red item.
+
+      - id: next
+        layout: end
+        next: Chapter 3 · Build and Test
+        say: >-
+          In Chapter 3, you will build and test each role before a customer
+          sees anything.
+
+  - n: 3
+    title: Build and Test
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-05 · Chapter 3 of 5
+        headline: Build and Test
+        sub: No unit goes on a mission without a rehearsal.
+        say: >-
+          Chapter 3. Build and Test. No unit goes on a mission without a
+          rehearsal. You run each AI role 10 times on sample work, log every
+          result, and decide go or no-go before a customer sees anything.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 3 · 60 minutes
+        heading: Rehearse before live use.
+        items:
+          - "Task: Build a prompt and test each role."
+          - "Conditions: 10 samples per role, no personal data."
+          - "Standards: 10 runs logged. Go at 9 of 10 passing."
+        say: >-
+          [+] Your task: build a prompt for each role and test it before live
+          use. [+] Conditions: 10 sample inputs per role, with all personal
+          data removed. [+] Standards: 10 runs logged per role. Go requires 9
+          of 10 passing, with zero failures on price, promise, data, or facts.
+
+      - id: prompt
+        layout: list
+        tag: Build the prompt
+        heading: Your job description becomes the prompt.
+        items:
+          - "Role: who the AI acts as"
+          - "Context: the facts the job needs"
+          - "Task: one job"
+          - "Format: the shape of the output"
+          - "Limits: decision and data limits"
+          - "Sample: one approved example"
+        say: >-
+          Your job description becomes the prompt, in six parts. [+] Role. [+]
+          Context, such as your price list and approved template. [+] Task,
+          one job. [+] Format, such as 120 words or fewer. [+] Limits, from
+          fields 9 and 12. [+] And one approved sample, with the name removed.
+          Save the prompt, and use it for every run.
+
+      - id: test
+        layout: steps
+        tag: Run the test
+        heading: Ten runs, one decision
+        items:
+          - text: Collect 10 samples, personal data removed.
+          - text: Run all 10 with the saved prompt.
+          - text: Grade each output against field 8.
+            note: Pass or fail.
+          - text: Log each failure by type.
+            note: Price, promise, data, facts, length, or tone.
+          - text: Decide go or no-go.
+        say: >-
+          [+] Collect 10 samples with personal data removed. [+] Run all 10
+          with the saved prompt. [+] Grade each against field 8. Pass or fail.
+          [+] Log each failure by type. [+] Then decide. Go means 9 or 10
+          pass, with any failure on length or tone. A failure on price,
+          promise, data, or facts means no-go.
+
+      - id: round-one
+        layout: numbers
+        name: Round 1
+        role: Quote Follow-Up Assistant · Illustrative
+        nums:
+          - ["Runs", "10"]
+          - ["Passed", "7"]
+          - ["Promise fails", "1"]
+          - ["Length fails", "2"]
+        quote: No-go. One fix, then round 2 passed 10 of 10.
+        say: >-
+          Example. In round 1, the quote role ran [+] 10 times. [+] 7 passed.
+          [+] 1 draft offered a discount, a promise failure. [+] 2 ran over
+          120 words. [+] No-go. The owner added "Offer no discounts" and a
+          word cap. Round 2 passed 10 of 10.
+
+      - id: disclosure
+        layout: table
+        tag: Disclosure · Know the rules before you go live
+        heading: Rules for specific uses
+        cols: [Rule, What you do]
+        rows:
+          - ["FTC review rule", "Never use AI to write reviews or testimonials"]
+          - ["FTC Act", "No false claims about your AI or who wrote a message"]
+          - ["FCC ruling, 2024", "Prior express consent before any AI-voice call"]
+          - ["State laws", "Check your state attorney general before go-live"]
+        say: >-
+          No single federal law requires a label on every AI draft. Several
+          rules apply to specific uses. [+] The FTC rule on reviews: never use
+          AI to write reviews or testimonials. [+] The FTC Act: no false
+          claims about your AI or who wrote a message. [+] A 2024 FCC ruling:
+          get prior express consent before any AI-voice call. [+] And state
+          laws differ and change every year. Check your state attorney general
+          before a customer-facing role goes live, and ask a qualified
+          attorney about hiring, lending, housing, insurance, health, or legal
+          uses.
+
+      - id: field-note
+        layout: fieldnote
+        headline: 9 of 10 pass. The one failure promised a date.
+        chips:
+          - Promise failure = no-go
+          - AI-written review breaks FTC rule
+        say: >-
+          Check on learning. [+] 9 of 10 pass, and the one failure promised a
+          Friday service date. No-go. A promise failure stops the role at any
+          pass rate. [+] And an AI-drafted customer review breaks the FTC
+          rule.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 3 worksheet · Build and test
+        sheet: 3
+        text: Build, test, and decide.
+        checks:
+          - Saved prompt in six parts
+          - 10 test runs logged
+          - Disclosure check, your state included
+          - Signed go or no-go decision
+        say: >-
+          Your task. On the Lesson 3 worksheet, for roles A and B, [+] write
+          the saved prompt. [+] Log 10 test runs. [+] Run the disclosure
+          check, your state included. [+] Sign a go or no-go decision.
+
+      - id: next
+        layout: end
+        next: Chapter 4 · Supervise
+        say: >-
+          In Chapter 4, you will supervise each live role with a weekly
+          scorecard.
+
+  - n: 4
+    title: Supervise
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-05 · Chapter 4 of 5
+        headline: Supervise
+        sub: Counsel on a schedule, not when something breaks.
+        say: >-
+          Chapter 4. Supervise. A leader counsels on a schedule, not when
+          something breaks. Your AI roles get a short scorecard every week,
+          reviewed in the Monday weekly sync you set in TM 1-04.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 4 · 45 minutes
+        heading: Score every live role every week.
+        items:
+          - "Task: A weekly scorecard for each live role."
+          - "Conditions: Live roles and your TM 1-04 rhythm."
+          - "Standards: Four measures in numbers, one fix."
+        say: >-
+          [+] Your task: run a weekly scorecard for every live AI role. [+]
+          Conditions: your live roles, plus the daily brief and Monday weekly
+          sync from TM 1-04. [+] Standards: one row per role every week, all
+          four measures in numbers, and one fix per role.
+
+      - id: measures
+        layout: tiles
+        tag: The four measures
+        heading: One row per role
+        tiles:
+          - label: Tasks completed
+            text: Outputs approved and used this week.
+          - label: Errors
+            text: Outputs fixed or rejected for price, promise, data, or facts.
+          - label: Hours saved
+            text: Minutes saved per task, with review, times tasks, divided by 60.
+          - label: One fix
+            text: One change to the prompt, inputs, or limits for next week.
+        say: >-
+          [+] Tasks completed: outputs approved and used this week. [+]
+          Errors: outputs fixed or rejected for price, promise, data, or
+          facts. [+] Hours saved: minutes saved per task, with your review,
+          times tasks completed, divided by 60. [+] One fix: one change to the
+          prompt, the inputs, or the limits.
+
+      - id: week
+        layout: table
+        tag: Example · One week of scorecards, illustrative
+        heading: Two live roles
+        cols: [Role, This week]
+        rows:
+          - ["Quote Follow-Up", "14 tasks, 1 error, 1.9 hours saved. Fix: add the service name."]
+          - ["Schedule Draft", "1 task, 0 errors, 1.5 hours saved. Fix: add technician days off."]
+          - ["Total", "15 tasks, 1 error, 3.4 hours saved"]
+        say: >-
+          Here is one illustrative week. [+] The Quote Follow-Up Assistant: 14
+          drafts, 1 error, and 1.9 hours saved. The fix: add the service name
+          to the inputs. [+] The Schedule Draft Assistant cut a 120-minute
+          task to 30 minutes, saving 1.5 hours. [+] The total: 3.4 hours
+          saved.
+
+      - id: rules
+        layout: list
+        tag: Action rules
+        heading: When one fires, act at the next event.
+        items:
+          - "Data-rule break: stop today, rerun the test"
+          - "Over 2 errors a week: rerun the test"
+          - Under 1 hour saved for 4 weeks, retire the role
+          - "4 zero-error weeks: automate or add a role"
+        say: >-
+          [+] Any data-rule break: stop the role today, fix it, and rerun the
+          10-run test. [+] More than 2 errors in a week: rerun the test before
+          next use. [+] Under 1 hour saved for 4 straight weeks: retire the
+          role. [+] 4 straight weeks with zero errors: automate one step, or
+          add one role. Not both. Run each role by hand for 4 weeks first, and
+          keep the approval gate after you automate.
+
+      - id: rhythm
+        layout: table
+        tag: AI in the battle rhythm
+        heading: Cadences from TM 1-04
+        cols: [Cadence, AI event]
+        rows:
+          - ["Daily brief", "AI task review: what ran, what failed, what waits for approval"]
+          - ["Weekly sync", "Scorecard review: four measures and one fix per role"]
+          - ["Monthly review", "Tool cost against hours saved: keep, retire, or add"]
+          - ["Quarterly planning", "Tool and data settings check, state rule check"]
+          - ["Annual conference", "Rewrite every job description. New AI Staff Roster."]
+        say: >-
+          [+] The daily brief reviews what ran, what failed, and what waits
+          for approval. [+] The weekly sync reviews each scorecard. [+] The
+          monthly review weighs tool cost against hours saved. [+] Quarterly
+          planning checks data settings and state rules. [+] And the annual
+          conference rewrites every job description.
+
+      - id: field-note
+        layout: fieldnote
+        headline: 0.6 hours saved for 4 weeks.
+        chips:
+          - Retire it, pick the next task
+          - Review it in the Monday sync
+        say: >-
+          Check on learning. [+] A role saved 0.6 hours a week for 4 straight
+          weeks. Retire it, and pick the next task on your inventory. [+] The
+          scorecard gets its review in the Monday weekly sync.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 4 worksheet · Weekly AI Scorecard
+        sheet: 4
+        text: Set up your AI Scorecard.
+        checks:
+          - Minutes per task before AI
+          - Week 1 row for each role
+          - Monthly cost check
+          - Action rules, each with a number
+        say: >-
+          Your task. Open the Lesson 4 worksheet. [+] Record minutes per task
+          before AI, from your audit. [+] Fill the week 1 row for each role.
+          [+] Set up the monthly cost check. [+] Write your action rules, each
+          with a number. Then add the scorecard to your Monday sync agenda.
+
+      - id: next
+        layout: end
+        next: Chapter 5 · Your AI Staff Roster
+        say: >-
+          In Chapter 5, you will build your AI Staff Roster.
+
+  - n: 5
+    title: Your AI Staff Roster
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-05 · Chapter 5 of 5
+        headline: Your AI Staff Roster
+        sub: Your task organization chart for AI.
+        say: >-
+          Chapter 5. Your capstone, the AI Staff Roster. It works as your task
+          organization chart for AI. One line per role, from first test to
+          retirement. Post it next to your Commander's Intent.
+
+      - id: roster
+        layout: table
+        tag: Example · Illustrative roster
+        heading: One line per role
+        cols: [Role, Status]
+        rows:
+          - ["Schedule Draft", "Live. Drafts next week's job schedule every Friday. Owner spot-checks."]
+          - ["Quote Follow-Up", "Live. A follow-up for every open quote. Owner approves every draft."]
+          - ["Research Analyst", "Testing. 10 new fleet managers a week from public sources."]
+          - ["Marketing", "Waiting. 3 social posts a week, after 4 zero-error weeks."]
+        say: >-
+          Here is an illustrative roster. [+] The Schedule Draft Assistant is
+          live. It drafts next week's job schedule every Friday, and the owner
+          spot-checks it. [+] The Quote Follow-Up Assistant is live, and the
+          owner approves every draft. [+] The Research Analyst is in testing.
+          It lists 10 new fleet managers a week from public sources. [+] The
+          Marketing Assistant waits. It drafts 3 social posts a week, after 4
+          zero-error weeks.
+
+      - id: columns
+        layout: list
+        tag: Roster columns
+        heading: One line per role
+        items:
+          - Role
+          - Mission
+          - Supervisor
+          - Approval rule
+          - Status, from testing to retired
+          - Next review
+        say: >-
+          Each line carries six columns. [+] The role. [+] Its mission. [+]
+          Its supervisor. [+] Its approval rule. [+] Its status: testing,
+          live, waiting, or retired. [+] And its next review.
+
+      - id: field-note
+        layout: fieldnote
+        headline: AI drafts. You approve.
+        chips:
+          - "Complaint reply: you send it"
+          - "Bank statements: Red tier"
+        say: >-
+          Field note. [+] AI drafts. You approve anything sent to a customer.
+          A reply to a customer complaint goes out from you, after you read
+          and approve it. [+] Reconciling bank statements is Red. It stays
+          with you or your bookkeeper. And before any AI-voice call to past
+          customers, get each person's prior express consent.
+
+      - id: task
+        layout: task
+        worksheet: Capstone · AI Staff Roster
+        sheet: 5
+        text: Build and post your roster.
+        checks:
+          - One line per role
+          - Mission, supervisor, approval rule
+          - Status and next review
+          - Printed and posted
+        say: >-
+          Your task. Open the capstone worksheet and build your roster. [+]
+          Write one line per role. [+] Give each line a mission, a supervisor,
+          and an approval rule. [+] Add its status and its next review. [+]
+          Then print it and post it next to your Commander's Intent.
+
+      - id: wrap
+        layout: checklist
+        tag: Deliverable checklist
+        heading: Go-live check
+        items:
+          - AI Task Inventory, Red tasks marked owner only
+          - Job descriptions A and B, each with a Go decision
+          - Weekly AI Scorecard with your action rules
+          - Data settings checked and written down
+          - Disclosure check done, your state included
+          - AI task review in your daily brief
+        say: >-
+          Before you go live, check your work. [+] AI Task Inventory complete,
+          with Red tasks marked owner only. [+] Job descriptions A and B, each
+          with a saved prompt, a test log, and a Go decision. [+] A Weekly AI
+          Scorecard with your action rules. [+] Data and privacy settings
+          checked and written down for each tool. [+] A disclosure check for
+          each role, your state included. [+] And the AI task review in your
+          daily brief.
+
+      - id: next
+        layout: end
+        next: TM 1-04 · Run the full rhythm for 30 days
+        say: >-
+          TM 1-05 is the last step in the Founders Bundle. Go back to TM 1-04,
+          Business Operational Battle Rhythm. Put the AI task review in your
+          daily brief and the scorecard in your Monday weekly sync. Run the
+          full rhythm for 30 days, then hold your first monthly review with AI
+          cost and hours saved on the agenda.

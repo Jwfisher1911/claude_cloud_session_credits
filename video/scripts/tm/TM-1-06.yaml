@@ -1,0 +1,647 @@
+# VERC training module video script: TM 1-06 Veteran Entrepreneur Marketing Blueprint
+# Source: VERC_TM-1-06_Veteran-Entrepreneur-Marketing-Blueprint_v1.html, the version on Payhip
+# (payhip.com/b/l7OZE, "About 3.5 hours"). Worksheet pages: TM-1-06-worksheets.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: "1-06"
+track: tm
+title: Veteran Entrepreneur Marketing Blueprint
+short: Marketing Blueprint
+
+chapters:
+
+  - n: 1
+    title: Target Customer
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC · TM 1-06
+        headline: Marketing Blueprint
+        sub: Chapter 1 of 5 · Target Customer
+        say: >-
+          Welcome to TM 1-06, Veteran Entrepreneur Marketing Blueprint. In
+          uniform you studied the area of operations before you moved. This
+          module applies the same method to marketing: one buyer, one offer, two
+          channels, and a 30-day plan for your first customers.
+
+      - id: outline
+        layout: outline
+        heading: Four steps, in order
+        items:
+          - Target Customer
+          - Offer and Message
+          - Channels
+          - First 30 Customers
+          - Launch your 30-day plan
+        say: >-
+          Four lessons and a capstone. [+] Target: one buyer. [+] Offer: one
+          offer and one message. [+] Channel: a main and a supporting channel.
+          [+] Track: your first 30 customers. [+] Then launch your plan. Work
+          the steps in order.
+
+      - id: definition
+        layout: statement
+        tag: Definition
+        headline: Marketing gets one defined buyer to contact you.
+        sub: Sales closes the deal. Marketing fills your list of people ready to talk.
+        say: >-
+          Marketing is the work of getting one defined buyer to know your
+          business, trust it, and contact you. [+] Sales closes the deal.
+          Marketing fills your list of people ready to talk.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 1 · 45 minutes
+        heading: One buyer with three traits.
+        items:
+          - "Task: Build a one-page Customer Profile."
+          - "Conditions: Your offer, past customers, the worksheet."
+          - "Standards: One buyer, five interviews, five names."
+        say: >-
+          A buyer has three traits: a problem you solve, money to pay you, and
+          the authority to say yes. [+] Your task: build a one-page Customer
+          Profile for one buyer. [+] Conditions: your offer, a list of past
+          customers or people who asked for help, and the worksheet. [+]
+          Standards: one buyer type, the top problem in the buyer's own words,
+          three places they look for help, five real names, and five interviews
+          done.
+
+      - id: drill
+        layout: steps
+        tag: The drill
+        heading: Find your buyer
+        items:
+          - text: List 20 people who paid you or asked for help.
+            note: Friends count. Former coworkers count.
+          - text: "Group them: consumer, business or government."
+          - text: Interview five people in the group.
+            note: Write their answers word for word. Do not pitch.
+          - text: Write the profile in their words.
+        say: >-
+          [+] List 20 people who paid you or asked for help. Friends and former
+          coworkers count. [+] Group them by type: consumer, business, or
+          government. [+] Interview five people in the group. Ask about the
+          problem, what they tried last, where they looked for help, and what
+          would make them switch. Write their answers word for word, and do not
+          pitch. [+] Write the profile in their words, not yours.
+
+      - id: profile
+        layout: table
+        tag: Example · Veteran-owned mobile detailing
+        heading: Customer Profile
+        cols: [Field, Example]
+        rows:
+          - ["Buyer", "Fleet manager or owner, local service company, 10 to 50 work vans"]
+          - ["Problem, in their words", "Dirty vans look bad to customers. Car wash trips cost driver hours."]
+          - ["Who says yes", "The owner under 20 vans, the operations manager above 20"]
+          - ["Where they look", "Google search, the county business association, LinkedIn"]
+          - ["Service area", "One county, within 25 miles of home base"]
+        say: >-
+          Here is an illustrative profile for a veteran-owned mobile detailing
+          company. [+] The buyer: a fleet manager or owner with 10 to 50 work
+          vans. [+] The problem: dirty vans look bad to customers, and car wash
+          trips cost driver hours. [+] The owner says yes below 20 vans, the
+          operations manager above 20. [+] They look for help on Google, at the
+          county business association, and on LinkedIn. [+] The service area:
+          one county, within 25 miles of home base.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Name one real person who fits.
+        chips:
+          - "No name? Narrow the buyer line."
+          - Replace every guess with a quote
+        say: >-
+          Check on learning. [+] Ask a friend to name one real person who fits
+          your buyer line. No name means the line is too broad. [+] Then read
+          your problem line. Replace any guess with a buyer's quote.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 1 worksheet · Customer Profile
+        sheet: 1
+        text: Build your one-page Customer Profile.
+        checks:
+          - One buyer type, one-line description
+          - Top problem, quoted from an interview
+          - Three places they look for help
+          - Five real names, not categories
+        say: >-
+          Your task. Open TM 1-06 to the Lesson 1 worksheet. [+] Name one buyer
+          type. [+] Quote the top problem from an interview. [+] List three
+          places they look for help. [+] Write five real people or organizations
+          who fit, by name. Keep the profile next to your desk.
+
+      - id: next
+        layout: end
+        next: "Chapter 2 · Offer and Message"
+        say: >-
+          In Chapter 2, you will write one offer and a three-sentence message
+          for this buyer.
+
+  - n: 2
+    title: Offer and Message
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-06 · Chapter 2 of 5
+        headline: Offer and Message
+        sub: Sell one thing first.
+        say: >-
+          Chapter 2. Offer and Message. A capabilities brief tells a commander
+          what a unit does, how fast, and with what. Your offer does the same
+          for a buyer. Sell one thing first.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 2 · 50 minutes
+        heading: One offer, one price, one message.
+        items:
+          - "Task: Write one offer, its price and a message."
+          - "Conditions: Your profile, costs, overhead and proof."
+          - "Standards: Price at or above your cost floor."
+        say: >-
+          [+] Your task: write one offer, set its price, and write a three-
+          sentence message. [+] Conditions: your Customer Profile, your costs
+          per job, your overhead, and your proof. [+] Standards: a defined scope
+          and delivery time, a price at or above your cost floor, and every
+          claim backed by proof you hold today.
+
+      - id: offer
+        layout: table
+        tag: The seven parts of an offer · Example
+        heading: Fleet Van Detail
+        cols: [Part, Example]
+        rows:
+          - ["Scope", "Exterior wash, interior vacuum, windows and dash. No engine bay."]
+          - ["Outcome", "Clean vans at the start of the shift, no driver time lost"]
+          - ["Price", "$149 per van, 5-van minimum per visit"]
+          - ["Delivery", "In the customer's lot, before 7 a.m., every other week"]
+          - ["Next step", "Book a one-van trial"]
+        say: >-
+          An offer has seven parts. Here is the detailing offer, Fleet Van
+          Detail. [+] Scope: exterior wash, interior vacuum, windows, and dash.
+          No engine bay. [+] Outcome: clean vans at the start of the shift, with
+          no driver time lost. [+] Price: $149 per van, with a 5-van minimum.
+          [+] Delivery: in the customer's lot, before 7 a.m., every other week.
+          [+] Next step: book a one-van trial.
+
+      - id: price
+        layout: table
+        tag: Price logic · Use your own costs
+        heading: Start from your costs
+        cols: [Line, Example]
+        rows:
+          - ["Direct costs", "Supplies, water, fuel for one van: $18"]
+          - ["Overhead share", "Insurance, phone and software, per van served: $22"]
+          - ["Owner pay", "2 hours at $35 an hour: $70"]
+          - ["Cost floor", "Sum of the three lines: $110"]
+          - ["Price at 25% margin", "$110 ÷ 0.75 = $146.67, rounded up to $149"]
+        say: >-
+          Start from your costs, not from a competitor's price list. [+] Direct
+          costs for one van: $18. [+] Overhead share: $22. [+] Owner pay, 2
+          hours at $35 an hour: $70. [+] The cost floor: $110. [+] At a 25%
+          margin, the price comes to $146.67. Round up to $149.
+
+      - id: message
+        layout: list
+        tag: Three-sentence message
+        heading: Problem. Solution and proof. Next step.
+        items:
+          - "Problem: The buyer's problem, in their words"
+          - "Proof: What you do, and one fact proving it"
+          - "Action: The one next step the buyer takes"
+        say: >-
+          Your message has three sentences. [+] The problem, in the buyer's
+          words. [+] What you do, and one fact proving you deliver. [+] The one
+          action to take. For example: Dirty work vans hurt your image, and car
+          wash trips cost driver hours. We detail your vans in your own lot
+          before the shift starts, and we carry $1 million in general liability
+          coverage. Book a one-van trial this week.
+
+      - id: claims
+        layout: table
+        tag: Veteran claims · Say it right
+        heading: Say what is true today
+        cols: [Claim, Use it when]
+        rows:
+          - ["Veteran-owned", "Veterans own and control the business. Keep your DD-214 on file."]
+          - ["Certified VOSB or SDVOSB", "After the SBA approves your firm through VetCert"]
+          - ["Agency names and seals", "Never in your marketing"]
+        say: >-
+          Word your veteran claims to the facts. [+] Say veteran-owned when
+          veterans own and control the business, and keep your discharge record
+          on file. [+] Say certified VOSB or certified SDVOSB after the SBA
+          approves your firm through VetCert, not while the application is
+          pending. [+] Keep agency seals and logos out of your marketing. A
+          false status claim in federal contracting risks suspension and
+          debarment.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Read your message out loud with a timer.
+        chips:
+          - "Over 30 seconds? Cut words."
+          - "No proof? Delete the claim."
+        say: >-
+          Check on learning. [+] Read your message out loud with a timer. Over
+          30 seconds means it is too long. Cut words. [+] Point to the proof
+          behind each claim. No proof, delete the claim.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 2 worksheet · Offer and Message Sheet
+        sheet: 2
+        text: Write your Offer and Message Sheet.
+        checks:
+          - Name, scope, delivery and terms
+          - Price math from your cost floor
+          - Your three-sentence message
+          - Proof list and veteran claim wording
+        say: >-
+          Your task. Open the Lesson 2 worksheet. [+] Write the offer name,
+          scope, delivery, and terms. [+] Show your price math from your cost
+          floor. [+] Write your three-sentence message. [+] List the proof you
+          hold today, and copy the exact veteran claim wording you will use.
+
+      - id: next
+        layout: end
+        next: "Chapter 3 · Channels"
+        say: >-
+          In Chapter 3, you will pick the two channels for your message.
+
+  - n: 3
+    title: Channels
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-06 · Chapter 3 of 5
+        headline: Channels
+        sub: One main effort. One supporting effort.
+        say: >-
+          Chapter 3. Channels. A commander weights one main effort and backs it
+          with a supporting effort. Two channels, worked every week, beat six
+          channels worked once a month.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 3 · 50 minutes
+        heading: Two channels for the next 30 days.
+        items:
+          - "Task: Pick a main and a supporting channel."
+          - "Conditions: Your profile, offer, hours and budget."
+          - "Standards: Six scored, two picked, rules written."
+        say: >-
+          [+] Your task: pick one main channel and one supporting channel for
+          the next 30 days. [+] Conditions: your profile, your offer sheet, your
+          weekly hours, and your marketing budget. [+] Standards: all six
+          channels scored, two picked, hours and dollars set, and the legal rule
+          for each written down.
+
+      - id: channels
+        layout: list
+        tag: Six channels compared
+        heading: Score all six.
+        items:
+          - "Referrals: One name from each customer"
+          - "Networking: The same group every month"
+          - "LinkedIn: Weekly post, messages to buyers"
+          - "Google: A free Business Profile, Search and Maps"
+          - "Email: Follow-up and a short newsletter"
+          - "Government: SAM.gov, capability statement"
+        say: >-
+          [+] Referrals: ask every customer for one name, the day you finish the
+          job. [+] Local networking: attend the same group every month. [+]
+          LinkedIn: one post a week and direct messages to named buyers. [+]
+          Google Business Profile is free, and a verified listing shows you in
+          Search and Maps. [+] Email: follow-up and a short newsletter to people
+          who gave you their address. [+] Government buyers: SAM.gov
+          registration and a capability statement. Register before you bid.
+
+      - id: score
+        layout: tiles
+        tag: Score each one, 1 to 5
+        heading: Four questions per channel
+        tiles:
+          - label: Fit
+            text: Does your buyer look for help here?
+          - label: Cost
+            text: Does it fit your monthly budget?
+          - label: Time
+            text: Does it fit your weekly hours?
+          - label: Skill
+            text: Will you work it every week without dread?
+        say: >-
+          Rate each channel from 1 to 5 on four questions. [+] Fit: does your
+          buyer look for help here? [+] Cost: does it fit your budget? [+] Time:
+          does it fit your weekly hours? [+] Skill: will you work it every week
+          without dread? The top total becomes your main channel. The second
+          becomes your supporting channel.
+
+      - id: split
+        layout: bignum
+        num: "70%"
+        headline: Main channel
+        sub: The rest to the supporting channel
+        say: >-
+          Put about 70% of your marketing hours into the main channel. [+] The
+          rest goes to the supporting channel. Hold the split for 30 days before
+          you judge a channel.
+
+      - id: rules
+        layout: table
+        tag: Rules for email and texts
+        heading: Know the rule before you send
+        cols: [Rule, What you do]
+        rows:
+          - ["CAN-SPAM email", "Postal address and a clear way to opt out"]
+          - ["Email opt-outs", "Honor them within 10 business days"]
+          - ["TCPA texts", "Written opt-in before the first marketing text"]
+          - ["STOP replies", "Treat every STOP as stop all texts now"]
+        say: >-
+          Know the legal rule for each channel. [+] CAN-SPAM covers every
+          marketing email, business email included. Include a valid postal
+          address and a clear way to opt out. [+] Honor opt-outs within 10
+          business days. The FTC counts each violating email as a separate
+          violation, with penalties above $50,000 each. [+] For marketing texts,
+          the TCPA calls for written opt-in first, and the opt-in is not a
+          condition of purchase. [+] Honor STOP within 10 business days. Treat
+          every STOP as stop all texts now.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Know your main channel's rule.
+        chips:
+          - Without looking
+          - "Government buyer? Register first."
+        say: >-
+          Check on learning. [+] Name the legal rule for your main channel
+          without looking. [+] And if your buyer is a contracting officer at a
+          federal agency, the government channel fits best, and your SAM.gov
+          registration comes before any bid.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 3 worksheet · Your channels
+        sheet: 3
+        text: Score all six. Pick two.
+        checks:
+          - Fit, cost, time and skill scores
+          - "Main channel: hours and dollars"
+          - "Supporting channel: hours and dollars"
+          - Legal rules and a day-30 switch rule
+        say: >-
+          Your task. Open the Lesson 3 worksheet. [+] Score each channel on fit,
+          cost, time, and skill. [+] Set weekly hours and monthly dollars for
+          your main channel [+] and for your supporting channel. [+] Copy the
+          legal rule for each, and write a day-30 switch rule, such as fewer
+          than 5 replies.
+
+      - id: next
+        layout: end
+        next: "Chapter 4 · First 30 Customers"
+        say: >-
+          In Chapter 4, you will plan the daily work for your first 30
+          customers.
+
+  - n: 4
+    title: First 30 Customers
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-06 · Chapter 4 of 5
+        headline: First 30 Customers
+        sub: No tracker means no follow-up.
+        say: >-
+          Chapter 4. First 30 Customers. Battle tracking keeps every unit's
+          location and status current. Your tracker does the same for every
+          buyer you contact. No tracker means no follow-up.
+
+      - id: tcs
+        layout: list
+        tag: Lesson 4 · 60 minutes
+        heading: Count the touches. Track every one.
+        items:
+          - "Task: Start a 30-day plan with a tracker."
+          - "Conditions: Profile, offer sheet, two channels."
+          - "Standards: Daily count, 6 columns, 10 touches."
+        say: >-
+          [+] Your task: build and start a 30-Day First-Customer Plan. [+]
+          Conditions: your profile, your offer sheet, your two channels, and a
+          spreadsheet or notebook. [+] Standards: a daily touch count set from
+          your goal, a 6-column tracker, a four-week calendar, a review request
+          process, and your first 10 touches logged.
+
+      - id: touches
+        layout: numbers
+        name: The math
+        role: "Goal: 30 customers in 30 days"
+        nums:
+          - [Customers wanted, "30"]
+          - [Touches per sale, "20"]
+          - [Total touches, "600"]
+          - [Touches a day, "20"]
+        quote: Replace the 1-in-20 guess with your own rate after week 1.
+        say: >-
+          A touch is one personal contact with a named buyer: a call, a direct
+          message, a personal email, or a visit. A public post does not count.
+          Say you want [+] 30 customers in 30 days, [+] and you guess 1 in 20
+          touches turns into a customer. [+] 30 customers at 20 touches each is
+          600 touches. [+] Over 30 days, you make 20 touches a day. [+]
+          Replace the guess with your own rate after week 1.
+
+      - id: weeks
+        layout: tiles
+        tag: The four-week plan
+        heading: One focus per week
+        tiles:
+          - label: Week 1
+            text: List 100 named buyers. Start your daily count. Log every touch.
+          - label: Week 2
+            text: Follow up on every touch with no reply. Ask for referrals.
+          - label: Week 3
+            text: Keep the message version with the most replies. Ask for reviews.
+          - label: Week 4
+            text: Count results. Apply your switch rule. Write the next plan.
+        say: >-
+          [+] Week 1: list 100 named buyers, build the tracker, and start your
+          daily count. [+] Week 2: follow up on every touch with no reply, and
+          ask new customers for one referral. [+] Week 3: keep the message
+          version with the most replies, and send review requests. [+] Week 4:
+          count your results, apply your switch rule, and write the next plan.
+
+      - id: follow-up
+        layout: list
+        tag: Three rules
+        heading: Follow up. Respect a no. Report the numbers.
+        items:
+          - "Spacing: Up to 3 follow-ups, 3 to 5 days apart"
+          - "Stop: A stop request ends all contact"
+          - "Numbers: Report them in your TM 1-04 sync"
+        say: >-
+          [+] Follow up with each buyer up to 3 times, 3 to 5 business days
+          apart. [+] A buyer who says stop gets marked lost, with no more
+          contact on any channel. [+] Report your numbers in your TM 1-04 weekly
+          sync.
+
+      - id: reviews
+        layout: table
+        tag: Reviews and testimonials · FTC and Google rules
+        heading: Ask every customer, the same way
+        cols: [Do, Do not]
+        rows:
+          - ["Ask every customer", "Hand-pick happy customers"]
+          - ["Honest reviews", "Pay, discount or gift for a review"]
+          - ["Their own words", "Write, buy or post AI-generated reviews"]
+          - ["No staff or family", "Undisclosed employee or relative reviews"]
+          - ["Written permission", "Edit a testimonial to change its meaning"]
+        say: >-
+          Reviews follow FTC and Google rules. [+] Ask every customer, the same
+          way, after each job. [+] Ask for an honest review, and offer no
+          discount, gift, or payment for it. [+] Let real customers write their
+          own words. Post no AI-generated reviews. [+] Keep staff and family out
+          of your reviews. [+] Use testimonials with written permission, and
+          keep their meaning. The FTC rule on fake reviews carries civil
+          penalties above $50,000 per violation.
+
+      - id: field-note
+        layout: fieldnote
+        headline: A 5-star review for 10% off? Decline.
+        chips:
+          - Ask for an honest review instead
+          - "Zero replies? Fix buyer or message."
+        say: >-
+          Check on learning. [+] A customer offers a 5-star review for 10% off
+          the next job. Decline the trade and ask for an honest review. [+] If
+          day 10 shows 200 touches and zero replies, fix the buyer or the
+          message before you change channels.
+
+      - id: task
+        layout: task
+        worksheet: Lesson 4 worksheet · 30-Day First-Customer Plan
+        sheet: 4
+        text: Plan it. Log 10 touches.
+        checks:
+          - Customer goal and daily touch count
+          - Week-by-week plan with dates
+          - Follow-up rule and review request
+          - First 10 touches in the tracker
+        say: >-
+          Your task. Open the Lesson 4 worksheet. [+] Set your customer goal and
+          show your daily touch math. [+] Write the week-by-week plan with
+          dates. [+] Write your follow-up rule and your review request, sent
+          within 48 hours of each job. [+] Log your first 10 touches.
+
+      - id: next
+        layout: end
+        next: "Chapter 5 · Launch your 30-day plan"
+        say: >-
+          In Chapter 5, you will check every piece and start day 1.
+
+  - n: 5
+    title: Launch your 30-day plan
+    scenes:
+      - id: open
+        layout: title
+        tag: TM 1-06 · Chapter 5 of 5
+        headline: Launch your plan
+        sub: Three deliverables form one marketing order.
+        say: >-
+          Chapter 5. Your capstone: launch your 30-day plan. Your three
+          deliverables form one marketing order.
+
+      - id: order
+        layout: tiles
+        tag: One marketing order
+        heading: Target, offer, daily work
+        tiles:
+          - label: Customer Profile
+            text: Names the target. One buyer, five real names.
+          - label: Offer and Message
+            text: States what you bring. Scope, price math, proof.
+          - label: 30-Day Plan
+            text: Sets the daily work and the measures.
+        say: >-
+          [+] The Customer Profile names the target. [+] The Offer and Message
+          Sheet states what you bring. [+] The 30-Day First-Customer Plan sets
+          the daily work and the measures. Finish both checklists, then start
+          day 1.
+
+      - id: assessment
+        layout: table
+        tag: Assessment
+        heading: Check yourself
+        cols: [Question, Answer]
+        rows:
+          - ["Buyer line: small businesses", "Too broad. Narrow by industry, size, place and who says yes."]
+          - ["SDVOSB application pending", "Say veteran-owned. Say certified after SBA approval."]
+          - ["Email with no address", "Breaks CAN-SPAM. Add the address and a way to opt out."]
+        say: >-
+          Check yourself. [+] Your buyer line reads small businesses. It is too
+          broad to name a real person. Narrow it by industry, size, location,
+          and the person who says yes. [+] Your SDVOSB application is pending
+          with the SBA. Your website says veteran-owned, if a veteran owns and
+          controls the business. It says certified after the SBA approves your
+          firm through VetCert. [+] You send a promotional email with no postal
+          address. This breaks CAN-SPAM. Every marketing email needs a valid
+          postal address and a clear way to opt out.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Ask an attorney to confirm.
+        chips:
+          - Not legal advice
+          - Penalties change each year
+        say: >-
+          Field note. [+] This module gives general information on marketing
+          laws, not legal advice. [+] Confirm your duties under CAN-SPAM, the
+          TCPA, FTC rules, and your state law with an attorney. Penalty amounts
+          change each year with inflation. Check ftc.gov for the current figure.
+
+      - id: task
+        layout: task
+        worksheet: Capstone · Deliverable checklist
+        sheet: 5
+        text: Finish both checklists, then start day 1.
+        checks:
+          - Customer Profile, five real names
+          - Offer sheet with price math and proof
+          - Two channels with hours and rules
+          - 30-day plan printed and posted
+        say: >-
+          Your task. Finish the deliverable checklist. [+] Customer Profile
+          complete, with five real names. [+] Offer and Message Sheet complete,
+          with price math and a proof list. [+] Main and supporting channels
+          picked, with hours, dollars, and legal rules. [+] Your 30-Day
+          First-Customer Plan printed and posted. Then start day 1 tomorrow.
+
+      - id: wrap
+        layout: checklist
+        tag: Action checklist
+        heading: Before day 1
+        items:
+          - Tracker built, 100 named buyers listed
+          - "Email footer: postal address and unsubscribe"
+          - Text opt-in on your forms, or no texts
+          - Google Business Profile claimed and verified
+          - Veteran claims checked against Lesson 2
+          - Weekly numbers on your TM 1-04 sync agenda
+        say: >-
+          Before day 1, run the action checklist. [+] Build the tracker and list
+          your first 100 named buyers. [+] Put your postal address and an
+          unsubscribe link in your marketing email footer. [+] Add text opt-in
+          language to your forms, or send no marketing texts. [+] Claim and
+          verify your Google Business Profile, if you serve local customers. [+]
+          Check every veteran claim against Lesson 2. [+] And add your weekly
+          marketing numbers to your TM 1-04 weekly sync.
+
+      - id: next
+        layout: end
+        next: "TM 1-07 · SAM Registration Blueprint"
+        say: >-
+          Next in the Founders Bundle is TM 1-07, SAM Registration Blueprint. It
+          walks you through registering your business in SAM.gov, the free
+          registration every federal buyer checks before an award.

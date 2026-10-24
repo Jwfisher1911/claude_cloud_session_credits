@@ -91,7 +91,7 @@ LAYOUTS: dict[str, dict] = {
     },
     "task": {
         "use": "The lesson's 'Your task today', pointing at a workbook worksheet. Second to last scene of every chapter.",
-        "fields": {"worksheet": 50, "text": 60, "checks": ("list", 42, 2, 4), "page?": 40},
+        "fields": {"worksheet": 50, "text": 60, "checks": ("list", 42, 2, 4), "page?": 40, "sheet?": 2},
         "builds": lambda s: len(s["checks"]),
     },
     "end": {
@@ -147,7 +147,7 @@ def on_screen_text(scene: dict) -> list[str]:
                 walk(x)
         elif isinstance(v, dict):
             for k, x in v.items():
-                if k not in ("say", "layout", "id", "photo", "page", "credit"):
+                if k not in ("say", "layout", "id", "photo", "page", "credit", "sheet"):
                     walk(x)
 
     walk(scene)
