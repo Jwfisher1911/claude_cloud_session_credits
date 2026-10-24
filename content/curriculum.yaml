@@ -36,6 +36,7 @@ tracks:
     modules:
       - id: battle-rhythm
         title: Operational Battle Rhythm
+        short: Battle Rhythm
         goal: Run the business week like an operation so revenue work happens first, every day.
         lessons:
           - "The first-light task: one revenue action before email or admin."
@@ -51,6 +52,7 @@ tracks:
 
       - id: five-ws
         title: "Who, What, When, Where, Why: Your One-Page Business Brief"
+        short: Business Brief
         goal: Define the business on one page, the way a unit writes a mission brief.
         lessons:
           - "Who you serve: one specific customer, described in plain words."
@@ -65,6 +67,7 @@ tracks:
 
       - id: ai-staff
         title: Building Your AI Staff
+        short: AI Staff
         goal: Assign AI tools to defined staff roles with written standing orders and a human review step.
         lessons:
           - "Think in billets, not tools: define the job before picking software."
@@ -83,6 +86,7 @@ tracks:
 
       - id: google-presence
         title: Google Business Profile and Search Console
+        short: Google Presence
         goal: Get the business found in local Google searches and measure what searches bring visitors.
         lessons:
           - "Why local search matters for a new business."
@@ -101,6 +105,7 @@ tracks:
 
       - id: facebook-setup
         title: Facebook Page Setup and Verification
+        short: Facebook Page
         goal: Build a professional Facebook Page, secure it, and prepare for business verification.
         lessons:
           - "Business Page versus personal profile, and why customers need the Page."
@@ -120,6 +125,7 @@ tracks:
 
       - id: instagram-setup
         title: Instagram Setup for Business
+        short: Instagram
         goal: Set up a professional Instagram account that turns profile visits into conversations.
         lessons:
           - "Switching to a professional account and linking it to the Facebook Page."
@@ -135,6 +141,7 @@ tracks:
 
       - id: first-ads
         title: Launching Your First Social Media Ads
+        short: First Ads
         goal: Run small, controlled ad tests and make spend decisions from results instead of hope.
         lessons:
           - "Ad readiness: a clear offer, a working page, and a way to capture leads."
@@ -161,6 +168,7 @@ tracks:
     modules:
       - id: vetcert-overview
         title: "VetCert: What It Is and Who Qualifies"
+        short: VetCert Basics
         goal: Understand the SBA Veteran Small Business Certification and decide whether to pursue VOSB or SDVOSB status.
         lessons:
           - "What VetCert is and why SBA took over certification from the VA in 2023."
@@ -174,6 +182,7 @@ tracks:
 
       - id: vetcert-prep
         title: "Getting Ready: SAM.gov, VA Records, and Documents"
+        short: Getting Ready
         goal: Gather every record and document before starting the application.
         lessons:
           - "SAM.gov registration, the UEI, and NAICS codes."
@@ -189,6 +198,7 @@ tracks:
 
       - id: vetcert-control
         title: "Ownership and Control: Proving the Veteran Runs the Business"
+        short: Ownership and Control
         goal: Make sure the business documents and daily practice both show veteran ownership and control.
         lessons:
           - "Ownership: at least 51 percent held by one or more qualifying veterans."
@@ -206,6 +216,7 @@ tracks:
 
       - id: vetcert-apply
         title: Submitting the Application and Staying Certified
+        short: Submit and Recertify
         goal: Submit a complete application, answer SBA questions fast, and keep the certification current.
         lessons:
           - "Setting up the account and starting the application."

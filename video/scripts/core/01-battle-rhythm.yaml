@@ -1,0 +1,657 @@
+# VERC lesson video script: Module 1, Operational Battle Rhythm
+# Source: output/markdown/core/01-battle-rhythm-lesson.md and -workbook.md
+#
+# Each scene has a layout, the text shown on screen, and "say", the narration.
+# A [+] in "say" marks the moment the next on-screen item appears.
+# The number of [+] markers must match the number of build items in the layout.
+
+module: 1
+track: core
+title: Operational Battle Rhythm
+short: Battle Rhythm
+
+chapters:
+
+  - n: 1
+    title: The first-light task
+    scenes:
+      - id: open
+        layout: title
+        tag: VERC Core · Module 1
+        headline: Operational Battle Rhythm
+        sub: Chapter 1 of 5 · The first-light task
+        say: >-
+          Welcome to Module 1, Operational Battle Rhythm. A battle rhythm is the
+          repeating schedule a military unit runs each day and each week.
+          Meetings, reports, and actions happen at set times, so nobody wastes
+          effort deciding what comes next.
+
+      - id: outline
+        layout: outline
+        heading: Five chapters. One rhythm.
+        items:
+          - The first-light task
+          - Three Mission-Essential Tasks
+          - The weekly rhythm
+          - The four daily numbers
+          - The Friday after-action review
+        say: >-
+          In five short chapters, you will build a battle rhythm for your
+          business. [+] A first-light task. [+] Three Mission-Essential Tasks
+          each day. [+] A weekly rhythm. [+] Four daily numbers. [+] And a Friday
+          after-action review. Keep your workbook next to you. Every chapter
+          ends with one task.
+
+      - id: first-light
+        layout: photo
+        photo: 36343.jpg
+        credit: "Photo: DVIDS"
+        tag: First light
+        headline: One revenue action before you open email.
+        say: >-
+          First light is the moment the sky gets bright enough to see. Units
+          plan their first action of the day around it. [+] Your first-light
+          task is one revenue action. You complete it before you open email,
+          read texts, or touch admin.
+
+      - id: revenue-actions
+        layout: list
+        tag: Revenue actions
+        heading: A revenue action moves a customer closer to paying you.
+        items:
+          - Call a past customer and offer a repeat service
+          - Send a quote to a prospect
+          - Follow up on an open proposal
+          - Send an invoice for finished work
+          - Ask a satisfied customer for a referral
+        say: >-
+          A revenue action moves a customer closer to paying you. [+] Call a
+          past customer and offer a repeat service. [+] Send a quote to a
+          prospect. [+] Follow up on an open proposal. [+] Send an invoice for
+          finished work. [+] Ask a satisfied customer for a referral.
+
+      - id: why-first
+        layout: compare
+        tag: Why first
+        cols:
+          - label: Email
+            text: Fills your morning with other people's priorities.
+          - label: Admin
+            text: Feels productive. Brings in no money.
+          - label: First-light task
+            text: Sales work happens every working day.
+            hi: true
+        say: >-
+          Why first? [+] Email fills a morning with other people's priorities.
+          [+] Admin feels productive and brings in no money. [+] Put one revenue
+          action ahead of both, and sales work happens every working day, no
+          matter how the rest of the day goes.
+
+      - id: drill
+        layout: steps
+        tag: The drill
+        heading: Run your first-light task
+        items:
+          - text: Pick the task the night before.
+          - text: Name the person, the action, and the deadline.
+            note: '"Call Maria Lopez about the spring cleanup quote." Not "Do sales."'
+          - text: Keep it under 30 minutes.
+          - text: Turn on do-not-disturb.
+          - text: Complete the task.
+          - text: Mark it done. Write the result in one line.
+        say: >-
+          Here is the drill. [+] Pick the task the night before. Write it on a
+          card or on the first line of tomorrow's page. [+] Make it specific.
+          Name the person, the action, and the deadline. "Call Maria Lopez about
+          the spring cleanup quote" is a task. "Do sales" is not. [+] Keep it under 30
+          minutes. A small task gets done. A large one gets postponed. [+] Turn
+          on do-not-disturb. Leave email, texts, and social media closed. [+]
+          Complete the task. [+] Mark it done and write the result in one line.
+
+      - id: dana
+        layout: example
+        name: Dana
+        role: Two-person lawn care company
+        rows:
+          - k: "6:30 a.m."
+            v: Before email, one call from last season's list.
+          - k: 10 min
+            v: She offers a spring aeration booking.
+          - k: No answer
+            v: She leaves a voicemail and marks the task done.
+        quote: The action counts. The outcome belongs to the customer.
+        say: >-
+          Example. Dana runs a two-person lawn care company. Her mornings started
+          with coffee, the inbox, and supplier emails. Sales calls slid to the
+          afternoon, when her crew needed her in the field. [+] She set one rule.
+          At 6:30 a.m., before email, she calls one customer from last season's
+          list. [+] The call takes ten minutes. She offers a spring aeration
+          booking. [+] Some mornings nobody answers. She leaves a voicemail and
+          marks the task done. [+] The action counts. The outcome belongs to the
+          customer.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Keep a first-light list of 20 names.
+        chips:
+          - Past customers
+          - Open quotes
+          - Referral partners
+        say: >-
+          Field note. [+] Keep a first-light list of 20 names. [+] Past
+          customers, open quotes, and referral partners. When you pick
+          tomorrow's task at night, pull the next name from the list. Add names
+          as you meet people.
+
+      - id: task
+        layout: task
+        worksheet: Worksheet 1 · Daily MET Card
+        text: Write tomorrow's first-light task in the first-light row.
+        checks:
+          - The person's name
+          - The action
+          - The time
+          - Card on top of your phone or laptop
+        say: >-
+          Your task today. Open your workbook to Worksheet 1, the Daily MET Card.
+          In the first-light row, write tomorrow's task. Include [+] the
+          person's name, [+] the action, [+] and the time. [+] Place the card on
+          top of your phone or laptop before you go to bed.
+
+      - id: next
+        layout: end
+        next: "Chapter 2 · Three Mission-Essential Tasks"
+        dod: true
+        say: >-
+          In Chapter 2, you will add three Mission-Essential Tasks to the same
+          card.
+
+  - n: 2
+    title: Three Mission-Essential Tasks
+    scenes:
+      - id: open
+        layout: title
+        tag: Module 1 · Chapter 2 of 5
+        headline: Three Mission-Essential Tasks
+        sub: Exactly three per day. At least one touches revenue.
+        say: >-
+          Chapter 2. Three Mission-Essential Tasks. In the military,
+          Mission-Essential Tasks are the tasks a unit must perform to
+          accomplish its mission. Training time and resources go to those tasks
+          before anything else.
+
+      - id: three
+        layout: bignum
+        num: "3"
+        headline: Three METs per day.
+        sub: At least one touches revenue.
+        say: >-
+          Your business gets exactly three Mission-Essential Tasks, or METs, per
+          day. Not two. Not five. Three. [+] At least one of the three must
+          touch revenue. Finding customers, making offers, delivering paid work,
+          billing, and collecting all count.
+
+      - id: why-three
+        layout: compare
+        tag: Why three
+        cols:
+          - label: Three tasks
+            text: Fit inside a working day, with room for calls and surprises.
+            hi: true
+          - label: Ten tasks
+            text: Leave you guessing which task mattered.
+          - label: Everything else
+            text: Goes below the line and waits.
+        say: >-
+          Why three? [+] Three tasks fit inside a working day, with room for
+          phone calls and surprises. [+] A list of ten leaves you guessing which
+          task mattered. [+] Everything else is admin, and admin goes below the
+          line. It waits until your METs are done, or until a set admin block.
+
+      - id: card
+        layout: card
+        heading: The daily MET card
+        first_light: Text the title company to confirm Thursday's two closings
+        mets:
+          - text: Visit two law offices downtown, leave rate sheets
+            r: true
+          - text: Complete the 2:00 p.m. loan signing
+            r: true
+          - text: Renew errors and omissions insurance before Friday
+        below:
+          - Reply to email
+          - Update the mileage log
+          - Order stamp ink
+        say: >-
+          Here is the card. [+] At the end of each working day, write tomorrow's
+          first-light task at the top. [+] Under it, write three METs, numbered
+          in priority order. [+] Mark each revenue-touching task with an R. [+]
+          Draw a line under task 3, and write admin below the line. Work the
+          METs in order. At the end of the day, check off what you finished. An
+          unfinished MET moves to tomorrow's card, and it takes one of
+          tomorrow's three slots.
+
+      - id: marcus
+        layout: example
+        name: Marcus
+        role: Marine veteran · Mobile notary service
+        rows:
+          - k: MET 1 · R
+            v: Visit two law offices downtown and leave rate sheets.
+          - k: MET 2 · R
+            v: Complete the 2:00 p.m. loan signing.
+          - k: MET 3
+            v: Renew his insurance. His clients require the coverage.
+        quote: The mileage log waits below the line.
+        say: >-
+          Example. Marcus, a Marine veteran, runs a mobile notary service. His
+          Tuesday starts with a text to the title company office manager to
+          confirm Thursday's two closings. [+] MET 1, visit two law offices
+          downtown and leave rate sheets. [+] MET 2, the 2 p.m. loan signing. [+]
+          MET 3, renew his errors and omissions insurance before Friday. It
+          brings in no money, but his title company clients require the
+          coverage, so it earns a slot. [+] Email and the mileage log wait below
+          the line.
+
+      - id: field-note
+        layout: fieldnote
+        headline: A hard deadline turns admin into a MET.
+        chips:
+          - License renewal
+          - Insurance renewal
+          - Tax filing date
+        say: >-
+          Field note. [+] A hard deadline turns admin into a Mission-Essential
+          Task. [+] When a license renewal, insurance renewal, or tax filing date
+          arrives, promote it to a MET on the due date or the day before. Ask
+          your CPA or the issuing agency for your exact deadlines.
+
+      - id: task
+        layout: task
+        worksheet: Worksheet 1 · Daily MET Card
+        text: Fill out tomorrow's card.
+        checks:
+          - One first-light task
+          - Three METs, revenue task marked R
+          - A line under task 3, admin below it
+        say: >-
+          Your task today. Fill out tomorrow's card on Worksheet 1. [+] One
+          first-light task. [+] Three METs, with the revenue task marked R. [+] A
+          line under task 3, and your admin list below it.
+
+      - id: next
+        layout: end
+        next: "Chapter 3 · The weekly rhythm"
+        say: >-
+          In Chapter 3, you will set the rhythm for your whole week.
+
+  - n: 3
+    title: The weekly rhythm
+    scenes:
+      - id: open
+        layout: title
+        tag: Module 1 · Chapter 3 of 5
+        headline: The weekly rhythm
+        sub: Your card sets the day. Your rhythm sets the week.
+        say: >-
+          Chapter 3. The weekly rhythm. Your daily card sets the day. Your weekly
+          rhythm sets the week. It assigns each block of time to one of four
+          jobs.
+
+      - id: four-jobs
+        layout: tiles
+        tag: Four jobs
+        heading: Every block gets one job.
+        tiles:
+          - label: Revenue
+            text: Prospecting, quotes, sales calls, follow-up, networking.
+          - label: Delivery
+            text: The paid work your customers bought.
+          - label: Financial review
+            text: Invoices, collections, your numbers, your bank account.
+          - label: Rest
+            text: At least one full day off.
+        say: >-
+          [+] Revenue blocks, for prospecting, quotes, sales calls, follow-up,
+          and networking. [+] Delivery blocks, for the paid work your customers
+          bought. [+] One financial review block each week, to send invoices,
+          check collections, review your numbers, and look at your bank account.
+          [+] And rest. At least one full day off.
+
+      - id: group
+        layout: statement
+        tag: Group like work
+        headline: Plan rest first. Group like work together.
+        sub: A day off you plan gets protected. A day off you hope for gets filled with work.
+        say: >-
+          Mixing jobs wastes time. Switching from a customer site to a sales
+          call to an invoice and back costs focus and drive time. Group like
+          work together. [+] And put rest on the grid first. A day off you plan
+          gets protected. A day off you hope for gets filled with work.
+
+      - id: build
+        layout: steps
+        tag: Build it in this order
+        heading: Your weekly grid
+        items:
+          - text: Mark your rest day.
+          - text: Pick at least two half-day revenue blocks.
+            note: Choose times when your customers answer the phone.
+          - text: Group paid work into delivery blocks.
+          - text: Set one financial review block.
+            note: Friday afternoon pairs with your after-action review.
+          - text: Post the grid where you see it each morning.
+          - text: Hold the rhythm for four weeks before you change it.
+        say: >-
+          Build it in this order. [+] Mark your rest day. [+] Pick your revenue
+          blocks. Choose times when your customers answer the phone, and plan at
+          least two half-day blocks per week. [+] Group your paid work into
+          delivery blocks. [+] Set one financial review block. Friday afternoon
+          works well. [+] Write the rhythm on a Monday to Sunday grid and post it
+          where you see it each morning. [+] Hold the rhythm for four weeks
+          before you change it. Your first-light task still happens every
+          working day, delivery days included.
+
+      - id: ray
+        layout: grid
+        name: Ray
+        role: Air Force veteran · One-truck HVAC contractor
+        rows:
+          - [Monday, "REV: call back last week's estimates", "DEL: scheduled maintenance"]
+          - [Tuesday, DEL, DEL]
+          - [Wednesday, "REV: visit two property managers", DEL]
+          - [Thursday, DEL, DEL]
+          - [Friday, DEL, "FIN: financial review and AAR"]
+          - [Saturday, "ON CALL", "ON CALL"]
+          - [Sunday, REST, REST]
+        say: >-
+          Example. Ray, an Air Force veteran, owns a one-truck HVAC contractor.
+          Emergency calls broke every plan he made. [+] He set revenue mornings
+          on Monday and Wednesday, [+] delivery on the other days, [+] financial
+          review on Friday afternoon, [+] on call Saturday, and rest on Sunday.
+          When an emergency lands on a revenue morning, Ray moves the revenue
+          block to the next open afternoon in the same week. He does not drop
+          it.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Busy season? Write two rhythms.
+        chips:
+          - Peak months
+          - Slow months, more revenue blocks
+        say: >-
+          Field note. [+] If your work has a busy season, write two rhythms. [+]
+          One for peak months, one for slow months. In slow months, move more
+          blocks to revenue, so you fill the calendar for the next peak.
+
+      - id: task
+        layout: task
+        worksheet: Worksheet 2 · Weekly Battle Rhythm Planner
+        text: Mark next week's grid in this order.
+        checks:
+          - Rest
+          - Revenue
+          - Delivery
+          - One financial review block
+        say: >-
+          Your task today. Open Worksheet 2, the Weekly Battle Rhythm Planner.
+          Mark next week's grid in this order: [+] rest, [+] revenue, [+]
+          delivery, [+] and one financial review block.
+
+      - id: next
+        layout: end
+        next: "Chapter 4 · The four daily numbers"
+        say: >-
+          In Chapter 4, you will track four numbers every working day.
+
+  - n: 4
+    title: The four daily numbers
+    scenes:
+      - id: open
+        layout: title
+        tag: Module 1 · Chapter 4 of 5
+        headline: The four daily numbers
+        sub: Your card shows what you did. The numbers show whether it moved money.
+        say: >-
+          Chapter 4. The four daily numbers. Your MET card tells you what you
+          did. The four daily numbers tell you whether the work moved money.
+
+      - id: four-numbers
+        layout: tiles
+        tag: Record each working day
+        heading: Four numbers. Two minutes.
+        tiles:
+          - label: Contacts made
+            text: Direct conversations or messages with one person. A mass email does not count.
+          - label: Offers made
+            text: A specific proposal with a price, to one person.
+          - label: Invoices sent
+            text: Bills for delivered work or deposits due.
+          - label: Money collected
+            text: Dollars received in your business account.
+        say: >-
+          Record these four each working day. [+] Contacts made. Conversations or
+          direct messages with a specific person about your business. A mass
+          email does not count. [+] Offers made. Specific proposals with a
+          price, sent or spoken to one person. [+] Invoices sent. Bills for
+          delivered work or deposits due. [+] Money collected. Dollars received
+          in your business account.
+
+      - id: patterns
+        layout: table
+        tag: Pattern guide
+        heading: Where your sales process stalls
+        cols: [Pattern, What it means]
+        rows:
+          - ["Many contacts, few offers", "Conversations stop before you name a price"]
+          - ["Many offers, few invoices", "Customers decline, or work sits unfinished"]
+          - ["Many invoices, low collections", "Your billing follow-up has a gap"]
+        say: >-
+          The numbers show where your sales process stalls. [+] Many contacts and
+          few offers means your conversations stop before you name a price. [+]
+          Many offers and few invoices means customers decline, or work sits
+          unfinished. [+] Many invoices and low collections means your billing
+          follow-up has a gap. A busy week feels like a good week. The numbers
+          show what happened.
+
+      - id: steps
+        layout: steps
+        tag: The drill
+        heading: Track the four numbers
+        items:
+          - text: Write your definition of each number.
+          - text: Keep one tracker in one place.
+            note: A card, a notebook, or a spreadsheet.
+          - text: Record the numbers at the end of each working day.
+          - text: Write zero when the count is zero.
+          - text: Total each number on Friday.
+        say: >-
+          [+] Write your definition of each number before you start counting.
+          [+] Keep one tracker in one place: a card, a notebook, or a
+          spreadsheet. [+] Record the four numbers at the end of each working
+          day. It takes two minutes. [+] Write zero when the count is zero. Do
+          not skip a day. [+] Total each number on Friday.
+
+      - id: priya
+        layout: numbers
+        name: Priya
+        role: Military spouse · Bookkeeping practice
+        nums:
+          - [Contacts, "14"]
+          - [Offers, "3"]
+          - [Invoices sent, "6"]
+          - [Paid, "2"]
+        quote: "New MET for Monday: call each client with an open invoice."
+        say: >-
+          Example. Priya, a military spouse, runs a bookkeeping practice from
+          home. In one week she recorded [+] 14 contacts, [+] 3 offers, [+] 6
+          invoices sent, [+] and payments on 2 of those invoices. Four invoices
+          sat unpaid past her terms. [+] She added a MET for Monday morning:
+          call each client with an open invoice and confirm a payment date.
+          Without the numbers, she would have spent Monday hunting for new
+          clients.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Track money collected, not money promised.
+        chips:
+          - Signed agreement = offer won
+          - Money in the account = collected
+        say: >-
+          Field note. [+] Track money collected, not money promised. [+] A
+          signed agreement counts as an offer won. Money in your business
+          account counts as money collected. For help with your books or your
+          cash flow, talk to a CPA or a bookkeeper.
+
+      - id: task
+        layout: task
+        worksheet: Worksheet 3 · Four-Numbers Tracker
+        text: Define and record your four numbers.
+        checks:
+          - Write what counts for each number
+          - Record today's numbers, zeros included
+        say: >-
+          Your task today. Open Worksheet 3, the Four-Numbers Tracker. [+] Write
+          what counts as each number for your business. [+] Before you stop
+          work, record today's four numbers, zeros included.
+
+      - id: next
+        layout: end
+        next: "Chapter 5 · The Friday after-action review"
+        say: >-
+          In Chapter 5, you will review the week.
+
+  - n: 5
+    title: The Friday after-action review
+    scenes:
+      - id: open
+        layout: title
+        tag: Module 1 · Chapter 5 of 5
+        headline: The Friday after-action review
+        sub: Facts, not blame. One improvement each week.
+        say: >-
+          Chapter 5. The Friday after-action review. An after-action review, or
+          AAR, compares the plan to the result and decides what to keep and what
+          to change. It focuses on facts, not blame.
+
+      - id: questions
+        layout: list
+        tag: Five questions
+        heading: Your Friday AAR
+        items:
+          - "Planned: What did I plan to do this week?"
+          - "Happened: What happened?"
+          - "Why: Why was there a difference?"
+          - "Sustain: What worked and should continue?"
+          - "Improve: What one thing will I change next week?"
+        say: >-
+          Your Friday AAR answers five questions. [+] Planned. What did I plan to
+          do this week? [+] Happened. What happened? [+] Why. Why was there a
+          difference? [+] Sustain. What worked and should continue? [+] Improve.
+          What one thing will I change next week?
+
+      - id: rules
+        layout: compare
+        tag: Three rules
+        cols:
+          - label: 30 minutes
+            text: Right after your financial review.
+          - label: Write it down
+            text: A review held in your head disappears by Monday.
+          - label: One improvement
+            text: One change you make beats five changes you forget.
+            hi: true
+        say: >-
+          Three rules. [+] Keep it to 30 minutes, right after your financial
+          review. [+] Write the answers down. A review held in your head
+          disappears by Monday. [+] Pick one improvement, not five. One change
+          you make beats five changes you forget.
+
+      - id: steps
+        layout: steps
+        tag: The drill
+        heading: Run the review
+        items:
+          - text: Gather your MET cards, grid, and tracker.
+          - text: Check last week's improvement.
+          - text: Write what you planned and what happened.
+          - text: Write the cause of each gap in one sentence.
+          - text: List one to three items to sustain.
+          - text: Put one improvement on next week's grid.
+            note: Write it as a task with a day and a time.
+          - text: File the form in one binder.
+        say: >-
+          [+] Gather the week's MET cards, your grid, and your tracker. [+] Read
+          last week's AAR and check whether you made last week's improvement.
+          [+] Write what you planned and what happened. [+] For each gap, write
+          the cause in one sentence. State facts. [+] List one to three items to
+          sustain. [+] Write one improvement as a task with a day and time, and
+          put it on next week's grid. [+] File the form in one binder.
+
+      - id: andre
+        layout: table
+        tag: "Example · Andre, Navy veteran · Airport shuttle service"
+        heading: Andre's Friday AAR
+        cols: [Question, Andre's answer]
+        rows:
+          - [Planned, Two revenue blocks. Eight contacts with hotel front desks.]
+          - [Happened, One revenue block held. Four contacts. One offer. Five rides.]
+          - [Why, A van repair took the Wednesday revenue block. He did not reschedule it.]
+          - [Sustain, First-light task on all five working days.]
+          - [Improve, "When a block moves, write the new time on the grid within the hour."]
+        say: >-
+          Example. Andre, a Navy veteran, runs a small airport shuttle service.
+          [+] He planned two revenue blocks and eight contacts with hotel front
+          desks. [+] One block held. Four contacts, one offer, five rides
+          delivered. [+] Why? A van repair on Tuesday took the Wednesday revenue
+          block, and he did not reschedule it. [+] Sustain: his first-light task
+          on all five working days. [+] Improve: when a block moves, write the
+          new time on the grid within the hour. The van repair was outside his
+          control. The missing reschedule was inside it.
+
+      - id: field-note
+        layout: fieldnote
+        headline: Run the review in a good week too.
+        chips:
+          - A strong week shows what to sustain
+          - Partner or spouse answers first
+        say: >-
+          Field note. [+] Run the review in a good week too. A strong week shows
+          you what to sustain. [+] If a partner or spouse works in the business,
+          have each person answer the five questions before you discuss them.
+
+      - id: task
+        layout: task
+        worksheet: Worksheet 4 · Friday After-Action Review Form
+        text: Get Friday ready now.
+        checks:
+          - "30-minute block on Friday, labeled AAR"
+          - Worksheet 4 printed and ready
+        say: >-
+          Your task today. [+] Put a 30-minute block on this Friday's calendar
+          labeled AAR. [+] Print Worksheet 4, the Friday After-Action Review
+          Form, so it is ready when Friday arrives.
+
+      - id: wrap
+        layout: checklist
+        tag: Before Module 2
+        heading: Your module scorecard
+        items:
+          - First-light task on five working days in a row
+          - A MET card each working day for one week
+          - Weekly grid built and posted, rest marked first
+          - Four numbers recorded every working day
+          - One Friday AAR, one improvement on next week's grid
+        say: >-
+          Before the next module, [+] complete a first-light task on five
+          working days in a row. [+] Fill out a MET card each working day for
+          one week. [+] Build and post your weekly grid. [+] Record the four
+          numbers every working day, zeros included. [+] And run one Friday AAR.
+          Bring your four-numbers tracker to Module 2. You will use it to define
+          who you serve and what you sell.
+
+      - id: next
+        layout: end
+        next: "Module 2 · Your One-Page Business Brief"
+        say: >-
+          See you in Module 2.

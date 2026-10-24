@@ -1,0 +1,400 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family:"Barlow Condensed"; font-weight:600; src:url("../node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family:"Barlow Condensed"; font-weight:700; src:url("../node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family:"Barlow Condensed"; font-weight:800; src:url("../node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family:"Public Sans"; font-weight:400; src:url("../node_modules/@fontsource/public-sans/files/public-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family:"Public Sans"; font-weight:600; src:url("../node_modules/@fontsource/public-sans/files/public-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family:"Public Sans"; font-weight:700; src:url("../node_modules/@fontsource/public-sans/files/public-sans-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family:"IBM Plex Mono"; font-weight:400; src:url("../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family:"IBM Plex Mono"; font-weight:500; src:url("../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); }
+
+/* Harbor Dawn, the palette from the VERC launch video */
+:root {
+  --ground:#0E3D4A; --deep:#0A2F39; --main:#7DB9F2; --paper:#EEF5F7; --accent:#F2C14E;
+  --ink:#0E3D4A; --muted:#B9CDD3; --line:rgba(125,185,242,.22); --card:rgba(10,47,57,.72);
+  --rev:#F2C14E; --del:#7DB9F2; --fin:#7FD6B4; --rest:#8FA6AD;
+}
+* { box-sizing:border-box; }
+html, body { margin:0; padding:0; }
+body { width:1920px; height:1080px; overflow:hidden; background:var(--ground); color:var(--paper);
+  font-family:"Public Sans", sans-serif; position:relative; }
+.grid { position:absolute; inset:0; background-image:
+  repeating-linear-gradient(0deg, rgba(125,185,242,.10) 0 2px, transparent 2px 120px),
+  repeating-linear-gradient(90deg, rgba(125,185,242,.10) 0 2px, transparent 2px 120px);
+  background-position:-20px -40px; }
+.vig { position:absolute; inset:0; background:radial-gradient(ellipse at 30% 40%, transparent 40%, rgba(5,25,32,.55) 100%); }
+.stage { position:absolute; inset:0; }
+
+/* header */
+.hdr { position:absolute; left:120px; right:120px; top:54px; display:flex; justify-content:space-between; align-items:center; gap:48px;
+  font-family:"IBM Plex Mono"; font-size:24px; letter-spacing:.14em; text-transform:uppercase; color:var(--main); }
+.hdr > div { min-width:0; white-space:nowrap; }
+.hdr > div:first-child, .hdr .dots span { overflow:hidden; text-overflow:ellipsis; }
+.hdr .dots { display:flex; gap:10px; align-items:center; }
+.hdr .dots i { flex:none; }
+.hdr .dots i { width:44px; height:6px; border-radius:3px; background:rgba(125,185,242,.28); display:block; }
+.hdr .dots i.on { background:var(--accent); }
+.hdr .dots span { margin-right:14px; }
+
+.tag { font-family:"IBM Plex Mono"; font-weight:500; font-size:28px; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); margin:0; }
+.h1 { font-family:"Barlow Condensed"; font-weight:800; line-height:.95; margin:0; letter-spacing:-.003em; }
+.body { font-size:42px; line-height:1.28; }
+.muted { color:var(--muted); }
+.gold { color:var(--accent); }
+.b { transition:none; }
+
+/* content area: x 120-1800, y 150-880. Bottom 180px stays clear for captions. */
+.content { position:absolute; left:120px; right:120px; top:150px; height:730px; }
+.split { display:grid; grid-template-columns: 640px 1fr; gap:80px; height:100%; align-items:center; }
+.left { display:flex; flex-direction:column; gap:26px; }
+
+/* title */
+.title-wrap { position:absolute; left:120px; top:250px; width:1100px; display:flex; flex-direction:column; gap:30px; }
+.title-wrap .h1 { font-size:168px; }
+.title-wrap .bar { width:220px; height:14px; background:var(--accent); }
+.title-wrap .sub { font-size:46px; color:var(--muted); margin:0; }
+.route { position:absolute; right:150px; top:190px; width:430px; height:700px; }
+.route .ln { position:absolute; left:28px; top:20px; bottom:20px; width:6px; background:rgba(125,185,242,.35); border-radius:3px; }
+.route .wp { position:absolute; left:0; display:flex; align-items:center; gap:30px; font-family:"Barlow Condensed"; font-weight:700; font-size:40px; color:var(--muted); }
+.route .wp .d { width:62px; height:62px; border-radius:50%; border:5px solid rgba(125,185,242,.55); background:var(--ground);
+  display:flex; align-items:center; justify-content:center; font-family:"IBM Plex Mono"; font-size:26px; color:var(--main); flex:none; }
+.route .wp.on { color:var(--paper); }
+.route .wp.on .d { border-color:var(--accent); background:var(--accent); color:var(--ground); font-weight:500; }
+.logo-card { position:absolute; background:#fff; border:6px solid var(--paper); box-shadow:0 18px 40px rgba(0,0,0,.28); overflow:hidden; }
+.logo-card img { width:100%; height:100%; object-fit:contain; display:block; }
+
+/* outline: horizontal route */
+.hroute { position:absolute; left:0; right:0; top:380px; height:300px; }
+.hroute .ln { position:absolute; left:150px; right:150px; top:40px; height:6px; background:rgba(125,185,242,.35); border-radius:3px; }
+.hroute .wp { position:absolute; top:0; width:280px; margin-left:-140px; display:flex; flex-direction:column; align-items:center; gap:26px; text-align:center; }
+.hroute .wp .d { width:86px; height:86px; border-radius:50%; background:var(--accent); color:var(--ground); display:flex; align-items:center; justify-content:center;
+  font-family:"Barlow Condensed"; font-weight:800; font-size:52px; box-shadow:0 0 0 12px var(--ground); }
+.hroute .wp .t { font-family:"Barlow Condensed"; font-weight:700; font-size:44px; line-height:1.05; }
+
+/* photo */
+.photo { position:absolute; inset:0; }
+.photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.photo .shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(6,26,32,.94) 0%, rgba(6,26,32,.82) 34%, rgba(6,26,32,.22) 60%, rgba(6,26,32,0) 80%); }
+.photo .shade2 { position:absolute; inset:0; background:linear-gradient(0deg, rgba(6,20,25,.5) 0%, transparent 20%), linear-gradient(180deg, rgba(6,20,25,.55) 0%, transparent 16%); }
+.credit { position:absolute; left:120px; bottom:40px; font-family:"IBM Plex Mono"; font-size:20px; letter-spacing:.1em; color:rgba(238,245,247,.7); text-transform:uppercase; }
+
+/* list */
+.items { display:flex; flex-direction:column; gap:0; }
+.items .it { display:flex; gap:30px; align-items:center; padding:22px 0; border-top:2px solid var(--line); font-size:42px; line-height:1.2; }
+.items .it:last-child { border-bottom:2px solid var(--line); }
+.items .it .sq { width:22px; height:22px; background:var(--accent); flex:none; }
+.items .it .lbl { font-family:"Barlow Condensed"; font-weight:800; color:var(--accent); font-size:46px; min-width:170px; text-transform:uppercase; letter-spacing:.01em; }
+
+/* compare */
+.content.mid { display:flex; flex-direction:column; justify-content:center; }
+.cols { display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; margin-top:44px; }
+.colc { background:var(--card); border:3px solid rgba(125,185,242,.35); border-radius:22px; padding:50px 46px; min-height:400px; display:flex; flex-direction:column; gap:28px; }
+.colc .lbl { font-family:"Barlow Condensed"; font-weight:800; font-size:64px; line-height:1; }
+.colc .tx { font-size:44px; line-height:1.28; color:var(--muted); }
+.colc.hi { border-color:var(--accent); background:rgba(242,193,78,.10); }
+.colc.hi .lbl { color:var(--accent); }
+.colc.hi .tx { color:var(--paper); }
+
+/* steps */
+.steps { position:relative; display:flex; flex-direction:column; gap:22px; }
+.steps .ln { position:absolute; left:33px; top:30px; bottom:30px; width:6px; background:rgba(125,185,242,.35); border-radius:3px; }
+.steps .st { position:relative; display:flex; gap:34px; align-items:flex-start; }
+.steps .st .d { width:72px; height:72px; border-radius:50%; background:var(--ground); border:5px solid var(--accent); color:var(--accent); flex:none;
+  display:flex; align-items:center; justify-content:center; font-family:"Barlow Condensed"; font-weight:800; font-size:40px; }
+.steps .st .tx { padding-top:10px; font-size:40px; line-height:1.2; font-weight:600; }
+.steps .st .nt { margin-top:8px; font-size:30px; font-weight:400; color:var(--main); line-height:1.3; }
+
+/* example */
+.ex-name { font-size:150px; }
+.ex-role { font-size:40px; color:var(--muted); margin:0; line-height:1.25; }
+.paper { background:var(--paper); color:var(--ink); border-radius:18px; padding:50px 56px; box-shadow:0 24px 60px rgba(0,0,0,.35); }
+.paper .row { display:grid; grid-template-columns:230px 1fr; gap:30px; padding:26px 0; border-top:2px solid rgba(14,61,74,.14); align-items:baseline; }
+.paper .row:first-child { border-top:none; }
+.paper .row .k { font-family:"Barlow Condensed"; font-weight:800; font-size:48px; color:#B07A12; text-transform:uppercase; }
+.paper .row .v { font-size:40px; line-height:1.25; }
+.quote { font-family:"Barlow Condensed"; font-weight:700; font-size:58px; line-height:1.05; color:var(--accent); border-left:10px solid var(--accent); padding-left:30px; }
+
+/* field note */
+.fn { position:absolute; left:120px; top:260px; width:1500px; display:flex; flex-direction:column; gap:40px; }
+.fn .icon { width:110px; height:110px; border-radius:24px; border:4px solid var(--accent); display:flex; align-items:center; justify-content:center; }
+.fn .icon svg { width:62px; height:62px; fill:none; stroke:var(--accent); stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+.fn .h1 { font-size:124px; }
+.chips { display:flex; gap:24px; flex-wrap:wrap; }
+.chip { font-family:"Barlow Condensed"; font-weight:700; font-size:44px; padding:18px 34px; border-radius:16px; border:3px solid var(--main); color:var(--paper); background:var(--card); }
+
+/* task */
+.task .h1 { font-size:84px; }
+.checks { display:flex; flex-direction:column; gap:22px; margin-top:10px; }
+.ck { display:flex; gap:26px; align-items:center; font-size:40px; font-weight:600; }
+.ck .bx { width:46px; height:46px; border:4px solid var(--accent); border-radius:8px; flex:none; position:relative; }
+.ck .bx::after { content:""; position:absolute; left:11px; top:2px; width:12px; height:24px; border-right:5px solid var(--accent); border-bottom:5px solid var(--accent); transform:rotate(40deg); }
+.wbpage { position:absolute; right:150px; top:110px; width:560px; transform:rotate(3deg); border:8px solid #fff; box-shadow:0 30px 70px rgba(0,0,0,.45); background:#fff; }
+.wbpage img { width:100%; display:block; }
+/* worksheet page drawn from the workbook markdown when no page image is supplied */
+.wbhtml { height:724px; overflow:hidden; padding:34px 36px; color:#1F2933; font-family:"Public Sans"; font-size:14px; line-height:1.4;
+  -webkit-mask-image:linear-gradient(180deg, #000 82%, transparent 100%); mask-image:linear-gradient(180deg, #000 82%, transparent 100%); }
+.wbhtml .wbh { font-size:9px; color:#6B7C85; text-align:right; margin-bottom:10px; letter-spacing:.04em; }
+.wbhtml h2 { font-size:21px; color:#1F3A5F; margin:0 0 8px; font-weight:700; }
+.wbhtml h3 { font-size:15px; color:#1F3A5F; margin:14px 0 6px; font-weight:700; }
+.wbhtml p { margin:0 0 8px; }
+.wbhtml ol, .wbhtml ul { margin:0 0 8px; padding-left:20px; }
+.wbhtml li { margin:0 0 3px; }
+.wbhtml ul.cb { list-style:none; padding-left:0; }
+.wbhtml ul.cb li::before { content:""; display:inline-block; width:10px; height:10px; border:1.5px solid #1F3A5F; margin-right:8px; vertical-align:-1px; }
+.wbhtml table { width:100%; border-collapse:collapse; margin:4px 0 10px; font-size:12px; }
+.wbhtml th { background:#1F3A5F; color:#fff; text-align:left; padding:4px 6px; font-weight:600; }
+.wbhtml td { border:1px solid #C9D3DA; padding:4px 6px; height:16px; }
+.wbhtml td.ex { color:#6B7C85; font-style:italic; }
+.wbhtml .ln { border-bottom:1px solid #9AA9B2; height:20px; }
+.wbhtml blockquote { margin:6px 0 10px; padding:8px 10px; background:#EEF2F7; border-left:3px solid #B8862B; }
+.need { position:absolute; inset:0; display:flex; align-items:flex-end; justify-content:flex-end; padding:0 120px 220px 0;
+  font-family:"IBM Plex Mono"; font-size:24px; letter-spacing:.08em; color:var(--accent); text-transform:uppercase;
+  background:linear-gradient(135deg, #1B4F5E 0%, #0A2F39 100%); }
+.wblabel { font-family:"IBM Plex Mono"; font-size:26px; color:var(--main); letter-spacing:.08em; text-transform:uppercase; }
+
+/* end */
+.end { position:absolute; left:120px; right:120px; top:200px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:34px; }
+.end .h1 { font-size:110px; }
+.end .url { font-family:"Barlow Condensed"; font-weight:800; font-size:64px; }
+.disc { position:absolute; left:120px; right:120px; bottom:40px; text-align:center; font-size:22px; line-height:1.5; color:rgba(238,245,247,.62); }
+
+/* big number */
+.bign { font-family:"Barlow Condensed"; font-weight:800; font-size:640px; line-height:.8; color:var(--accent); }
+
+/* statement */
+.stmt { position:absolute; left:120px; top:250px; width:1500px; display:flex; flex-direction:column; gap:36px; }
+.stmt .h1 { font-size:120px; }
+.stmt .sub { font-size:46px; color:var(--muted); max-width:1300px; line-height:1.3; margin:0; }
+
+/* MET card */
+.idx { background:#FBF8F0; color:var(--ink); border-radius:14px; padding:34px 50px 40px; box-shadow:0 24px 60px rgba(0,0,0,.35); width:1060px; }
+.idx .fl { display:flex; gap:24px; align-items:baseline; padding:14px 0 18px; border-bottom:2px solid rgba(125,185,242,.5); }
+.idx .k { font-family:"Barlow Condensed"; font-weight:800; font-size:38px; color:#B07A12; text-transform:uppercase; min-width:200px; flex:none; }
+.idx .v { font-size:34px; line-height:1.28; }
+.idx .met { display:flex; gap:24px; align-items:center; padding:16px 0; border-bottom:2px solid rgba(125,185,242,.5); }
+.idx .met:last-child { border-bottom:none; }
+.idx .met .n { font-family:"Barlow Condensed"; font-weight:800; font-size:40px; min-width:200px; flex:none; }
+.idx .met .v { flex:1; }
+.idx .r { width:58px; height:58px; border-radius:50%; background:var(--accent); color:var(--ink); font-family:"Barlow Condensed"; font-weight:800; font-size:36px;
+  display:flex; align-items:center; justify-content:center; flex:none; }
+.idx .r.no { background:transparent; }
+.idx .rule { height:8px; background:var(--ink); border-radius:4px; margin:10px 0 20px; }
+.idx .below { display:flex; gap:24px; align-items:baseline; color:#5B7480; }
+.idx .below .list { font-size:32px; line-height:1.4; }
+
+/* tiles */
+.tiles { display:grid; grid-template-columns:repeat(4, 1fr); gap:30px; margin-top:56px; }
+.tile { background:var(--card); border-radius:22px; border-top:14px solid var(--main); padding:40px 36px; min-height:380px; display:flex; flex-direction:column; gap:22px; }
+.tile .lbl { font-family:"Barlow Condensed"; font-weight:800; font-size:58px; line-height:1; }
+.tile .tx { font-size:34px; line-height:1.3; color:var(--muted); }
+
+/* weekly grid */
+.wk { width:100%; border-collapse:separate; border-spacing:10px 10px; font-size:30px; }
+.wk th { font-family:"IBM Plex Mono"; font-weight:500; font-size:22px; letter-spacing:.12em; text-transform:uppercase; color:var(--main); text-align:left; padding:0 18px; }
+.wk td { height:76px; padding:0 22px; border-radius:12px; background:rgba(125,185,242,.08); color:var(--muted); }
+.wk td.day { background:none; font-family:"Barlow Condensed"; font-weight:700; font-size:38px; color:var(--paper); width:200px; padding:0; }
+.wk td.REV { background:var(--rev); color:var(--ink); font-weight:600; }
+.wk td.DEL { background:rgba(125,185,242,.85); color:var(--ink); font-weight:600; }
+.wk td.FIN { background:var(--fin); color:var(--ink); font-weight:600; }
+.wk td.REST { background:var(--rest); color:var(--ink); font-weight:600; }
+.wk td.ONCALL { background:transparent; border:3px dashed var(--main); color:var(--paper); font-weight:600; }
+
+/* table */
+.tbl { width:100%; border-collapse:collapse; font-size:36px; margin-top:40px; }
+.tbl th { text-align:left; font-family:"IBM Plex Mono"; font-weight:500; font-size:24px; letter-spacing:.12em; text-transform:uppercase; color:var(--main); padding:0 26px 18px; }
+.tbl td { padding:26px; border-top:2px solid var(--line); line-height:1.25; vertical-align:top; }
+.tbl td:first-child { font-family:"Barlow Condensed"; font-weight:800; font-size:44px; color:var(--accent); width:520px; }
+.tbl.dense { font-size:32px; margin-top:26px; }
+.tbl.dense td { padding:16px 26px; }
+.tbl.dense td:first-child { font-size:38px; width:360px; }
+
+/* numbers */
+.nums { display:grid; grid-template-columns:repeat(4, 1fr); gap:28px; }
+.num { background:var(--card); border:3px solid rgba(125,185,242,.35); border-radius:22px; padding:30px 34px; display:flex; flex-direction:column; gap:6px; }
+.num .v { font-family:"Barlow Condensed"; font-weight:800; font-size:150px; line-height:1; color:var(--accent); }
+.num .k { font-family:"IBM Plex Mono"; font-size:24px; letter-spacing:.12em; text-transform:uppercase; color:var(--main); }
+.num.warn { border-color:var(--accent); }
+</style>
+</head>
+<body>
+<div class="grid"></div><div class="vig"></div>
+<div class="stage" id="stage"></div>
+<script>
+const esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+let B = 0;               // build counter while laying out a scene
+const b = () => ` class-b data-b="${++B}"`;
+const ICON_FLAG = '<svg viewBox="0 0 24 24"><path d="M4 22V4"/><path d="M4 4h12l-2 4 2 4H4"/></svg>';
+
+const asset = (m, name) => (m.files || {})[name] || null;
+const modLabel = m => `${m.track === 'vetcert' ? 'VetCert ' : ''}Module ${m.module}`;
+
+function header(m) {
+  const dots = Array.from({length:m.chapters}, (_,i) => `<i class="${i+1===m.ch?'on':''}"></i>`).join('');
+  return `<div class="hdr"><div>VERC · ${modLabel(m)} · ${esc(m.short)}</div>
+    <div class="dots"><span>Ch ${m.ch} · ${esc(m.chTitle)}</span>${dots}</div></div>`;
+}
+
+function worksheetPage(s, m) {
+  const url = s.page ? asset(m, s.page) : null;
+  if (url) return `<div class="wbpage"><img src="${url}"></div>`;
+  const num = (String(s.worksheet).match(/Worksheet\s+(\d+)/i) || [])[1];
+  const html = num && m.worksheets ? m.worksheets[num] : null;
+  return html ? `<div class="wbpage wbhtml"><div class="wbh">VERC | ${esc(m.title)}</div>${html}</div>` : '';
+}
+
+const L = {
+  title(s, m) {
+    const wps = m.chTitles.map((t,i) => {
+      const y = 20 + i * (640/(m.chTitles.length-1)) - 31;
+      return `<div class="wp ${i+1===m.ch?'on':''}" style="top:${y}px"><div class="d">${i+1}</div><div>${esc(t)}</div></div>`;
+    }).join('');
+    return `<div class="title-wrap"><p class="tag">${esc(s.tag)}</p><h1 class="h1"${String(s.headline).length > 22 ? ' style="font-size:140px"' : ''}>${esc(s.headline)}</h1>
+      <div class="bar"></div><p class="sub">${esc(s.sub)}</p></div>
+      <div class="route"><div class="ln"></div>${wps}</div>
+      <div class="logo-card" style="left:120px; top:80px; width:250px; height:125px;"><img src="${asset(m, 'verc-logo.png') || ''}"></div>`;
+  },
+  outline(s, m) {
+    const n = s.items.length;
+    const wps = s.items.map((t,i) => `<div class="wp"${b()} style="left:${150 + i*(1380/(n-1))}px"><div class="d">${i+1}</div><div class="t">${esc(t)}</div></div>`).join('');
+    return header(m) + `<div class="content"><p class="tag" style="margin-top:60px">${modLabel(m)} · ${n} chapters</p>
+      <h1 class="h1" style="font-size:120px;margin-top:20px">${esc(s.heading)}</h1>
+      <div class="hroute"><div class="ln"></div>${wps}</div></div>`;
+  },
+  photo(s, m) {
+    const url = asset(m, s.photo);
+    const bg = url ? `<div class="photo"><img src="${url}"><div class="shade"></div><div class="shade2"></div></div>`
+                   : `<div class="need">Photo needed: ${esc(s.photo)} in output/video/assets</div>`;
+    return bg + header(m) +
+      `<div class="stmt" style="top:330px;width:1000px"><p class="tag">${esc(s.tag)}</p><h1 class="h1"${b()} style="font-size:128px">${esc(s.headline)}</h1></div>
+      <div class="credit">${esc(s.credit)}</div>`;
+  },
+  list(s, m) {
+    const its = s.items.map(t => {
+      const mm = String(t).match(/^([A-Za-z]+):\s*(.*)$/);
+      return mm ? `<div class="it"${b()}><div class="lbl">${esc(mm[1])}</div><div>${esc(mm[2])}</div></div>`
+                : `<div class="it"${b()}><div class="sq"></div><div>${esc(t)}</div></div>`;
+    }).join('');
+    return header(m) + `<div class="content"><div class="split"><div class="left"><p class="tag">${esc(s.tag)}</p>
+      <h1 class="h1" style="font-size:92px">${esc(s.heading)}</h1></div><div class="items">${its}</div></div></div>`;
+  },
+  compare(s, m) {
+    const cs = s.cols.map(c => `<div class="colc ${c.hi?'hi':''}"${b()}><div class="lbl">${esc(c.label)}</div><div class="tx">${esc(c.text)}</div></div>`).join('');
+    return header(m) + `<div class="content mid"><p class="tag">${esc(s.tag)}</p><div class="cols">${cs}</div></div>`;
+  },
+  steps(s, m) {
+    const its = s.items.map((it,i) => `<div class="st"${b()}><div class="d">${i+1}</div><div class="tx">${esc(it.text)}${it.note?`<div class="nt">${esc(it.note)}</div>`:''}</div></div>`).join('');
+    const gap = s.items.length > 6 ? 12 : 22;
+    return header(m) + `<div class="content"><div class="split"><div class="left"><p class="tag">${esc(s.tag)}</p>
+      <h1 class="h1" style="font-size:104px">${esc(s.heading)}</h1></div><div class="steps" style="gap:${gap}px"><div class="ln"></div>${its}</div></div></div>`;
+  },
+  example(s, m) {
+    const rows = s.rows.map(r => `<div class="row"${b()}><div class="k">${esc(r.k)}</div><div class="v">${esc(r.v)}</div></div>`).join('');
+    return header(m) + `<div class="content"><div class="split" style="grid-template-columns:620px 1fr"><div class="left"><p class="tag">Example</p>
+      <h1 class="h1 ex-name">${esc(s.name)}</h1><p class="ex-role">${esc(s.role)}</p>
+      <div class="quote"${b()} style="margin-top:30px">${esc(s.quote)}</div></div>
+      <div class="paper">${rows}</div></div></div>`;
+  },
+  fieldnote(s, m) {
+    return header(m) + `<div class="fn"><div style="display:flex;gap:34px;align-items:center"><div class="icon">${ICON_FLAG}</div><p class="tag">Field note</p></div>
+      <h1 class="h1"${b()}>${esc(s.headline)}</h1><div class="chips"${b()}>${s.chips.map(c => `<div class="chip">${esc(c)}</div>`).join('')}</div></div>`;
+  },
+  task(s, m) {
+    const cks = s.checks.map(c => `<div class="ck"${b()}><div class="bx"></div><div>${esc(c)}</div></div>`).join('');
+    return header(m) + `<div class="content task"><div style="width:1000px;display:flex;flex-direction:column;gap:28px;margin-top:40px">
+      <p class="tag">Your task today</p><div class="wblabel">${esc(s.worksheet)}</div><h1 class="h1">${esc(s.text)}</h1><div class="checks">${cks}</div></div></div>
+      ${worksheetPage(s, m)}`;
+  },
+  end(s, m) {
+    const dod = s.dod ? ' The appearance of U.S. Department of Defense (DoD) visual information does not imply or constitute DoD endorsement. Imagery: DVIDS.' : '';
+    return `<div class="end"><p class="tag">Up next</p><h1 class="h1">${esc(s.next)}</h1>
+      <div class="logo-card" style="position:relative;width:420px;height:210px;margin-top:30px"><img src="${asset(m, 'verc-logo.png') || ''}"></div>
+      <div class="url">vercusa.com</div></div>
+      <div class="disc">VERC is a d/b/a of Casa Concepts LLC. VERC is not affiliated with DoD, SBA or VA.${dod}</div>`;
+  },
+  bignum(s, m) {
+    return header(m) + `<div class="content"><div style="display:flex;align-items:center;gap:90px;height:100%">
+      <div class="bign">${esc(s.num)}</div><div style="display:flex;flex-direction:column;gap:30px">
+      <h1 class="h1" style="font-size:130px">${esc(s.headline)}</h1><p class="body gold"${b()} style="font-size:60px;margin:0;font-family:'Barlow Condensed';font-weight:700">${esc(s.sub)}</p></div></div></div>`;
+  },
+  statement(s, m) {
+    return header(m) + `<div class="stmt"><p class="tag">${esc(s.tag)}</p><h1 class="h1">${esc(s.headline)}</h1><p class="sub"${b()}>${esc(s.sub)}</p></div>`;
+  },
+  card(s, m) {
+    const mets = s.mets.map((x,i) => `<div class="met"><div class="n">MET ${i+1}</div><div class="v">${esc(x.text)}</div><div class="r ${x.r?'':'no'}" data-r="1">${x.r?'R':''}</div></div>`).join('');
+    return header(m) + `<div class="content"><div class="split" style="grid-template-columns:560px 1fr"><div class="left"><p class="tag">Worksheet 1</p>
+      <h1 class="h1" style="font-size:104px">${esc(s.heading)}</h1>
+      <p class="body muted" style="margin:0">One first-light task. Three METs. A line. Admin below it.</p></div>
+      <div class="idx">
+        <div class="fl"${b()}><div class="k">First light</div><div class="v">${esc(s.first_light)}</div></div>
+        <div class="mets"${b()}>${mets}</div>
+        <div class="rmarks" data-b="${++B}" class-b></div>
+        <div${b()}><div class="rule"></div><div class="below"><div class="k">Below the line</div><div class="list">${s.below.map(esc).join(' · ')}</div></div></div>
+      </div></div></div>`;
+  },
+  tiles(s, m) {
+    const ts = s.tiles.map(t => `<div class="tile"${b()}><div class="lbl">${esc(t.label)}</div><div class="tx">${esc(t.text)}</div></div>`).join('');
+    return header(m) + `<div class="content"><p class="tag" style="margin-top:30px">${esc(s.tag)}</p>
+      <h1 class="h1" style="font-size:100px;margin-top:18px">${esc(s.heading)}</h1><div class="tiles">${ts}</div></div>`;
+  },
+  grid(s, m) {
+    const kind = v => { const t = String(v).toUpperCase(); if (t.startsWith('REV')) return 'REV'; if (t.startsWith('DEL')) return 'DEL';
+      if (t.startsWith('FIN')) return 'FIN'; if (t.startsWith('REST')) return 'REST'; if (t.startsWith('ON')) return 'ONCALL'; return ''; };
+    const order = {REV:1, DEL:2, FIN:3, ONCALL:4, REST:4};
+    const label = v => { const t = String(v); const i = t.indexOf(':'); return i > 0 ? (x => x.charAt(0).toUpperCase() + x.slice(1))(t.slice(i+1).trim()) : ({DEL:'Delivery',REST:'Rest',ONCALL:'On call',REV:'Revenue',FIN:'Financial review'}[kind(t)] || t); };
+    const rows = s.rows.map(r => `<tr><td class="day">${esc(r[0])}</td>${[r[1], r[2]].map(c => `<td class="${kind(c)}" data-b="${B + order[kind(c)]}" class-b>${esc(label(c))}</td>`).join('')}</tr>`).join('');
+    B += 4;
+    return header(m) + `<div class="content"><div class="split" style="grid-template-columns:480px 1fr"><div class="left"><p class="tag">Example</p>
+      <h1 class="h1 ex-name" style="font-size:140px">${esc(s.name)}</h1><p class="ex-role">${esc(s.role)}</p></div>
+      <table class="wk"><tr><th></th><th>Morning</th><th>Afternoon</th></tr>${rows}</table></div></div>`;
+  },
+  table(s, m) {
+    const rows = s.rows.map(r => `<tr${b()}><td>${esc(r[0])}</td><td>${esc(r.slice(1).join(', '))}</td></tr>`).join('');
+    return header(m) + `<div class="content"><p class="tag" style="margin-top:10px">${esc(s.tag)}</p>
+      <h1 class="h1" style="font-size:${s.rows.length >= 5 ? 84 : 96}px;margin-top:16px">${esc(s.heading)}</h1>
+      <table class="tbl${s.rows.length >= 5 ? ' dense' : ''}"><tr><th>${esc(s.cols[0])}</th><th>${esc(s.cols[1])}</th></tr>${rows}</table></div>`;
+  },
+  numbers(s, m) {
+    const ns = s.nums.map((x,i) => `<div class="num ${i===s.nums.length-1?'warn':''}"${b()}><div class="v">${esc(x[1])}</div><div class="k">${esc(x[0])}</div></div>`).join('');
+    return header(m) + `<div class="content"><p class="tag" style="margin-top:20px">Example</p>
+      <div style="display:flex;align-items:baseline;gap:40px;margin-top:10px"><h1 class="h1 ex-name" style="font-size:130px">${esc(s.name)}</h1><p class="ex-role">${esc(s.role)}</p></div>
+      <div class="nums" style="margin-top:40px">${ns}</div><div class="quote"${b()} style="margin-top:50px">${esc(s.quote)}</div></div>`;
+  },
+  checklist(s, m) {
+    const its = s.items.map(t => `<div class="ck"${b()}><div class="bx"></div><div>${esc(t)}</div></div>`).join('');
+    return header(m) + `<div class="content"><div class="split" style="grid-template-columns:560px 1fr"><div class="left"><p class="tag">${esc(s.tag)}</p>
+      <h1 class="h1" style="font-size:104px">${esc(s.heading)}</h1></div><div class="checks" style="gap:34px">${its}</div></div></div>`;
+  },
+};
+
+// The example layout numbers its quote last. Fix the order after layout.
+function renumberExample(root, s) {
+  if (s.layout !== 'example') return;
+  const q = root.querySelector('.quote'); const rows = root.querySelectorAll('.paper .row');
+  rows.forEach((r,i) => r.dataset.b = i+1); if (q) q.dataset.b = rows.length + 1;
+}
+
+window.renderScene = (scene, meta) => {
+  B = 0;
+  const html = L[scene.layout](scene, meta).replace(/ class-b /g, ' ').replace(/ class-b>/g, '>').replace(/ class-b/g, '');
+  const st = document.getElementById('stage'); st.innerHTML = html;
+  renumberExample(st, scene);
+  // keep hyphenated words in headings on one line ("first-light")
+  st.querySelectorAll('.h1, .lbl, .t').forEach(h => { h.innerHTML = h.innerHTML.replace(/([A-Za-z]+(?:-[A-Za-z]+)+)/g, '<span style="white-space:nowrap">$1</span>'); });
+  // the MET card shows R marks as their own build
+  if (scene.layout === 'card') {
+    const rb = st.querySelector('.rmarks').dataset.b;
+    st.querySelectorAll('[data-r]').forEach(el => el.dataset.b = rb);
+  }
+  return Math.max(0, ...[...st.querySelectorAll('[data-b]')].map(e => +e.dataset.b));
+};
+
+window.setLevel = (lvl) => {
+  document.querySelectorAll('#stage [data-b]').forEach(el => { el.style.opacity = (+el.dataset.b <= lvl) ? 1 : 0; });
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "verc-lesson-video",
+  "private": true,
+  "type": "module",
+  "description": "Renders VERC lesson video frames from the YAML scripts.",
+  "dependencies": {
+    "@fontsource/barlow-condensed": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/public-sans": "^5.3.0",
+    "js-yaml": "^4.1.0",
+    "playwright": "^1.64.1"
+  },
+  "scripts": {
+    "setup": "npx playwright install chromium"
+  }
+}

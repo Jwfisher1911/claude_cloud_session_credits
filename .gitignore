@@ -15,3 +15,5 @@ venv/
 
 # Word lock files
 ~$*.docx
+video/node_modules/
+video/build/
