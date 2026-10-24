@@ -1,4 +1,4 @@
-# Daily Battle Drills
+# Daily Revenue Rhythm
 
 ## What you will be able to do
 

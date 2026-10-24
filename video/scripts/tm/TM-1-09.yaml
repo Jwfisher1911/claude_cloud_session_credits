@@ -1,4 +1,4 @@
-# VERC training module video script: TM 1-09 Daily Battle Drills
+# VERC training module video script: TM 1-09 Daily Revenue Rhythm
 # Built from the Module 1 Operational Battle Rhythm videos (video/scripts/core/01-battle-rhythm.yaml).
 # Voice: chapters 2 to 4 reuse the Module 1 narration. Chapter 1's opening scene and Chapter 5's
 # last two scenes are new narration, spliced in at scene breaks.
@@ -10,8 +10,8 @@
 
 module: "1-09"
 track: tm
-title: Daily Battle Drills
-short: Battle Drills
+title: Daily Revenue Rhythm
+short: Revenue Rhythm
 
 chapters:
 
@@ -21,10 +21,10 @@ chapters:
       - id: open
         layout: title
         tag: VERC · TM 1-09
-        headline: Daily Battle Drills
+        headline: Daily Revenue Rhythm
         sub: Chapter 1 of 5 · The first-light task
         say: >-
-          Welcome to TM 1-09, Daily Battle Drills. A battle rhythm is the
+          Welcome to TM 1-09, Daily Revenue Rhythm. A battle rhythm is the
           repeating schedule a military unit runs each day and each week.
           Meetings, reports, and actions happen at set times, so nobody wastes
           effort deciding what comes next.

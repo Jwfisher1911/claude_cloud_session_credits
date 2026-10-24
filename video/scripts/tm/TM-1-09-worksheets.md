@@ -1,4 +1,4 @@
-# Daily Battle Drills Workbook
+# Daily Revenue Rhythm Workbook
 
 ## How to use this workbook
 
