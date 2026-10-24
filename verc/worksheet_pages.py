@@ -61,7 +61,8 @@ def section_html(lines: list[str]) -> str:
         elif re.match(r"^\d+\.\s", line):
             items = []
             while i < len(lines) and re.match(r"^\d+\.\s", lines[i]):
-                items.append(f"<li>{inline(re.sub(r'^\d+\.\s', '', lines[i]))}</li>")
+                text = re.sub(r"^\d+\.\s", "", lines[i])
+                items.append(f"<li>{inline(text)}</li>")
                 i += 1
             out.append("<ol>" + "".join(items) + "</ol>")
             continue
