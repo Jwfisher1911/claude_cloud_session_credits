@@ -384,6 +384,11 @@ window.renderScene = (scene, meta) => {
   renumberExample(st, scene);
   // keep hyphenated words in headings on one line ("first-light")
   st.querySelectorAll('.h1, .lbl, .t').forEach(h => { h.innerHTML = h.innerHTML.replace(/([A-Za-z]+(?:-[A-Za-z]+)+)/g, '<span style="white-space:nowrap">$1</span>'); });
+  // an empty card waits for its first row
+  st.querySelectorAll('.paper, .idx').forEach(card => {
+    const kids = [...card.querySelectorAll('[data-b]')].map(e => +e.dataset.b);
+    if (kids.length) card.dataset.b = Math.min(...kids);
+  });
   // the MET card shows R marks as their own build
   if (scene.layout === 'card') {
     const rb = st.querySelector('.rmarks').dataset.b;

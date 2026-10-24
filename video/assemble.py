@@ -63,20 +63,36 @@ def words(text: str) -> int:
     return len(text.split())
 
 
+def scene_sentences(say: str) -> list[str]:
+    """Caption lines for a scene: whole sentences of the narration, ignoring [+] markers."""
+    import re as _re
+    return sentences(_re.sub(r"\s*\[\+\]\s*", " ", str(say)).strip())
+
+
 def estimate(chapter: dict) -> list[dict]:
     """Estimated timings: per scene, its start, its cue times, and caption cues."""
     t = 0.0
     out = []
     for sc in chapter["scenes"]:
         start = t
-        cues, caps = [], []
-        for k, seg in enumerate(segments(sc["say"])):
-            if k > 0:
-                cues.append(round(t, 2))
-            for sen in sentences(seg):
-                d = words(sen) / WPM * 60 + SENTENCE_PAUSE
-                caps.append({"start": round(t, 2), "end": round(t + d - 0.08, 2), "text": sen})
-                t += d
+        segs = segments(sc["say"])
+        # word offsets where each [+] segment starts
+        seg_starts, n = [], 0
+        for seg in segs:
+            seg_starts.append(n)
+            n += words(seg)
+        caps, cues, w_done = [], [], 0
+        sec_per_word = 60 / WPM
+        word_time = []
+        for sen in scene_sentences(sc["say"]):
+            for _ in range(words(sen)):
+                word_time.append(t)
+                t += sec_per_word
+            caps.append({"start": round(word_time[w_done], 2), "end": round(t - 0.08, 2), "text": sen})
+            w_done += words(sen)
+            t += SENTENCE_PAUSE
+        for k in seg_starts[1:]:
+            cues.append(round(word_time[min(k, len(word_time) - 1)], 2))
         t += SCENE_TAIL
         out.append({"id": sc["id"], "start": round(start, 2), "end": round(t, 2), "cues": cues, "captions": caps})
     return out

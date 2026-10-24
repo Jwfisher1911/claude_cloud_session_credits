@@ -191,7 +191,23 @@ Scenes with the `photo` layout need the photo in `output/video/assets/`. The pre
 
 ### Voice
 
-The previews are silent. When the voice is ready (your own recording, or an ElevenLabs voice), the same cues get timed to the voice, and each chapter is rebuilt with narration, captions, and an MP3 version.
+The previews are silent. To build a finished chapter, put its narration in `output/video/voice/<module>/`, named by chapter: `ch1.mp3`, `ch2.mp3`, and so on. The narration must read the script's words in order (your recording, or your ElevenLabs voice). Then:
+
+```
+pip install -r video/requirements-voice.txt
+python3 video/preview.py --module battle-rhythm --voiced
+```
+
+It times every on-screen item and caption to the voice and writes four files per chapter to `output/video/final/<module>/`:
+
+| File | Use |
+|---|---|
+| `VERC-M1-Ch1.mp4` | Upload to Payhip or another course player, with the `.vtt` as its captions |
+| `VERC-M1-Ch1.vtt` | Captions file |
+| `VERC-M1-Ch1-Captioned.mp4` | Captions burned in, for social media and downloads |
+| `VERC-M1-Ch1-Audio.mp3` | Audio-only version |
+
+The timing step runs offline and costs nothing. If it stops on a word it does not know, add the word to `EXTRA_WORDS` in `video/align.py`.
 
 ## Before you publish
 1. Open the newest report in `output/reports/`.

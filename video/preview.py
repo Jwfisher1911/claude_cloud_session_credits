@@ -7,6 +7,15 @@ Spends no API credits. Needs Node.js and ffmpeg (see README, "Lesson videos").
     python3 video/preview.py --module five-ws --chapters 1    only Chapter 1
     python3 video/preview.py --module five-ws --frames-only   storyboard frames, no MP4s (fast)
     python3 video/preview.py --track core                     every core module with a script
+    python3 video/preview.py --module battle-rhythm --voiced  final chapters from voice files
+
+Voiced chapters: put the narration for each chapter in
+    output/video/voice/<module>/ch1.mp3, ch2.mp3, ...
+--voiced times every item and caption to the voice and writes
+    output/video/final/<module>/VERC-M1-Ch1.mp4             clean, for course players (add the .vtt)
+    output/video/final/<module>/VERC-M1-Ch1-Captioned.mp4   captions burned in, for social and downloads
+    output/video/final/<module>/VERC-M1-Ch1.vtt             captions file
+    output/video/final/<module>/VERC-M1-Ch1-Audio.mp3       audio-only version
 
 Output, per module:
     output/video/storyboards/<module>/index.html   open this in your browser
@@ -53,7 +62,55 @@ def run(cmd: list[str]) -> None:
     subprocess.run(cmd, check=True)
 
 
-def build_module(track: dict, number: int, module: dict, chapters: list[int] | None, frames_only: bool) -> Path | None:
+def level_voice(src: Path, dst: Path) -> None:
+    """Two-pass loudness match to -16 LUFS, the usual target for course audio."""
+    chain = "highpass=f=70,loudnorm=I=-16:TP=-1.5:LRA=7"
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(src), "-af", chain + ":print_format=json", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    m = json.loads(r.stderr[r.stderr.rindex("{"):r.stderr.rindex("}") + 1])
+    measured = (f":measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
+                f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
+    run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(src), "-af", chain + measured, "-ar", "48000", "-ac", "1", str(dst)])
+
+
+def build_voiced(track: dict, number: int, stem: str, script_path: Path, build: Path, render: list[str],
+                 chapters: list[int] | None) -> list[Path]:
+    voice_dir = OUTPUT / "video" / "voice" / stem
+    final = OUTPUT / "video" / "final" / stem
+    final.mkdir(parents=True, exist_ok=True)
+    script = yaml.safe_load(script_path.read_text(encoding="utf-8"))
+    prefix = f"VERC-{'VC' if track['id'] == 'vetcert' else 'M'}{number}"
+    made = []
+    for ch in script["chapters"]:
+        n = ch["n"]
+        if chapters and n not in chapters:
+            continue
+        voice = next((voice_dir / f"ch{n}{ext}" for ext in (".mp3", ".wav", ".m4a") if (voice_dir / f"ch{n}{ext}").exists()), None)
+        if not voice:
+            print(f"  Chapter {n}: no voice file in {voice_dir.relative_to(ROOT)}, skipped")
+            continue
+        print(f"  Chapter {n}: timing items and captions to {voice.name}...")
+        timings = build / f"ch{n}.timings.json"
+        run([sys.executable, str(VIDEO / "align.py"), str(script_path), "--chapter", str(n), "--audio", str(voice), "--out", str(timings)])
+        leveled = build / f"ch{n}-voice.wav"
+        level_voice(voice, leveled)
+        run(render + ["--chapters", str(n)])
+        base = final / f"{prefix}-Ch{n}"
+        for out, burn in ((base.with_suffix(".mp4"), False), (Path(f"{base}-Captioned.mp4"), True)):
+            print(f"  Chapter {n}: encoding {out.name}...")
+            run([sys.executable, str(VIDEO / "assemble.py"), str(script_path), "--frames", str(build / "frames"),
+                 "--chapter", str(n), "--timings", str(timings), "--audio", str(leveled), "--out", str(out)]
+                + (["--burn-captions"] if burn else []))
+        for extra in (Path(f"{base}-Captioned.vtt"), Path(f"{base}-Captioned.timings.json"), base.with_suffix(".timings.json")):
+            extra.unlink(missing_ok=True)
+        run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(leveled), "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100",
+             f"{base}-Audio.mp3"])
+        made.append(base.with_suffix(".mp4"))
+    return made
+
+
+def build_module(track: dict, number: int, module: dict, chapters: list[int] | None, frames_only: bool,
+                 voiced: bool = False) -> Path | None:
     script_path = find_script(track["id"], number, module["id"])
     if not script_path:
         print(f"- {module['id']}: no video script yet. Run: python3 generate.py --module {module['id']} --kind video")
@@ -83,6 +140,11 @@ def build_module(track: dict, number: int, module: dict, chapters: list[int] | N
     print(f"\n{module['title']}: {script_path.relative_to(ROOT)}")
     render = ["node", str(VIDEO / "render_frames.mjs"), str(script_path), "--out", str(build / "frames"),
               "--assets", assets, "--worksheets", str(build / "worksheets.json")]
+    if voiced:
+        made = build_voiced(track, number, stem, script_path, build, render, chapters)
+        for m in made:
+            print(f"    {m.relative_to(ROOT)}")
+        return made[0].parent if made else None
     # Storyboard frames for every chapter, then every build step for the chapters to preview.
     run(render + ["--final"])
     if not frames_only:
@@ -102,6 +164,7 @@ def main() -> None:
     ap.add_argument("--track", choices=["core", "vetcert", "all"])
     ap.add_argument("--chapters", help="chapters to preview, for example 1 or 1,2. Default: all")
     ap.add_argument("--frames-only", action="store_true", help="storyboard frames only, skip the MP4 previews")
+    ap.add_argument("--voiced", action="store_true", help="build final chapters from voice files in output/video/voice/<module>/")
     a = ap.parse_args()
     if not a.module and not a.track:
         ap.error("name a --module or a --track")
@@ -120,11 +183,11 @@ def main() -> None:
         for number, module in enumerate(track["modules"], start=1):
             if a.module and module["id"] not in a.module:
                 continue
-            page = build_module(track, number, module, chapters, a.frames_only)
+            page = build_module(track, number, module, chapters, a.frames_only, a.voiced)
             if page:
                 built.append(page)
     if built:
-        print("\nStoryboards:")
+        print("\nFinal chapters:" if a.voiced else "\nStoryboards:")
         for p in built:
             print(f"    open {p.relative_to(ROOT)}")
 
