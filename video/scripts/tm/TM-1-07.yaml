@@ -197,13 +197,13 @@ chapters:
         tag: The sequence, part 1
         heading: From sign-in to UEI
         items:
-          - text: Sign in with Login.gov. Type the address yourself.
+          - text: Type SAM.gov. Sign in with Login.gov.
             note: Never use a link from an email.
           - text: Select Get Started, then Create New Entity.
-          - text: Validate your legal name and physical address.
-            note: "Not found? Submit documents through the Federal Service Desk."
-          - text: Choose whether your record shows in public searches.
-          - text: Certify your authority and write down your UEI.
+          - text: Validate legal name and physical address.
+            note: "Not found? Use the Federal Service Desk."
+          - text: Decide if your record is public.
+          - text: Certify, then write down your UEI.
         say: >-
           [+] Go to SAM.gov, select Sign In, and authenticate with Login.gov.
           Type the address yourself. Never use a link from an email. [+] From
@@ -219,13 +219,13 @@ chapters:
         heading: Purpose to submit
         items:
           - text: "Choose your purpose: All Awards."
-            note: Financial Assistance Awards Only does not let you bid on contracts.
+            note: "Financial Assistance only: no contract bids."
           - text: Complete core data, including bank details.
           - text: Add your NAICS codes and size data.
-          - text: Answer every rep and cert question truthfully.
+          - text: Answer every rep and cert in full.
           - text: Add your points of contact.
           - text: Submit. Look for Registration Submitted.
-            note: No confirmation on screen means the registration did not submit.
+            note: No confirmation means it did not submit.
         say: >-
           [+] Select All Awards. It covers contracts, plus grants and loans. [+]
           Complete core data, including financial information for electronic
