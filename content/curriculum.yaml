@@ -18,6 +18,12 @@ settings:
   model: claude-opus-5-5
   # Upper limit on the length of each draft, in tokens (about 0.75 words each).
   max_tokens: 16000
+  # The same limit for lesson video scripts, which are longer. Claude thinks
+  # before it writes, and the thinking counts toward these limits.
+  video_max_tokens: 48000
+  # How hard Claude works on each draft: low, medium, high, xhigh, or max.
+  # Leave it out to use the model's default. Higher costs more.
+  # effort: medium
   # Target length of each lesson guide, in words.
   lesson_words: 2500
   # After each draft, check it against the style rules and send one

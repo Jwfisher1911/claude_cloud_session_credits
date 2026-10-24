@@ -161,7 +161,7 @@ Review the first one before you run the rest with `python3 generate.py --kind vi
 
 Each script is checked before it is saved: the right number of on-screen items for each scene, text short enough to fit the frame, every task scene pointing at a real worksheet, and the VERC writing rules. A script that fails gets one automatic revision. Anything left shows up in the run report.
 
-Cost with `claude-opus-5-5`: about $0.15 to $0.30 per module, so about $2 to $3 for all ten.
+Cost with `claude-opus-5-5`: about $0.50 to $1 per module, so about $5 to $10 for all ten. Claude thinks before it writes, and the thinking is billed as output. A script that needs its automatic revision costs about twice as much.
 
 ### Watch the previews
 

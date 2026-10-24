@@ -50,6 +50,8 @@ CONTENT = ROOT / "content"
 OUTPUT = ROOT / "output"
 KINDS = ("lesson", "workbook")
 VIDEO = "video"
+# Set from curriculum.yaml "effort" when present. None sends no effort setting (the model default).
+EFFORT = None
 NEXT_STEP_TITLE = "Next step: your free VetCert score"
 
 
@@ -195,9 +197,15 @@ def make_client():
 
 
 def stream_text(client, model: str, max_tokens: int, system_blocks: list, messages: list, label: str):
-    """Send one request, show live progress, and return (text, usage, stop_reason)."""
+    """Send one request, show live progress, and return (text, usage, stop_reason).
+
+    Claude thinks before it writes. Thinking counts toward max_tokens but is not
+    shown, so the word count starts once the writing starts.
+    """
     chars, shown = 0, 0
-    with client.messages.stream(model=model, max_tokens=max_tokens, system=system_blocks, messages=messages) as stream:
+    print(f"    {label}: thinking...", end="", flush=True)
+    extra = {"extra_body": {"output_config": {"effort": EFFORT}}} if EFFORT else {}
+    with client.messages.stream(model=model, max_tokens=max_tokens, system=system_blocks, messages=messages, **extra) as stream:
         for chunk in stream.text_stream:
             chars += len(chunk)
             if chars - shown >= 300:
@@ -336,7 +344,7 @@ def run_video_job(client, curriculum, system_blocks, job: Job, totals: Totals, m
         return None
 
     settings = curriculum.get("settings", {})
-    max_tokens = int(settings.get("max_tokens", 16000))
+    max_tokens = int(settings.get("video_max_tokens", 48000))
     lesson_md = job.lesson_md_path.read_text(encoding="utf-8")
     workbook_md = job.workbook_md_path.read_text(encoding="utf-8") if job.workbook_md_path.exists() else None
     short = job.module.get("short") or " ".join(job.module["title"].split(":")[0].split()[:3])
@@ -365,7 +373,8 @@ def run_video_job(client, curriculum, system_blocks, job: Job, totals: Totals, m
             print("    revision was not better, keeping the first script")
     print(f"    checks: {'clean' if not problems else str(len(problems)) + ' problems left, see the report'}")
     if truncated:
-        print("    WARNING: the script hit the max_tokens limit and is cut off. Raise max_tokens in curriculum.yaml.")
+        print("    WARNING: the script hit the token limit and is cut off. Raise video_max_tokens in curriculum.yaml,")
+        print(f"    then rerun with --force: python3 generate.py --module {job.module['id']} --kind video --force")
 
     job.video_path.write_text(text, encoding="utf-8")
     print(f"    saved {job.video_path.relative_to(ROOT)}")
@@ -467,6 +476,8 @@ def main() -> None:
     curriculum = load_curriculum()
     settings = curriculum.get("settings", {})
     model = args.model or settings.get("model", "claude-opus-5-5")
+    global EFFORT
+    EFFORT = settings.get("effort") or None
     auto_fix = bool(settings.get("auto_fix", True)) and not args.no_fix
 
     if args.list:
