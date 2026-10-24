@@ -24,11 +24,18 @@ from assemble import SCENE_TAIL, scene_sentences, segments  # noqa: E402
 ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split()
 TENS = "_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()
 # Words the speech dictionary lacks, in its phone set. Add more here when align.py reports one.
+# A second spelling as "word(2)" covers a word a voice can say two ways.
 EXTRA_WORDS = {
     "aeration": "EH R EY SH AH N",
     "opord": "OW P AO R D",
     "vetcert": "V EH T S ER T",
     "verc": "V ER K",
+    "cpa": "S IY P IY EY",
+    "hvac": "EY CH V AE K",
+    "hvac(2)": "EY CH V IY EY S IY",
+    "aar": "EY EY AA R",
+    "aar(2)": "EY EY R",
+    "priya": "P R IY Y AH",
 }
 LEAD = 0.25       # a scene starts this long before its first word
 CUE_LEAD = 0.12   # an item appears this long before the words about it
