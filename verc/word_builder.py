@@ -50,6 +50,7 @@ class DocInfo:
     colors: dict = field(default_factory=dict)
     font: str = "Calibri"
     break_before_h2: bool = False
+    release: bool = False  # True for buyer copies: no draft banner
 
 
 def _hex(color: str, fallback: str) -> RGBColor:
@@ -211,8 +212,11 @@ class WordBuilder:
 
         p = self.doc.add_paragraph()
         stamp = dt.date.today().strftime("%B %d, %Y").replace(" 0", " ")
-        add_inline(p, f"DRAFT generated {stamp}. Review every fact and every highlighted VERIFY note before publishing.",
-                   color=RGBColor(0x9A, 0x3B, 0x2E), size=Pt(8.5))
+        if info.release:
+            add_inline(p, f"Current as of {dt.date.today().strftime('%B %Y')}.", size=Pt(8.5))
+        else:
+            add_inline(p, f"DRAFT generated {stamp}. Review every fact and every highlighted VERIFY note before publishing.",
+                       color=RGBColor(0x9A, 0x3B, 0x2E), size=Pt(8.5))
         p.paragraph_format.space_after = Pt(14)
         _paragraph_border(p, "bottom", self.accent_hex, size=12, space=6)
 
@@ -335,6 +339,9 @@ class WordBuilder:
             weight = min(max(longest, 3), 40)
             if not body:  # a column the reader fills in by hand
                 weight = max(weight, 14)
+            # Never narrower than the longest single word, so "Wednesday" stays on one line.
+            words = [w for r in rows for w in r[c].split()]
+            weight = max(weight, (max((len(w) for w in words), default=0) + 3) * 1.25)
             weights.append(weight)
         scale = total / sum(weights)
         return [Inches(w * scale) for w in weights]
